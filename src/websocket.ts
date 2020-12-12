@@ -65,6 +65,11 @@ export class Client extends Emitter {
 		});
 	};
 
+	destroy(reason?: string) {
+		this.socket.close();
+		this.emit("debug", `${red.bold("[NOTICE/websocket]")} ${red(reason ? reason : "The websocket was closed")}`)
+	};
+
 	async sendMessage(channel: string, content: string | object) {
 		const url = `https://discord.com/api/v7/channels/${channel}/messages`;
 		let b: messageProperties = {};
