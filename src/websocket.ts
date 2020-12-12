@@ -63,7 +63,7 @@ export class Client extends Emitter {
 	async sendMessage(channel: string, content: string | object) {
 		const url = `https://discord.com/api/v7/channels/${channel}/messages`;
 		let b: messageProperties = {};
-		if (!content) throw new Error("[ERROR/discordAPI error] Cannot send a message with no content");
+		if (!content || !content.toString().length) throw new Error("[ERROR/discordAPI error] Cannot send a message with no content");
 		if (typeof content === "string") b.content = content;
 		if (typeof content === "object") b = content;
 		const sent = await fetch(url, {
