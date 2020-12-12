@@ -106,3 +106,4 @@ dist
 yarn.json
 package-lock.json
 target
+package-lock.json
