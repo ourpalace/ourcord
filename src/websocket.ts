@@ -16,16 +16,16 @@ export interface messageProperties {
 
 export interface embedProperties {
 	embed: {
-		title: string;
-		author: object;
-		thumbnail: string;
-		description: string;
-		fields: object[];
-		colour: string | number;
-		color: embedProperties["embed"]["colour"];
-		footer: object;
-		image: string;
-	};
+		title?: string;
+		author?: object;
+		thumbnail?: string;
+		description?: string;
+		fields?: object[];
+		colour?: string | number;
+		color?: embedProperties["embed"]["colour"];
+		footer?: object;
+		image?: string;
+	}
 };
 
 export class Client extends Emitter {
@@ -51,10 +51,6 @@ export class Client extends Emitter {
 				handlers.errorHandler(error, this);
 			});
 			this.socket.on("message", (message: any, flag: any) => {
-				console.log(message);
-				console.log(flag);
-				console.log(this);
-
 				handlers.messageHandler(message, flag, this)
 			});
 			this.socket.on("close", () => {
@@ -124,19 +120,6 @@ export class Client extends Emitter {
 		if (inflateData.err) throw new Error("An error occured while decompressing data");
 		return JSON.parse(inflateData.toString());
 	};
- 
-	// handleMessage(message: string, flag: any, websocket: any) {
-	// 	const msg = this.evaluate(message, flag);
-	// 	if (msg.t === "READY") {
-	// 		websocket.emit("ready", msg.d.user);
-	// 	} else if (msg.t === "MESSAGE_CREATE") {
-	// 		websocket.emit("message", msg.d);
-	// 	};
-	// };
-
-	// handleErr(err: string, emitter: Emitter) {
-	// 	emitter.emit("error", err);
-	// }
 }
 
 export default Client;

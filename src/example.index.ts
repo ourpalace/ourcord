@@ -1,17 +1,21 @@
-import Client from "./websocket";
+import Client, { messageProperties } from "./websocket";
 
 const client = new Client(process.env.TOKEN);
+
 client.connect();
 
 client.on("ready", () => {
     console.log("Client connected to discord API");
 });
 
-client.on("debug", debug => {
-    console.log(debug);
+client.on("debug", log => {
+    console.log(log);
 });
 
 client.on("message", async (msg: any) => {
-    const tested = await client.sendMessage(msg.channel_id, "yes");
-    console.log(tested);
+    if (msg.author.bot) return;
+    if (!msg.content.startsWith("stupid")) return;
+    const opts = {title: "poo"}
+    console.log(await client.MessageEmbed(msg.channel_id, {embed:opts}));
+    console.log(msg);
 });
