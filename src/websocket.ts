@@ -55,13 +55,17 @@ export class Client extends Emitter {
 		});
 	}
 	sendMessage(t: string, channelId: string) {
-		fetch(`https://discord.com/api/v6/channels/${channelId}/messages`, {
-			method: 'post',
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({content: t})
-		});
+		try{
+			fetch(`https://discord.com/api/v6/channels/${channelId}/messages`, {
+				method: 'post',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({content: t})
+			});
+		} catch (err) {
+			handleErr(err.stack, this);
+		}
 	}
 	getMetaData():object {
 		const metaData = {
