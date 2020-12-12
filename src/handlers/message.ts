@@ -17,7 +17,7 @@ export default function handleMessage(message: string, flag: any, websocket: any
         }, msg.d.heartbeat_interval)
         return websocket.emit("debug", `${bold("[NOTICE/websocket]")} - Starting heartbeat at ${msg.d.heartbeat_interval}ms`);
     } else if (msg.op == 7) {
-        websocket.send({
+        websocket.socket.send({
             op: 6,
             d: {
                 session_id: websocket._sessionId,
