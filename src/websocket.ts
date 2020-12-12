@@ -47,8 +47,8 @@ export class Client extends Emitter {
 		if (!token) throw new Error(`${red.bold("[ERROR/websocket]")} ${red("No token was provided")}`);
 		this.token = token;
 		if (!options) this.config = {
-			browser: "ourcord",
-			device: "ourcord",
+			browser: "ourcord (https://github.com/ourcord/ourcord)",
+			device: "ourcord (https://github.com/ourcord/ourcord)",
 		};
 		else this.config = options;
 	}
@@ -97,7 +97,7 @@ export class Client extends Emitter {
 
 	async MessageEmbed(channel: string, options: EmbedProperties) {
 		const url = `https://discord.com/api/v7/channels/${channel}/messages`;
-		if (!options) throw new Error('CANNOT send an Empty message lol')
+		if (!options) throw new Error('[ERROR/discordAPI error] Cannot send a message with no content')
 		const data = await fetch(url, {
 			method: "POST",
 			headers: {
@@ -105,6 +105,18 @@ export class Client extends Emitter {
 				"Content-Type" : "application/json",
 			},
 			body: JSON.stringify(options),
+		});
+		return await data.json();
+	};
+	async GetRestUser(userID: string) {
+		const url = `https://discord.com/api/v7/users/${userID}`;
+		if (!userID || !userID.toString().length) throw new Error("[ERROR/discordAPI error] Please provide a userID");
+		const data = await fetch(url, {
+			method: "GET",
+			headers: {
+				"Authorization": `Bot ${this.token}`,
+				"Content-Type" : "application/json",
+			},
 		});
 		return await data.json();
 	};
