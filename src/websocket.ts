@@ -55,6 +55,7 @@ export class Client extends Emitter {
 		});
 	}
 	sendMessage(t: string, channelId: string) {
+		if (t.length < 1) return throw new Error('The length of a message has to be bigger than 0')
 		try{
 			fetch(`https://discord.com/api/v6/channels/${channelId}/messages`, {
 				method: 'post',
