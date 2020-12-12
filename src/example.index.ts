@@ -1,4 +1,4 @@
-import Client, { messageProperties } from "./websocket";
+import Client from "./websocket";
 
 const client = new Client(process.env.TOKEN);
 
@@ -17,5 +17,4 @@ client.on("message", async (msg: any) => {
     if (!msg.content.startsWith("stupid")) return;
     const opts = {title: "poo"}
     console.log(await client.MessageEmbed(msg.channel_id, {embed:opts}));
-    console.log(msg);
 });

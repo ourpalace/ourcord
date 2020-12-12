@@ -10,11 +10,11 @@ import handlers from "./handlers/handlers.index"
 
 config();
 
-export interface messageProperties {
+export interface MessageProperties {
 	content?: string;
 }
 
-export interface embedProperties {
+export interface EmbedProperties {
 	embed: {
 		title?: string;
 		author?: object;
@@ -22,22 +22,30 @@ export interface embedProperties {
 		description?: string;
 		fields?: object[];
 		colour?: string | number;
-		color?: embedProperties["embed"]["colour"];
+		color?: EmbedProperties["embed"]["colour"];
 		footer?: object;
 		image?: string;
 	}
 };
 
+interface ClientOptions {
+	browser?: string;
+	device?: string;
+}
+
 export class Client extends Emitter {
 	token: string;
 	socket: any;
-	config: object;
-	constructor(token?: string, opts?: object) {
+	config: ClientOptions;
+	constructor(token?: string, options?: ClientOptions) {
 		super();
 		if (!token) throw new Error(`${red.bold("[ERROR/websocket]")} ${red("No token was provided")}`);
 		this.token = token;
-		if (!opts) this.config = {};
-		else this.config = opts;
+		if (!options) this.config = {
+			browser: "ourcord",
+			device: "ourcord",
+		};
+		else this.config = options;
 	}
 
 	connect() {
@@ -68,7 +76,7 @@ export class Client extends Emitter {
 
 	async sendMessage(channel: string, content: string | object) {
 		const url = `https://discord.com/api/v7/channels/${channel}/messages`;
-		let b: messageProperties = {};
+		let b: MessageProperties = {};
 		if (!content || !content.toString().length) throw new Error("[ERROR/discordAPI error] Cannot send a message with no content");
 		if (typeof content === "string") b.content = content;
 		if (typeof content === "object") b = content;
@@ -83,7 +91,7 @@ export class Client extends Emitter {
 		return await sent.json();
 	};
 
-	async MessageEmbed(channel: string, options: embedProperties) {
+	async MessageEmbed(channel: string, options: EmbedProperties) {
 		const url = `https://discord.com/api/v7/channels/${channel}/messages`;
 		if (!options) throw new Error('CANNOT send an Empty message lol')
 		const data = await fetch(url, {
@@ -104,8 +112,8 @@ export class Client extends Emitter {
 				token: this.token,
 				properties: {
 					$os: os.platform,
-					$browser: "ourcord (https://github.com/alebot-dev/our.discord)",
-					$device: "ourcord (https://github.com/alebot-dev/our.discord)"
+					$browser: this.config.browser,
+					$device: this.config.device,
 				}
 			}
 		};
