@@ -1,5 +1,8 @@
-import { EventEmitter } from "events";
-
-export default function handleMessage(message: string, flag: any, emitter: any) {
-    const msg = emitter.evalutate()
+export default function handleMessage(message: string, flag: any, websocket: any) {
+    const msg = websocket.evalutate(message, flag);
+    if (msg.t === "READY") {
+        websocket.emit("ready", msg.d.user);
+    } else if (msg.t === "MESSAGE_CREATE") {
+        websocket.emit("message", msg.d);
+    }
 }
