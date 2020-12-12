@@ -5,7 +5,8 @@
         "outDir": "./target",
         "module": "CommonJS",
         "strictNullChecks": false,
-        "esModuleInterop": true
+        "esModuleInterop": true,
+        "strict": true
     },
     "files": [
         "./src/index.ts",
