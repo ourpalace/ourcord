@@ -54,7 +54,15 @@ export class Client extends Emitter {
 			});
 		});
 	}
-
+	sendMessage(t: string, channelId: string) {
+		fetch(`https://discord.com/api/v6/channels/${channelId}/messages`, {
+			method: 'post',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({content: t})
+		});
+	}
 	getMetaData():object {
 		const metaData = {
 			op: 2,			// opcode of 2 means "identify"
