@@ -3,7 +3,9 @@
         "allowJs": true,
         "target": "ESNext",
         "outDir": "./target",
-        "module": "CommonJS"
+        "module": "CommonJS",
+        "strictNullChecks": false,
+        "esModuleInterop": true
     },
     "files": [
         "./src/index.ts",
