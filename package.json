@@ -1,0 +1,20 @@
+{
+  "name": "our.discord",
+  "version": "1.0.0",
+  "description": "A discord js library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alebot-dev/our.discord.git"
+  },
+  "author": "Dice, Matthew, Starman, Misly",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alebot-dev/our.discord/issues"
+  },
+  "homepage": "https://github.com/alebot-dev/our.discord#readme"
+}
