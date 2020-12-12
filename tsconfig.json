@@ -2,5 +2,9 @@
     "compilerOptions": {
         "allowJs": true,
         "target": "ESNext"
-    }
+    },
+    "files": [
+        "./src/index.ts",
+        "./src/websocket.ts"
+    ]
 }
