@@ -104,5 +104,6 @@ dist
 .tern-port
 
 yarn.json
+package-lock.json
 target
 package-lock.json
