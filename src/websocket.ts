@@ -32,6 +32,8 @@ export interface ClientOptions {
 	browser?: string;
 	device?: string;
 	prefix?: string;
+	presence?: {name: string, type: number}
+	status?: "dnd" | "invisible" | "online" | "idle"
 }
 
 export interface StatusInfo {
@@ -49,6 +51,7 @@ export class Client extends Emitter {
 		if (!options) this.config = {
 			browser: "ourcord (https://github.com/ourcord/ourcord)",
 			device: "ourcord (https://github.com/ourcord/ourcord)",
+			status: "dnd"
 		};
 		else this.config = options;
 	}
@@ -130,7 +133,11 @@ export class Client extends Emitter {
 					$os: os.platform,
 					$browser: this.config.browser,
 					$device: this.config.device,
-				}
+				},
+				presence: {
+					// 	activities: [{name: this.config.presence.name ? this.config.presence.name : null, type: 0}]
+					status: this.config.status
+				},
 			}
 		};
 		return metaData;
