@@ -1,7 +1,8 @@
 {
     "compilerOptions": {
         "allowJs": true,
-        "target": "ESNext"
+        "target": "ESNext",
+        "outDir": "./target"
     },
     "files": [
         "./src/index.ts",
