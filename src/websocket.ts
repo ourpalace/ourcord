@@ -7,6 +7,9 @@ import os from "os"
 import handleErr from "./handlers/error";
 import handleMessage from "./handlers/message";
 import zlib from "zlib-sync";
+import { config } from "dotenv";
+
+config();
 
 export interface messageProperties {
 	content?: string;
@@ -29,8 +32,10 @@ export interface embedProperties {
 export class Client extends Emitter {
 	token: string;
 	socket: any;
+	config: NodeJS.ProcessEnv;
 	constructor(token?: string) {
 		super();
+		this.config = process.env;
 		if (!token) throw new Error(`${red.bold("[ERROR/websocket]")} ${red("No token was provided")}`);
 		this.token = token;
 	}

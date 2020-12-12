@@ -3,7 +3,7 @@ import Client from "./websocket";
 const client = new Client(/* YOUR TOKEN HERE */);
 
 client.on("ready", () => {
-    console.log("Client connected to discord API")
+    console.log("Client connected to discord API");
 });
 
 client.on("message", async msg => {
