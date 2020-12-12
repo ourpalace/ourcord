@@ -10,7 +10,6 @@ import zlib from "zlib-sync";
 
 export interface messageProperties {
 	content?: string;
-	timestamp: number;
 }
 
 export interface embedProperties {
@@ -35,6 +34,7 @@ export class Client extends Emitter {
 		if (!token) throw new Error(`${red.bold("[ERROR/websocket]")} ${red("No token was provided")}`);
 		this.token = token;
 	}
+
 	connect() {
 		this.emit("debug", `${green.bold("[NOTICE/websocket]")} ${yellow("Attempting to connect to the discord gateway")}`)
 		this.socket = new ws("wss://gateway.discord.gg/?v=6&encoding=json");
@@ -43,7 +43,7 @@ export class Client extends Emitter {
 			const data = JSON.stringify(this.getMetaData());
 			this.socket.send(data);
 			this.socket.once("error", (error: string) => {
-				handleErr(error, this.socket)
+				handleErr(error, this)
 			});
 			this.socket.on("message", (message: any, flag: any) => {
 				console.log(message);
@@ -56,23 +56,42 @@ export class Client extends Emitter {
 				this.emit("debug", `${bold("[NOTICE/websocket]")} Connection closed unexpectedly. Re-attempting login`);
 				this.connect();
 			});
-			
+
 		});
 	}
-	sendMessage(t: string, channelId: string) {
-		try{
-			fetch(`https://discord.com/api/v6/channels/${channelId}/messages`, {
-				method: 'post',
-				headers: {
-					'Content-Type': 'application/json'
-				},
-				body: JSON.stringify({content: t})
-			});
-		} catch (err) {
-			handleErr(err.stack, this.socket);
-		}
+
+	async sendMessage(channel: string, content: string | object) {
+		const url = `https://discord.com/api/v7/channels/${channel}/messages`;
+		let b: messageProperties = {};
+		if (!content) throw new Error("[ERROR/discordAPI error] Cannot send a message with no content");
+		if (typeof content === "string") b.content = content;
+		if (typeof content === "object") b = content;
+		const sent = await fetch(url, {
+			method: "POST",
+			headers: {
+				"Authorization": `Bot ${this.token}`,
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(b)
+		});
+		return await sent.json();
 	}
-	getMetaData():object {
+
+	async MessageEmbed(channel: string, options: embedProperties) {
+		const url = `https://discord.com/api/v7/channels/${channel}/messages`;
+		if (!options) throw new Error('CANNOT send an Empty message lol')
+		const data = await fetch(url, {
+			method: "POST",
+			headers: {
+				"Authorization": `Bot ${this.token}`,
+				"Content-Type" : "application/json",
+			},
+			body: JSON.stringify(options),
+		});
+		return await data.json();
+	}
+
+	getMetaData(): object {
 		const metaData = {
 			op: 2,			// opcode of 2 means "identify"
 			d: {			// d is for data
@@ -86,6 +105,7 @@ export class Client extends Emitter {
 		};
 		return metaData;
 	}
+
 	evaluate(data: any, flag: any) {
 		if (typeof flag !== "object") flag = {};
 		if (!flag.binary) return JSON.parse(data);
@@ -95,3 +115,5 @@ export class Client extends Emitter {
 		return JSON.parse(inflateData.toString());
 	}
 }
+
+export default Client;

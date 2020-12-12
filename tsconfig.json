@@ -9,7 +9,7 @@
         "strict": true
     },
     "files": [
-        "./src/index.ts",
+        "./src/example.index.ts",
         "./src/websocket.ts",
         "./src/handlers/error.ts",
         "./src/handlers/message.ts"
