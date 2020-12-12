@@ -20,9 +20,15 @@ export interface embedProperties {
 	};
 }
 
+interface ClientOptions {
+	browser?: string;
+	device?: string;
+}
+
 export class Client extends Emitter {
     token: string;
     socket: typeof Emitter;
+    config: ClientOptions;
     constructor(token: string);
     login(): void;
     getMetaData(): {

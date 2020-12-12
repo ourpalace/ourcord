@@ -28,9 +28,14 @@ export interface EmbedProperties {
 	}
 };
 
-interface ClientOptions {
+export interface ClientOptions {
 	browser?: string;
 	device?: string;
+	prefix?: string;
+}
+
+export interface StatusInfo {
+	
 }
 
 export class Client extends Emitter {
@@ -128,6 +133,10 @@ export class Client extends Emitter {
 		if (inflateData.err) throw new Error("An error occured while decompressing data");
 		return JSON.parse(inflateData.toString());
 	};
+
+	setStatus() {
+
+	}
 }
 
 export default Client;
