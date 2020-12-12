@@ -1,12 +1,13 @@
 {
-  "name": "our.discord",
+  "name": "ourcord",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/alebot-dev/our.discord.git",
-  "author": "Dice <qbotdev84@gmail.com>",
+  "repository": "https://github.com/ourcord/ourcord",
+  "author": "ourcord",
   "license": "MIT",
   "scripts": {
-    "build": "tsc -p ."
+    "build": "tsc -p .",
+    "start": "node target/websocket"
   },
   "dependencies": {
     "@types/chalk": "^2.2.0",
@@ -19,5 +20,8 @@
     "package.json": "^2.0.1",
     "ws": "^7.4.1",
     "zlib-sync": "^0.1.7"
+  },
+  "devDependencies": {
+    "typescript": "^4.1.3"
   }
 }
