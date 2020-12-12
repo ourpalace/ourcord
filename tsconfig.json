@@ -10,6 +10,8 @@
     },
     "files": [
         "./src/index.ts",
-        "./src/websocket.ts"
+        "./src/websocket.ts",
+        "./src/handlers/error.ts",
+        "./src/handlers/message.ts"
     ]
 }
