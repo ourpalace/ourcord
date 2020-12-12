@@ -47,8 +47,8 @@ export class Client extends Emitter {
 		if (!token) throw new Error(`${red.bold("[ERROR/websocket]")} ${red("No token was provided")}`);
 		this.token = token;
 		if (!options) this.config = {
-			browser: "ourcord",
-			device: "ourcord",
+			browser: "ourcord (https://github.com/ourcord/ourcord)",
+			device: "ourcord (https://github.com/ourcord/ourcord)",
 		};
 		else this.config = options;
 	}
