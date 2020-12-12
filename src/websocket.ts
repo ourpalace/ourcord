@@ -64,7 +64,7 @@ export class Client extends Emitter {
 				body: JSON.stringify({content: t})
 			});
 		} catch (err) {
-			handleErr(err.stack, this);
+			handleErr(err.stack, this.socket);
 		}
 	}
 	getMetaData():object {
