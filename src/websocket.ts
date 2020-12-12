@@ -4,7 +4,7 @@ import fetch from "node-fetch";
 import { EventEmitter as Emitter } from "events";
 import { red, yellow, bold } from "chalk";
 import os from "os"
-import zlib from "zlib-sync";
+import pako from "pako"
 import { config } from "dotenv";
 import handlers from "./handlers/handlers.index"
 
@@ -146,8 +146,8 @@ export class Client extends Emitter {
 	evaluate(data: any, flag: any) {
 		if (typeof flag !== "object") flag = {};
 		if (!flag.binary) return JSON.parse(data);
-		const inflateData = new zlib.Inflate();
-		inflateData.push(data, zlib.Z_SYNC_FLUSH);
+		const inflateData = new pako.Inflate();
+		inflateData.push(data);
 		if (inflateData.err) throw new Error("An error occured while decompressing data");
 		return JSON.parse(inflateData.toString());
 	};
