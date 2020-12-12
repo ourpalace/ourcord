@@ -4,8 +4,6 @@ import fetch from "node-fetch";
 import { EventEmitter as Emitter } from "events";
 import { red, green, yellow, bold } from "chalk";
 import os from "os"
-import handleErr from "./handlers/error";
-import handleMessage from "./handlers/message";
 import zlib from "zlib-sync";
 import { config } from "dotenv";
 
@@ -32,10 +30,8 @@ export interface embedProperties {
 export class Client extends Emitter {
 	token: string;
 	socket: any;
-	config: NodeJS.ProcessEnv;
 	constructor(token?: string) {
 		super();
-		this.config = process.env;
 		if (!token) throw new Error(`${red.bold("[ERROR/websocket]")} ${red("No token was provided")}`);
 		this.token = token;
 	}
@@ -48,14 +44,14 @@ export class Client extends Emitter {
 			const data = JSON.stringify(this.getMetaData());
 			this.socket.send(data);
 			this.socket.once("error", (error: string) => {
-				handleErr(error, this)
+				this.handleErr(error, this);
 			});
 			this.socket.on("message", (message: any, flag: any) => {
 				console.log(message);
 				console.log(flag);
 				console.log(this);
 
-				handleMessage(message, flag, this)
+				this.handleMessage(message, flag, this)
 			});
 			this.socket.on("close", () => {
 				this.emit("debug", `${bold("[NOTICE/websocket]")} Connection closed unexpectedly. Re-attempting login`);
@@ -63,7 +59,7 @@ export class Client extends Emitter {
 			});
 
 		});
-	}
+	};
 
 	async sendMessage(channel: string, content: string | object) {
 		const url = `https://discord.com/api/v7/channels/${channel}/messages`;
@@ -80,7 +76,7 @@ export class Client extends Emitter {
 			body: JSON.stringify(b)
 		});
 		return await sent.json();
-	}
+	};
 
 	async MessageEmbed(channel: string, options: embedProperties) {
 		const url = `https://discord.com/api/v7/channels/${channel}/messages`;
@@ -94,7 +90,7 @@ export class Client extends Emitter {
 			body: JSON.stringify(options),
 		});
 		return await data.json();
-	}
+	};
 
 	getMetaData(): object {
 		const metaData = {
@@ -109,7 +105,7 @@ export class Client extends Emitter {
 			}
 		};
 		return metaData;
-	}
+	};
 
 	evaluate(data: any, flag: any) {
 		if (typeof flag !== "object") flag = {};
@@ -118,7 +114,20 @@ export class Client extends Emitter {
 		inflateData.push(data, zlib.Z_SYNC_FLUSH);
 		if (inflateData.err) throw new Error("An error occured while decompressing data");
 		return JSON.parse(inflateData.toString());
-	}
+	};
+
+	handleMessage(message: string, flag: any, websocket: any) {
+		const msg = websocket.evalutate(message, flag);
+		if (msg.t === "READY") {
+			websocket.emit("ready", msg.d.user);
+		} else if (msg.t === "MESSAGE_CREATE") {
+			websocket.emit("message", msg.d);
+		};
+	};
+
+	handleErr(err: string, emitter: Emitter) {
+		emitter.emit("error", err);
+	}	
 }
 
 export default Client;
