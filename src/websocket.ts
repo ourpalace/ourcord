@@ -2,7 +2,7 @@
 import ws from "ws";
 import fetch from "node-fetch";
 import { EventEmitter as Emitter } from "events";
-import { red, green, yellow, bold } from "chalk";
+import { red, yellow, bold } from "chalk";
 import os from "os"
 import zlib from "zlib-sync";
 import { config } from "dotenv";
@@ -32,6 +32,8 @@ export interface ClientOptions {
 	browser?: string;
 	device?: string;
 	prefix?: string;
+	presence?: {name: string, type: number}
+	status?: "dnd" | "invisible" | "online" | "idle"
 }
 
 export interface StatusInfo {
@@ -47,8 +49,9 @@ export class Client extends Emitter {
 		if (!token) throw new Error(`${red.bold("[ERROR/websocket]")} ${red("No token was provided")}`);
 		this.token = token;
 		if (!options) this.config = {
-			browser: "ourcord",
-			device: "ourcord",
+			browser: "ourcord (https://github.com/ourcord/ourcord)",
+			device: "ourcord (https://github.com/ourcord/ourcord)",
+			status: "dnd"
 		};
 		else this.config = options;
 	}
@@ -57,7 +60,7 @@ export class Client extends Emitter {
 		this.emit("debug", `${yellow.bold("[NOTICE/websocket]")} ${yellow("Attempting to connect to the discord gateway")}`)
 		this.socket = new ws("wss://gateway.discord.gg/?v=6&encoding=json");
 		this.socket.once("open", () => {
-			this.emit("debug", `${green.bold("[NOTICE/websocket]")} ${green("Attempting to login")}`);
+			this.emit("debug", `${yellow.bold("[NOTICE/websocket]")} ${yellow("Attempting to login")}`);
 			const data = JSON.stringify(this.getMetaData());
 			this.socket.send(data);
 			this.socket.once("error", (error: string) => {
@@ -97,7 +100,7 @@ export class Client extends Emitter {
 
 	async MessageEmbed(channel: string, options: EmbedProperties) {
 		const url = `https://discord.com/api/v7/channels/${channel}/messages`;
-		if (!options) throw new Error('CANNOT send an Empty message lol')
+		if (!options) throw new Error('[ERROR/discordAPI error] Cannot send a message with no content')
 		const data = await fetch(url, {
 			method: "POST",
 			headers: {
@@ -105,6 +108,18 @@ export class Client extends Emitter {
 				"Content-Type" : "application/json",
 			},
 			body: JSON.stringify(options),
+		});
+		return await data.json();
+	};
+	async GetRestUser(userID: string) {
+		const url = `https://discord.com/api/v7/users/${userID}`;
+		if (!userID || !userID.toString().length) throw new Error("[ERROR/discordAPI error] Please provide a userID");
+		const data = await fetch(url, {
+			method: "GET",
+			headers: {
+				"Authorization": `Bot ${this.token}`,
+				"Content-Type" : "application/json",
+			},
 		});
 		return await data.json();
 	};
@@ -118,7 +133,11 @@ export class Client extends Emitter {
 					$os: os.platform,
 					$browser: this.config.browser,
 					$device: this.config.device,
-				}
+				},
+				presence: {
+					// 	activities: [{name: this.config.presence.name ? this.config.presence.name : null, type: 0}]
+					status: this.config.status
+				},
 			}
 		};
 		return metaData;

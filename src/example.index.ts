@@ -1,6 +1,6 @@
 import Client from "./websocket";
 
-const client = new Client(process.env.TOKEN);
+const client = new Client(process.env.TOKEN, {status: "dnd"});
 
 client.connect();
 
