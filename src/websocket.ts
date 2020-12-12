@@ -70,8 +70,8 @@ export class Client extends Emitter {
 				token: this.token,
 				properties: {
 					$os: os.platform,
-					$browser: "ourcord",
-					$device: "ourcord"
+					$browser: "ourcord (https://github.com/alebot-dev/our.discord)",
+					$device: "ourcord (https://github.com/alebot-dev/our.discord)"
 				}
 			}
 		};
