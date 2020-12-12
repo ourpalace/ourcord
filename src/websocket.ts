@@ -2,7 +2,7 @@
 import ws from "ws";
 import fetch from "node-fetch";
 import { EventEmitter as Emitter } from "events";
-import { red, green, yellow } from "chalk";
+import { red, green, yellow, bold } from "chalk";
 import os from "os"
 import handleErr from "./handlers/error";
 import handleMessage from "./handlers/message";
@@ -52,6 +52,11 @@ export class Client extends Emitter {
 
 				handleMessage(message, flag, this)
 			});
+			this.socket.on("close", () => {
+				this.emit("debug", `${bold("[NOTICE/websocket]")} Connection closed unexpectedly. Re-attempting login`);
+				this.connect();
+			});
+			
 		});
 	}
 
