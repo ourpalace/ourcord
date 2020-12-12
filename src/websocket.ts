@@ -59,7 +59,19 @@ export class Client extends Emitter {
 			
 		});
 	}
-
+	sendMessage(t: string, channelId: string) {
+		try{
+			fetch(`https://discord.com/api/v6/channels/${channelId}/messages`, {
+				method: 'post',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({content: t})
+			});
+		} catch (err) {
+			handleErr(err.stack, this.socket);
+		}
+	}
 	getMetaData():object {
 		const metaData = {
 			op: 2,			// opcode of 2 means "identify"
@@ -67,8 +79,8 @@ export class Client extends Emitter {
 				token: this.token,
 				properties: {
 					$os: os.platform,
-					$browser: "ourcord",
-					$device: "ourcord"
+					$browser: "ourcord (https://github.com/alebot-dev/our.discord)",
+					$device: "ourcord (https://github.com/alebot-dev/our.discord)"
 				}
 			}
 		};
