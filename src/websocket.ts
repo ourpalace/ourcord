@@ -57,7 +57,7 @@ export class Client extends Emitter {
 	getMetaData():object {
 		const metaData = {
 			op: 2,			// opcode of 2 means "identify"
-			d: {			// d is for data
+			data: {
 				token: this.token,
 				properties: {
 					$os: os.platform,
