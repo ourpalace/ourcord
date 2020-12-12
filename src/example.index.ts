@@ -1,6 +1,7 @@
 import Client from "./websocket";
 
 const client = new Client(process.env.TOKEN);
+client.connect();
 
 client.on("ready", () => {
     console.log("Client connected to discord API");

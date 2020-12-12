@@ -6,6 +6,7 @@ import { red, green, yellow, bold } from "chalk";
 import os from "os"
 import zlib from "zlib-sync";
 import { config } from "dotenv";
+import handlers from "./handlers/handlers.index"
 
 config();
 
@@ -30,10 +31,13 @@ export interface embedProperties {
 export class Client extends Emitter {
 	token: string;
 	socket: any;
-	constructor(token?: string) {
+	config: object;
+	constructor(token?: string, opts?: object) {
 		super();
 		if (!token) throw new Error(`${red.bold("[ERROR/websocket]")} ${red("No token was provided")}`);
 		this.token = token;
+		if (!opts) this.config = {};
+		else this.config = opts;
 	}
 
 	connect() {
@@ -44,14 +48,14 @@ export class Client extends Emitter {
 			const data = JSON.stringify(this.getMetaData());
 			this.socket.send(data);
 			this.socket.once("error", (error: string) => {
-				this.handleErr(error, this);
+				handlers.errorHandler(error, this);
 			});
 			this.socket.on("message", (message: any, flag: any) => {
 				console.log(message);
 				console.log(flag);
 				console.log(this);
 
-				this.handleMessage(message, flag, this)
+				handlers.messageHandler(message, flag, this)
 			});
 			this.socket.on("close", () => {
 				this.emit("debug", `${bold("[NOTICE/websocket]")} Connection closed unexpectedly. Re-attempting login`);
@@ -115,19 +119,19 @@ export class Client extends Emitter {
 		if (inflateData.err) throw new Error("An error occured while decompressing data");
 		return JSON.parse(inflateData.toString());
 	};
+ 
+	// handleMessage(message: string, flag: any, websocket: any) {
+	// 	const msg = this.evaluate(message, flag);
+	// 	if (msg.t === "READY") {
+	// 		websocket.emit("ready", msg.d.user);
+	// 	} else if (msg.t === "MESSAGE_CREATE") {
+	// 		websocket.emit("message", msg.d);
+	// 	};
+	// };
 
-	handleMessage(message: string, flag: any, websocket: any) {
-		const msg = websocket.evalutate(message, flag);
-		if (msg.t === "READY") {
-			websocket.emit("ready", msg.d.user);
-		} else if (msg.t === "MESSAGE_CREATE") {
-			websocket.emit("message", msg.d);
-		};
-	};
-
-	handleErr(err: string, emitter: Emitter) {
-		emitter.emit("error", err);
-	}	
+	// handleErr(err: string, emitter: Emitter) {
+	// 	emitter.emit("error", err);
+	// }
 }
 
 export default Client;
