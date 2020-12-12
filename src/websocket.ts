@@ -35,7 +35,7 @@ export interface ClientOptions {
 }
 
 export interface StatusInfo {
-	
+
 }
 
 export class Client extends Emitter {
@@ -54,7 +54,7 @@ export class Client extends Emitter {
 	}
 
 	connect() {
-		this.emit("debug", `${green.bold("[NOTICE/websocket]")} ${yellow("Attempting to connect to the discord gateway")}`)
+		this.emit("debug", `${yellow.bold("[NOTICE/websocket]")} ${yellow("Attempting to connect to the discord gateway")}`)
 		this.socket = new ws("wss://gateway.discord.gg/?v=6&encoding=json");
 		this.socket.once("open", () => {
 			this.emit("debug", `${green.bold("[NOTICE/websocket]")} ${green("Attempting to login")}`);
@@ -70,7 +70,6 @@ export class Client extends Emitter {
 				this.emit("debug", `${bold("[NOTICE/websocket]")} Connection closed unexpectedly. Re-attempting login`);
 				this.connect();
 			});
-
 		});
 	};
 
