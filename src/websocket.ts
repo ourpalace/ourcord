@@ -2,7 +2,7 @@
 import ws from "ws";
 import fetch from "node-fetch";
 import { EventEmitter as Emitter } from "events";
-import { red, green, yellow, bold } from "chalk";
+import { red, yellow, bold } from "chalk";
 import os from "os"
 import zlib from "zlib-sync";
 import { config } from "dotenv";
@@ -57,7 +57,7 @@ export class Client extends Emitter {
 		this.emit("debug", `${yellow.bold("[NOTICE/websocket]")} ${yellow("Attempting to connect to the discord gateway")}`)
 		this.socket = new ws("wss://gateway.discord.gg/?v=6&encoding=json");
 		this.socket.once("open", () => {
-			this.emit("debug", `${green.bold("[NOTICE/websocket]")} ${green("Attempting to login")}`);
+			this.emit("debug", `${yellow.bold("[NOTICE/websocket]")} ${yellow("Attempting to login")}`);
 			const data = JSON.stringify(this.getMetaData());
 			this.socket.send(data);
 			this.socket.once("error", (error: string) => {
