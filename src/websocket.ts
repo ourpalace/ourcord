@@ -119,8 +119,8 @@ export class Client extends Emitter {
 	  });
 	  return await sent.json();
 	};
-/**
- * 
+	/**
+ *
  * @param {string} channel the channel ID which the message will be sent in
  * @param {any} options the properties of the embed
  */
@@ -138,7 +138,7 @@ export class Client extends Emitter {
 	  return await data.json();
 	};
 	/**
-	 * 
+	 *
 	 * @param {string} userID the userID to get from Discord's rest API
 	 */
 	async GetRestUser(userID: string) {
@@ -172,7 +172,12 @@ export class Client extends Emitter {
 	  };
 	  return metaData;
 	};
-
+	/**
+ *
+ * @param {any} data
+ * @param {any} flag
+ * @return {string}
+ */
 	evaluate(data: any, flag: any) {
 	  if (typeof flag !== 'object') flag = {};
 	  if (!flag.binary) return JSON.parse(data);
