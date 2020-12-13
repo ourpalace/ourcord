@@ -11,7 +11,8 @@
       "avatar_url": "https://avatars2.githubusercontent.com/u/65732060?v=4",
       "profile": "https://animalbot.xyz ",
       "contributions": [
-        "ideas"
+        "ideas",
+        "code"
       ]
     },
     {
@@ -24,13 +25,22 @@
       ]
     },
     {
-      "login": "Misly16",
-      "name": "Misly",
-      "avatar_url": "https://avatars0.githubusercontent.com/u/60405462?v=4",
-      "profile": "http://misly.dev",
+
+      "login": "alebot-dev",
+      "name": "alebot-dev",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/65502847?v=4",
+      "profile": "https://github.com/alebot-dev",
       "contributions": [
-        "code",
-        "design"
+        "code"
+      ]
+    },
+    {
+      "login": "Starman3787",
+      "name": "Starman3787",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/30315137?v=4",
+      "profile": "https://github.com/Starman3787",
+      "contributions": [
+        "code"
       ]
     }
   ],
