@@ -58,6 +58,6 @@ export class Client extends Emitter {
     _MessageEmbed(channel: string, options: embedProperties): Promise<JSON>;
 }
 
-declare module "ourcord" {
-    export default Client;
-}
+declare module "Client" 
+    
+export default Client;
