@@ -64,7 +64,7 @@ export class Client extends Emitter {
 	 * @param {string} token the token used to login to the gateway
 	 * @param {ClientOptions} options ClientOptions
 	 */
-	constructor(token?: string, options?: ClientOptions) {
+	constructor(token: string, options?: ClientOptions) {
 	  super();
 	  if (!token) throw new Error(`${red.bold('[ERROR/websocket]')} ${red('No token was provided')}`);
 	  this.token = token;
