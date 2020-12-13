@@ -50,7 +50,7 @@ client.on("ready", () => {
 
 ## Links
 
-[__Discord server__](https://discord.gg/3yDQKDXXdk)
+[__Discord server__](https://discord.gg/3yDQKDXXdk)  
 [__Examples__](https://github.com/ourcord/examples)  
 
 ---
