@@ -6,7 +6,7 @@
   "author": "ourcord",
   "license": "MIT",
   "scripts": {
-    "start": "node target/websocket",
+    "start": "node target/example.index",
     "postinstall": "npm i && tsc -p ."
   },
   "dependencies": {
