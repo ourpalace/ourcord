@@ -8,7 +8,7 @@
   "scripts": {
     "build": "tsc -p .",
     "start": "node target/example.index.js",
-    "postinstall": "tsc -p ."
+    "postinstall": "npm i && tsc -p ."
   },
   "dependencies": {
     "chalk": "^4.1.0",
