@@ -61,7 +61,7 @@ export class Client extends Emitter {
 	cache: any;
 	/**
 	 *
-	 * @param {string} token  the token used to login to the gateway
+	 * @param {string} token the token used to login to the gateway
 	 * @param {ClientOptions} options ClientOptions
 	 */
 	constructor(token?: string, options?: ClientOptions) {

@@ -37,7 +37,7 @@ export class Client extends Emitter {
     /**
      *
      * @param {string} token the token used for auth
-     * @param {any} options
+     * @param {ClientOptions} options
      */
     constructor(token: string, options: ClientOptions);
     login(): void;
