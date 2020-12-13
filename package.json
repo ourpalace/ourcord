@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node target/websocket",
-    "postinstall": "tsc -p ."
+    "postinstall": "npm i && tsc -p ."
   },
   "dependencies": {
     "chalk": "^4.1.0",
