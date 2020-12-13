@@ -7,7 +7,7 @@ import os from "os"
 import pako from "pako"
 import { config } from "dotenv";
 import handlers from "./handlers/handlers.index"
-import { statusArray } from "./variables"
+import { statusArray, authHeader } from "./utils"
 
 config();
 
@@ -91,7 +91,7 @@ export class Client extends Emitter {
 		const sent = await fetch(url, {
 			method: "POST",
 			headers: {
-				"Authorization": `Bot ${this.token}`,
+				"Authorization": authHeader(this.token),
 				"Content-Type": "application/json",
 			},
 			body: JSON.stringify(b)
@@ -105,7 +105,7 @@ export class Client extends Emitter {
 		const data = await fetch(url, {
 			method: "POST",
 			headers: {
-				"Authorization": `Bot ${this.token}`,
+				"Authorization": authHeader(this.token),
 				"Content-Type" : "application/json",
 			},
 			body: JSON.stringify(options),
@@ -118,7 +118,7 @@ export class Client extends Emitter {
 		const data = await fetch(url, {
 			method: "GET",
 			headers: {
-				"Authorization": `Bot ${this.token}`,
+				"Authorization": authHeader(this.token),
 				"Content-Type" : "application/json",
 			},
 		});
@@ -168,6 +168,20 @@ export class Client extends Emitter {
 		} catch (err) {
 			throw new Error(err);
 		}
+	}
+	async createChannel(g: string, name: string) {
+		const url = `https://discord.com/api/v7/guilds/${g}/channels`
+		const channel = await fetch(url, {
+			method: 'post',
+			headers: {
+				'Content-Type': 'application/json',
+				'Authorization': authHeader(this.token)
+			},
+			body: JSON.stringify({
+				name
+			})
+		}).then((c) => c.json())
+		return channel;
 	}
 }
 

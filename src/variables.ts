@@ -1,1 +1,0 @@
-export let statusArray = ['online', 'dnd', 'idle', 'invisible']
