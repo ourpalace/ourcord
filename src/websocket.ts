@@ -33,7 +33,7 @@ export interface ClientOptions {
 	browser?: string;
 	device?: string;
 	prefix?: string;
-	presence?: {name: string, type: number}
+	activity?: {name: string, type: number}
 	status?: "dnd" | "invisible" | "online" | "idle"
 }
 
@@ -136,7 +136,7 @@ export class Client extends Emitter {
 					$device: this.config.device,
 				},
 				presence: {
-					// 	activities: [{name: this.config.presence.name ? this.config.presence.name : null, type: 0}]
+					// activities: [{name: this.config.activity.name ? this.config.activity.name : null, type: 0}],
 					status: this.config.status
 				},
 			}
