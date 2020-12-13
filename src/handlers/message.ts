@@ -1,5 +1,5 @@
 import { green, bold } from "chalk";
-
+import { Message } from "../structures/Message"
 export default function handleMessage(message: string, flag: any, websocket: any) {
     const msg = websocket.evaluate(message, flag);
     websocket._sequenceNum = msg.s
@@ -8,7 +8,7 @@ export default function handleMessage(message: string, flag: any, websocket: any
         websocket._sessionId = msg.d.session_id
         return websocket.emit("ready", msg.d.user);
     } else if (msg.t === "MESSAGE_CREATE") {
-        return websocket.emit("message", msg.d);
+        return websocket.emit("message", new Message(msg.d, websocket));
     } else if (msg.op == 10) {
         if (websocket.hb) clearInterval(websocket.hb)
         websocket.hb = setInterval(() => {

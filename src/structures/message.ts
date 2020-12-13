@@ -1,3 +1,5 @@
+import Client from "../websocket";
+import { MessageRaw } from "./MessageRaw"
 export class Message {
     id: string;
     channel: object;
@@ -7,23 +9,21 @@ export class Message {
     content: string | object;
     timestamp: number;
     tts: boolean;
-    mention_everyone: boolean;
     mentions: object;
-    mention_roles: object;
-    mention_channels: object;
     attachments: object;
     embeds: object;
     reactions: object;
     pinned: boolean;
     type: string;
     stickers: object;
-    referenced_message: object;
-    constructor(data, client) {
+    replyTo: object;
+    constructor(data: MessageRaw, client: Client) {
         this.id = data.id
         this.channel = {
             id: data.channel_id,
-            send: function (content) {
-                client._sendMessage(this.id, content)
+            send: async function (content: string) {
+                const r = await client._sendMessage(data.channel_id, content)
+                return new Message(r, client)
             }
         }
         this.guild = {
@@ -34,17 +34,19 @@ export class Message {
         this.content = data.content
         this.timestamp = data.timestamp
         this.tts = data.tts
-        this.mention_everyone = data.mention_everyone
-        this.mentions = data.mentions
-        this.mention_roles = data.mention_roles
-        this.mention_channels = data.mention_channels
+        this.mentions = {
+            everyone: data.mention_everyone,
+            channels: data.mention_channels,
+            users: data.mentions,
+            roles: data.mention_roles
+        }
         this.attachments = data.attachments
         this.embeds = data.embeds
         this.reactions = data.reactions
         this.pinned = data.pinned
         this.type = data.type
         this.stickers = data.stickers
-        this.referenced_message = data.referenced_message
+        this.replyTo = data.referenced_message
         return this;
     }
 }
