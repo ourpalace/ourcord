@@ -13,6 +13,6 @@ client.on('debug', (log) => {
 client.on('message', async (msg: any) => {
   if (msg.author.bot) return;
   if (msg.content == 'stupid status') {
-    client.setStatus('online')
+    client.setStatus('online');
   }
 });
