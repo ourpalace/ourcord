@@ -8,7 +8,7 @@ import pako from "pako"
 import { config } from "dotenv";
 import handlers from "./handlers/handlers.index"
 import { statusArray, authHeader } from "./utils";
-import { connect } from "./client_functions";
+// import { connect } from "./client_functions";
 
 config();
 
@@ -58,27 +58,27 @@ export class Client extends Emitter {
 		else this.config = options;
 	}
 
-	connect = connect;
+	// connect = connect;
 
-	// connect(this) {
-	// 	this.emit("debug", `${yellow.bold("[NOTICE/websocket]")} ${yellow("Attempting to connect to the discord gateway")}`)
-	// 	this.socket = new ws("wss://gateway.discord.gg/?v=6&encoding=json");
-	// 	this.socket.once("open", () => {
-	// 		this.emit("debug", `${yellow.bold("[NOTICE/websocket]")} ${yellow("Attempting to login")}`);
-	// 		const data = JSON.stringify(this.getMetaData());
-	// 		this.socket.send(data);
-	// 		this.socket.once("error", (error: string) => {
-	// 			handlers.errorHandler(error, this);
-	// 		});
-	// 		this.socket.on("message", (message: any, flag: any) => {
-	// 			handlers.messageHandler(message, flag, this)
-	// 		});
-	// 		this.socket.on("close", () => {
-	// 			this.emit("debug", `${bold("[NOTICE/websocket]")} Connection closed unexpectedly. Re-attempting login`);
-	// 			this.connect(this);
-	// 		});
-	// 	});
-	// };
+	connect() {
+		this.emit("debug", `${yellow.bold("[NOTICE/websocket]")} ${yellow("Attempting to connect to the discord gateway")}`)
+		this.socket = new ws("wss://gateway.discord.gg/?v=6&encoding=json");
+		this.socket.once("open", () => {
+			this.emit("debug", `${yellow.bold("[NOTICE/websocket]")} ${yellow("Attempting to login")}`);
+			const data = JSON.stringify(this.getMetaData());
+			this.socket.send(data);
+			this.socket.once("error", (error: string) => {
+				handlers.errorHandler(error, this);
+			});
+			this.socket.on("message", (message: any, flag: any) => {
+				handlers.messageHandler(message, flag, this)
+			});
+			this.socket.on("close", () => {
+				this.emit("debug", `${bold("[NOTICE/websocket]")} Connection closed unexpectedly. Re-attempting login`);
+				this.connect();
+			});
+		});
+	};
 
 	destroy(reason?: string) {
 		this.socket.close();
