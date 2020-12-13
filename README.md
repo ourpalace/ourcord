@@ -1,6 +1,6 @@
 # ✨ ourcord ✨
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![npm](https://img.shields.io/npm/v/ourcord?color=red&style=for-the-badge)](https://npmjs.com/package/ourcord)
@@ -86,6 +86,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/alebot-dev"><img src="https://avatars2.githubusercontent.com/u/65502847?v=4" width="100px;" alt=""/><br /><sub><b>alebot-dev</b></sub></a><br /><a href="https://github.com/ourcord/ourcord/commits?author=alebot-dev" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/Starman3787"><img src="https://avatars2.githubusercontent.com/u/30315137?v=4" width="100px;" alt=""/><br /><sub><b>Starman3787</b></sub></a><br /><a href="https://github.com/ourcord/ourcord/commits?author=Starman3787" title="Code">💻</a></td>
     <td align="center"><a href="http://misly.dev"><img src="https://avatars0.githubusercontent.com/u/60405462?v=4" width="100px;" alt=""/><br /><sub><b>Misly</b></sub></a><br /><a href="https://github.com/ourcord/ourcord/commits?author=Misly16" title="Code">💻</a> <a href="#design-Misly16" title="Design">🎨</a></td>
+    <td align="center"><a href="https://discord.gg/HhAPkD8"><img src="https://avatars2.githubusercontent.com/u/60427892?v=4" width="100px;" alt=""/><br /><sub><b>null</b></sub></a><br /><a href="https://github.com/ourcord/ourcord/commits?author=vierofernando" title="Documentation">📖</a></td>
   </tr>
 </table>
 
