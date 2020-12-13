@@ -100,10 +100,10 @@ export class Client extends Emitter {
 	  this.socket.close();
 	  this.emit('debug', `${red.bold('[NOTICE/websocket]')} ${red(reason ? reason : 'The websocket was closed')}`);
 	};
-		/**
+	/**
  *
  * @param {string} channel the channel ID which the message will be sent in
- * @param {any} options the body of the message
+ * @param {any} content the body of the message
  */
 	async _sendMessage(channel: string, content: string | object) {
 	  const url = `https://discord.com/api/v7/channels/${channel}/messages`;

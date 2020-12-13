@@ -1,7 +1,7 @@
-import error from "./error";
-import message from "./message";
+import error from './error';
+import message from './message';
 
 export default {
-    errorHandler: error,
-    messageHandler: message
-}
+  errorHandler: error,
+  messageHandler: message,
+};
