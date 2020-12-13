@@ -10,6 +10,7 @@
 - [About](#about)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Links](#links)
 
 ## About  
 
@@ -46,3 +47,16 @@ client.on("ready", () => {
 | prefix | `string` | `Null` | Specify the prefix for the bot | `yes`
 | activity | `object` | No activity | The activity you want to appear on your client on connect | `yes`
 | status | `string` | dnd | The status you want your client to connect with | `yes`
+
+## Links
+
+[__Discord server__](https://discord.gg/3yDQKDXXdk)  
+
+---
+
+## Collaborators
+
+> [**Dice**](https://github.com/alebot-dev)  
+> [**Mattthew**](https://github.com/matthewthechickenman)  
+> [**Misly**](https://github.com/Misly16)  
+> [**Starman**](https://github.com/Starman3787)
