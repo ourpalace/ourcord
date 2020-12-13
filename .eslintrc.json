@@ -18,7 +18,8 @@
         "linebreak-style": "off",
         "no-mixed-spaces-and-tabs": "off",
         "no-tabs": "off",
-        "max-len": "off"
+        "max-len": "off",
+        "new-cap": "off"
 
     }
 }
