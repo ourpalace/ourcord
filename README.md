@@ -32,7 +32,7 @@ client.on("ready", () => {
 
 ---  
 
-## Client Config  <a href="src/websocket.ts#L32"></></a>
+## Client Config  <a href="src/websocket.ts#L33"></></a>
 
 | Option | Type | Default | Description | Optional? |
 | --- | --- | --- | --- | --- |
