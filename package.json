@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc -p .",
-    "start": "node target/websocket"
+    "start": "node example.index.js"
   },
   "dependencies": {
     "chalk": "^4.1.0",
