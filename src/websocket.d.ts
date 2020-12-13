@@ -24,7 +24,6 @@ interface ClientOptions {
 	browser?: string;
 	device?: string;
 }
-
 export class Client extends Emitter {
     token: string;
     socket: typeof Emitter;

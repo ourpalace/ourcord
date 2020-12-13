@@ -42,10 +42,20 @@ export interface StatusInfo {
 
 }
 
+/**
+ * @param {string} token the token used to login to the gateway
+ * @param {any} socket
+ * @param {any} config
+ */
 export class Client extends Emitter {
 	token: string;
 	socket: any;
 	config: ClientOptions;
+	/**
+	 *
+	 * @param {string} token  the token used to login to the gateway
+	 * @param {any} options ClientOptions
+	 */
 	constructor(token?: string, options?: ClientOptions) {
 	  super();
 	  if (!token) throw new Error(`${red.bold('[ERROR/websocket]')} ${red('No token was provided')}`);
@@ -58,8 +68,6 @@ export class Client extends Emitter {
 	  };
 	  } else this.config = options;
 	}
-
-	// connect = connect;
 
 	connect() {
 	  this.emit('debug', `${yellow.bold('[NOTICE/websocket]')} ${yellow('Attempting to connect to the discord gateway')}`);
@@ -82,11 +90,19 @@ export class Client extends Emitter {
 	  });
 	};
 
+	/**
+ *
+ * @param {string} reason the reason the socket was closed
+ */
 	destroy(reason?: string) {
 	  this.socket.close();
 	  this.emit('debug', `${red.bold('[NOTICE/websocket]')} ${red(reason ? reason : 'The websocket was closed')}`);
 	};
-
+		/**
+ *
+ * @param {string} channel the channel ID which the message will be sent in
+ * @param {any} options the body of the message
+ */
 	async _sendMessage(channel: string, content: string | object) {
 	  const url = `https://discord.com/api/v7/channels/${channel}/messages`;
 	  let b: MessageProperties = {};
@@ -103,7 +119,11 @@ export class Client extends Emitter {
 	  });
 	  return await sent.json();
 	};
-
+	/**
+ *
+ * @param {string} channel the channel ID which the message will be sent in
+ * @param {any} options the properties of the embed
+ */
 	async _MessageEmbed(channel: string, options: EmbedProperties) {
 	  const url = `https://discord.com/api/v7/channels/${channel}/messages`;
 	  if (!options) throw new Error('[ERROR/discordAPI error] Cannot send a message with no content');
@@ -117,6 +137,10 @@ export class Client extends Emitter {
 	  });
 	  return await data.json();
 	};
+	/**
+	 *
+	 * @param {string} userID the userID to get from Discord's rest API
+	 */
 	async GetRestUser(userID: string) {
 	  const url = `https://discord.com/api/v7/users/${userID}`;
 	  if (!userID || !userID.toString().length) throw new Error('[ERROR/discordAPI error] Please provide a userID');
@@ -148,7 +172,12 @@ export class Client extends Emitter {
 	  };
 	  return metaData;
 	};
-
+	/**
+ *
+ * @param {any} data
+ * @param {any} flag
+ * @return {string}
+ */
 	evaluate(data: any, flag: any) {
 	  if (typeof flag !== 'object') flag = {};
 	  if (!flag.binary) return JSON.parse(data);
@@ -158,6 +187,7 @@ export class Client extends Emitter {
 	  return JSON.parse(inflateData.toString());
 	};
 
+	// eslint-disable-next-line require-jsdoc
 	setStatus(t: 'dnd' | 'invisible' | 'online' | 'idle') {
 	  if (!statusTypesArray.includes(t)) {
 	    throw new Error('[ERROR/discordAPI error] Status provided is incorrect');
@@ -174,6 +204,11 @@ export class Client extends Emitter {
 	    throw new Error(err);
 	  }
 	}
+	/**
+	 *
+	 * @param {string} g the guild ID in which the channel should be created in
+	 * @param {string} name the name of the channel to be created
+	 */
 	async createChannel(g: string, name: string) {
 	  const url = `https://discord.com/api/v7/guilds/${g}/channels`;
 	  const channel = await fetch(url, {
