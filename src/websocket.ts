@@ -8,6 +8,7 @@ import pako from 'pako';
 import {config} from 'dotenv';
 import handlers from './handlers/handlers.index';
 import {statusTypesArray, authHeader} from './utils';
+import { Cache } from "./caches/base";
 // import { connect } from "./client_functions";
 
 config();
@@ -34,8 +35,10 @@ export interface ClientOptions {
 	browser?: string;
 	device?: string;
 	prefix?: string;
-	cacheGuilds?: boolean;
-	cacheUsers?: boolean;
+	cacheChannels?: boolean,
+    cacheGuilds?: boolean,
+    cacheUsers?: boolean,
+    cacheMembers?: boolean,
 	activity?: {name: string, type: number};
 	status?: 'dnd' | 'invisible' | 'online' | 'idle';
 }
@@ -55,6 +58,7 @@ export class Client extends Emitter {
 	activities: any;
 	hb: any;
 	config: ClientOptions;
+	cache: any;
 	/**
 	 *
 	 * @param {string} token  the token used to login to the gateway
@@ -71,6 +75,7 @@ export class Client extends Emitter {
 	    status: 'dnd',
 	  };
 	  } else this.config = options;
+	  this.cache = new Cache(options);
 	}
 
 	connect() {
