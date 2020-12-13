@@ -75,7 +75,7 @@ export class Client extends Emitter {
 	    status: 'dnd',
 	  };
 	  } else this.config = options;
-	  this.cache = new Cache(this, options);
+	  this.cache = new Cache(this, this.config);
 	}
 
 	connect() {
