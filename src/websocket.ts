@@ -34,8 +34,10 @@ export interface ClientOptions {
 	browser?: string;
 	device?: string;
 	prefix?: string;
-	activity?: {name: string, type: number}
-	status?: 'dnd' | 'invisible' | 'online' | 'idle'
+	cacheGuilds?: boolean;
+	cacheUsers?: boolean;
+	activity?: {name: string, type: number};
+	status?: 'dnd' | 'invisible' | 'online' | 'idle';
 }
 
 export interface StatusInfo {
