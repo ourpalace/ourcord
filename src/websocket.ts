@@ -34,8 +34,10 @@ export interface ClientOptions {
 	browser?: string;
 	device?: string;
 	prefix?: string;
-	activity?: {name: string, type: number}
-	status?: 'dnd' | 'invisible' | 'online' | 'idle'
+	cacheGuilds?: boolean;
+	cacheUsers?: boolean;
+	activity?: {name: string, type: number};
+	status?: 'dnd' | 'invisible' | 'online' | 'idle';
 }
 
 export interface StatusInfo {
@@ -98,12 +100,12 @@ export class Client extends Emitter {
 	  this.socket.close();
 	  this.emit('debug', `${red.bold('[NOTICE/websocket]')} ${red(reason ? reason : 'The websocket was closed')}`);
 	};
-	/**
+		/**
  *
  * @param {string} channel the channel ID which the message will be sent in
- * @param {string} content the content to be sent
+ * @param {any} options the body of the message
  */
-	async sendMessage(channel: string, content: string | object) {
+	async _sendMessage(channel: string, content: string | object) {
 	  const url = `https://discord.com/api/v7/channels/${channel}/messages`;
 	  let b: MessageProperties = {};
 	  if (!content || !content.toString().length) throw new Error('[ERROR/discordAPI error] Cannot send a message with no content');
@@ -124,7 +126,7 @@ export class Client extends Emitter {
  * @param {string} channel the channel ID which the message will be sent in
  * @param {any} options the properties of the embed
  */
-	async MessageEmbed(channel: string, options: EmbedProperties) {
+	async _MessageEmbed(channel: string, options: EmbedProperties) {
 	  const url = `https://discord.com/api/v7/channels/${channel}/messages`;
 	  if (!options) throw new Error('[ERROR/discordAPI error] Cannot send a message with no content');
 	  const data = await fetch(url, {
