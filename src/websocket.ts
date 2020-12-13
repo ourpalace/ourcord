@@ -5,10 +5,12 @@ import {EventEmitter as Emitter} from 'events';
 import {red, yellow, bold} from 'chalk';
 import os from 'os';
 import pako from 'pako';
+// @ts-ignore
+import zlib from 'fast-zlib';
 import {config} from 'dotenv';
 import handlers from './handlers/handlers.index';
 import {statusTypesArray, authHeader} from './utils';
-import { Cache } from "./caches/base";
+import {Cache} from './caches/base';
 // import { connect } from "./client_functions";
 
 config();
@@ -88,7 +90,7 @@ export class Client extends Emitter {
 	    this.socket.send(data);
 	    this.socket.once('error', (error: string) => {
 	      handlers.errorHandler(error, this);
-		});
+	    });
 	    this.socket.on('message', (message: any, flag: any) => {
 	      handlers.messageHandler(message, flag, this);
 	    });
@@ -203,16 +205,16 @@ export class Client extends Emitter {
 	    throw new Error('[ERROR/discordAPI error] Status provided is incorrect');
 	  }
 	  try {
-		const p = JSON.stringify({
-			op: 3,
-			d: {
+	    const p = JSON.stringify({
+	      op: 3,
+	      d: {
 			  status: t,
 			  afk: false,
-			  since: t == "idle" ? Date.now() : null,
+			  since: t == 'idle' ? Date.now() : null,
 			  game: null,
-			},
-		  })
-		console.log(p);
+	      },
+		  });
+	    console.log(p);
 	    this.socket.send(p);
 	  } catch (err) {
 	    throw new Error(err);
