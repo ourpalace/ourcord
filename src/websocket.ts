@@ -157,13 +157,17 @@ export class Client extends Emitter {
 		if (!statusArray.includes(t)) {
 			throw new Error('[ERROR/discordAPI error] Status provided is incorrect')
 		}
-		this.socket.send(JSON.stringify({
-			op: 3,
-			d: {
-				status: t,
-				afk: false
-			}
-		}))
+		try {
+			this.socket.send(JSON.stringify({
+				op: 3,
+				d: {
+					status: t,
+					afk: false
+				}
+			}))
+		} catch (err) {
+			throw new Error(err);
+		}
 	}
 }
 
