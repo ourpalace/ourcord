@@ -12,18 +12,18 @@ export default function handleMessage(message: string, flag: any, websocket: any
     } else if (msg.op == 10) {
         if (websocket.hb) clearInterval(websocket.hb)
         websocket.hb = setInterval(() => {
-            websocket.socket.send({op: 1, d: websocket._sequenceNum});
+            websocket.socket.send(JSON.stringify({op: 1, d: websocket._sequenceNum}));
             websocket.emit('debug', `[Heartbeat] - ${msg.d.heartbeat_interval}ms`)
         }, msg.d.heartbeat_interval)
         return websocket.emit("debug", `${bold("[NOTICE/websocket]")} - Starting heartbeat at ${msg.d.heartbeat_interval}ms`);
     } else if (msg.op == 7) {
-        websocket.socket.send({
+        websocket.socket.send(JSON.stringify({
             op: 6,
             d: {
                 session_id: websocket._sessionId,
                 token: websocket.token,
                 seq: websocket._sequenceNum
             }
-        })
+        }))
     }
 }

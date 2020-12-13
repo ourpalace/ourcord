@@ -7,6 +7,7 @@ import os from "os"
 import pako from "pako"
 import { config } from "dotenv";
 import handlers from "./handlers/handlers.index"
+import { statusArray } from "./variables"
 
 config();
 
@@ -148,12 +149,21 @@ export class Client extends Emitter {
 		if (!flag.binary) return JSON.parse(data);
 		const inflateData = new pako.Inflate();
 		inflateData.push(data);
-		if (inflateData.err) throw new Error("An error occured while decompressing data");
+		if (inflateData.err) throw new Error("[ERROR/pako error] An error occured while decompressing data");
 		return JSON.parse(inflateData.toString());
 	};
 
-	setStatus() {
-
+	setStatus(t: "dnd" | "invisible" | "online" | "idle") {
+		if (!statusArray.includes(t)) {
+			throw new Error('[ERROR/discordAPI error] Status provided is incorrect')
+		}
+		this.socket.send(JSON.stringify({
+			op: 3,
+			d: {
+				status: t,
+				afk: false
+			}
+		}))
 	}
 }
 
