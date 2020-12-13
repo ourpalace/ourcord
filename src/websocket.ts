@@ -87,7 +87,7 @@ export class Client extends Emitter {
 	  this.emit('debug', `${red.bold('[NOTICE/websocket]')} ${red(reason ? reason : 'The websocket was closed')}`);
 	};
 
-	async sendMessage(channel: string, content: string | object) {
+	async _sendMessage(channel: string, content: string | object) {
 	  const url = `https://discord.com/api/v7/channels/${channel}/messages`;
 	  let b: MessageProperties = {};
 	  if (!content || !content.toString().length) throw new Error('[ERROR/discordAPI error] Cannot send a message with no content');
@@ -104,7 +104,7 @@ export class Client extends Emitter {
 	  return await sent.json();
 	};
 
-	async MessageEmbed(channel: string, options: EmbedProperties) {
+	async _MessageEmbed(channel: string, options: EmbedProperties) {
 	  const url = `https://discord.com/api/v7/channels/${channel}/messages`;
 	  if (!options) throw new Error('[ERROR/discordAPI error] Cannot send a message with no content');
 	  const data = await fetch(url, {
