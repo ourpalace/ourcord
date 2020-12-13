@@ -20,15 +20,21 @@ export interface embedProperties {
 	};
 }
 
-interface ClientOptions {
+export interface ClientOptions {
 	browser?: string;
-	device?: string;
+    device?: string;
+    prefix?: string;
+	cacheGuilds?: boolean;
+	cacheUsers?: boolean;
+	activity?: {name: string, type: number};
+	status?: 'dnd' | 'invisible' | 'online' | 'idle';
 }
+
 export class Client extends Emitter {
     token: string;
     socket: typeof Emitter;
     config: ClientOptions;
-    constructor(token: string);
+    constructor(token: string, options: ClientOptions);
     login(): void;
     getMetaData(): {
         op: number;
@@ -43,8 +49,8 @@ export class Client extends Emitter {
     };
     messageHandler(message: string, flag: any, websocket: any): void;
     errorHandler(error: string, emitter: Emitter): void;
-    sendMessage(channel: string, content: string | object): Promise<JSON>;
-    MessageEmbed(channel: string, options: embedProperties): Promise<JSON>;
+    _sendMessage(channel: string, content: string | object): Promise<JSON>;
+    _MessageEmbed(channel: string, options: embedProperties): Promise<JSON>;
 }
 
 export default Client;
