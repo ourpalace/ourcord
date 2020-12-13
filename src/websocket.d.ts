@@ -1,6 +1,6 @@
 // <reference types="node" />
 
-import { EventEmitter as Emitter } from "events";
+import {EventEmitter as Emitter} from 'events';
 
 export interface messageProperties {
     content?: string
@@ -14,7 +14,7 @@ export interface embedProperties {
 		description: string;
 		fields: object[];
 		colour: string | number;
-		color: embedProperties["embed"]["colour"];
+		color: embedProperties['embed']['colour'];
 		footer: object;
 		image: string;
 	};
