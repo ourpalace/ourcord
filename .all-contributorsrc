@@ -25,7 +25,6 @@
       ]
     },
     {
-
       "login": "alebot-dev",
       "name": "alebot-dev",
       "avatar_url": "https://avatars2.githubusercontent.com/u/65502847?v=4",
@@ -41,6 +40,16 @@
       "profile": "https://github.com/Starman3787",
       "contributions": [
         "code"
+      ]
+    },
+    {
+      "login": "Misly16",
+      "name": "Misly",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/60405462?v=4",
+      "profile": "http://misly.dev",
+      "contributions": [
+        "code",
+        "design"
       ]
     }
   ],
