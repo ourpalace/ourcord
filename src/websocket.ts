@@ -13,7 +13,9 @@ import handlers from './handlers/handlers.index';
 import { statusTypesArray, authHeader } from './utils';
 import { Cache } from './caches/base';
 import { MessageRaw } from './structures/MessageRaw';
-// import { connect } from './client_functions';
+import { EmojiRaw } from './structures/EmojiRaw';
+
+// import { connect } from "./client_functions";
 
 config();
 
@@ -33,6 +35,11 @@ export interface EmbedProperties {
 		footer?: object;
 		image?: string;
 	}
+};
+
+export interface ModifyEmoji {
+	name?: string,
+	roles?: Array<string>
 };
 
 export interface ClientOptions {
@@ -137,6 +144,45 @@ export class Client extends Emitter {
 	    body: JSON.stringify(b)
 	  }).then(res => res.json());
 	};
+
+	/**
+	 * Method to update an Emoji
+	 * @param {string} guild ID of the Guild that the Emoji belongs to
+	 * @param {string} emoji ID of the Emoji that is to be modified
+	 * @param {string} name New name of the Emoji 
+	 * @param {Array<string>} roles Array of all Role ids which should be whitelisted to the emoji
+	 */
+	async _modifyEmoji(guild: string, emoji: string, name?: string, roles?: Array<string>): Promise<EmojiRaw> {
+		const url = `https://discord.com/api/v7/guilds/${guild}/emojis/${emoji}`;
+		let b: ModifyEmoji = {};
+		if (name) b.name = name;
+		if (roles) b.roles = roles;
+		const sent = await fetch(url, {
+			method: 'PATCH',
+			headers: {
+				'Authorization': authHeader(this.token),
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(b),
+		});
+		return await sent.json();
+	}
+	/**
+	 * Method to delete an emoji
+	 * @param guild ID of the Guild that the Emoji belongs to
+	 * @param emoji ID of the Emoji that is to be deleted
+	 */
+	async _deleteEmoji(guild: string, emoji: string): Promise<boolean> {
+		const url = `https://discord.com/api/v7/guilds/${guild}/emojis/${emoji}`;
+		const sent = await fetch(url, {
+			method: 'DELETE',
+			headers: {
+				'Authorization': authHeader(this.token),
+				'Content-Type': 'application/json',
+			},
+		});
+		return await sent.status === 204;
+	}
 
 	/**
          * The method used to send an embed in a TextChannel.
