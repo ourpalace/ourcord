@@ -15,6 +15,10 @@
         "@typescript-eslint"
     ],
     "rules": {
-        "linebreak-style": "off"
+        "linebreak-style": "off",
+        "no-mixed-spaces-and-tabs": "off",
+        "no-tabs": "off",
+        "max-len": "off"
+
     }
 }
