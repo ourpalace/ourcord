@@ -6,8 +6,10 @@
   "author": "ourcord",
   "license": "MIT",
   "scripts": {
-    "start": "node target/websocket",
-    "postinstall": "npm i && tsc -p ."
+    "build": "tsc -p .",
+    "start": "node target/example.index.js",
+    "postinstall": "npm i && tsc -p .",
+    "upgrade": "node packager.js"
   },
   "dependencies": {
     "chalk": "^4.1.0",
@@ -27,6 +29,7 @@
     "@typescript-eslint/parser": "^4.9.1",
     "eslint": "^7.15.0",
     "eslint-config-google": "^0.14.0",
+    "inquirer": "^7.3.3",
     "typescript": "^4.1.3"
   }
 }
