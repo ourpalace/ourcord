@@ -38,6 +38,6 @@ client.on("ready", () => {
 | --- | --- | --- | --- | --- |
 | browser | `string` | ourcord | Specify the browser you want to connect via (can be anything) | `yes`
 | device | `string` | ourcord | The device you want to connect with (can be anything) | `yes`
-| prefix | `string` | `Null` | The device you want to connect with (can be anything) | `yes`
+| prefix | `string` | `Null` | Specify the prefix for the bot | `yes`
 | activity | `object` | No activity | The activity you want to appear on your client on connect | `yes`
 | status | `string` | dnd | The status you want your client to connect with | `yes`
