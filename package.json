@@ -1,6 +1,6 @@
 {
   "name": "ourcord",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "dist/websocket.ts",
   "repository": "https://github.com/ourcord/ourcord",
   "author": "ourcord",
