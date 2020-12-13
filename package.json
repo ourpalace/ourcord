@@ -1,7 +1,7 @@
 {
   "name": "ourcord",
   "version": "1.0.4",
-  "main": "dist/websocket.ts",
+  "main": "dist/websocket.js",
   "repository": "https://github.com/ourcord/ourcord",
   "author": "ourcord",
   "license": "MIT",
