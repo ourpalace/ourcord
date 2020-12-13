@@ -81,7 +81,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://animalbot.xyz "><img src="https://avatars2.githubusercontent.com/u/65732060?v=4" width="100px;" alt=""/><br /><sub><b>matthewthechickenman</b></sub></a><br /><a href="#ideas-matthewthechickenman" title="Ideas, Planning, Feedback & Code">🤔 💻</a></td>
+    <td align="center"><a href="https://animalbot.xyz "><img src="https://avatars2.githubusercontent.com/u/65732060?v=4" width="100px;" alt=""/><br /><sub><b>matthewthechickenman</b></sub></a><br /><a href="#ideas-matthewthechickenman" title="Ideas, Planning, Feedback">🤔</a><a href="https://github.com/ourcord/ourcord/commits?author=matthewthechickenman" title="Code">💻</td>
     <td align="center"><a href="https://github.com/VoltrexMaster"><img src="https://avatars1.githubusercontent.com/u/62040526?v=4" width="100px;" alt=""/><br /><sub><b>VoltrexMaster</b></sub></a><br /><a href="https://github.com/ourcord/ourcord/commits?author=VoltrexMaster" title="Code">💻</a></td>
   </tr>
 </table>
