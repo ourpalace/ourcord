@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 export class MessageRaw {
     id: string;
     channel_id: string;

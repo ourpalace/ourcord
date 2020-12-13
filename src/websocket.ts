@@ -143,7 +143,7 @@ export class Client extends Emitter {
 	 *
 	 * @param {string} userID the userID to get from Discord's rest API
 	 */
-	async GetRestUser(userID: string) {
+	async _GetRestUser(userID: string) {
 	  const url = `https://discord.com/api/v7/users/${userID}`;
 	  if (!userID || !userID.toString().length) throw new Error('[ERROR/discordAPI error] Please provide a userID');
 	  const data = await fetch(url, {

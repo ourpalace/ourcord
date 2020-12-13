@@ -34,6 +34,11 @@ export class Client extends Emitter {
     token: string;
     socket: typeof Emitter;
     config: ClientOptions;
+    /**
+     *
+     * @param {string} token the token used for auth
+     * @param {any} options
+     */
     constructor(token: string, options: ClientOptions);
     login(): void;
     getMetaData(): {
