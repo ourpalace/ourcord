@@ -1,4 +1,4 @@
-import Client from "../websocket";
+import Client from "ourcord";
 
 const client = new Client("Your token here", {
     prefix: "!"
