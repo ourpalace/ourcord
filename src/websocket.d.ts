@@ -58,6 +58,6 @@ export class Client extends Emitter {
     _MessageEmbed(channel: string, options: embedProperties): Promise<JSON>;
 }
 
-declare module Client {}
+declare module "Client"
 
 export default Client;
