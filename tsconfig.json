@@ -8,10 +8,4 @@
         "esModuleInterop": true,
         "strict": true
     },
-    "files": [
-        "./src/example.index.ts",
-        "./src/websocket.ts",
-        "./src/handlers/error.ts",
-        "./src/handlers/message.ts"
-    ]
 }
