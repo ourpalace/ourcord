@@ -5,6 +5,7 @@
   "repository": "https://github.com/ourcord/ourcord",
   "author": "ourcord",
   "license": "MIT",
+  "types": "src/websocket.d.ts",
   "scripts": {
     "start": "node dist/example.index.js",
     "upgrade": "node packager.js"
