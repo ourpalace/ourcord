@@ -1,5 +1,11 @@
 import Client from './websocket';
-const client = new Client(process.env.TOKEN, {status: 'dnd'});
+const client = new Client(process.env.TOKEN, {
+  status: 'dnd',
+  cacheGuilds: true,
+  cacheChannels: true,
+  cacheUsers: true,
+  cacheMembers: true,
+});
 client.connect();
 
 client.on('ready', () => {
@@ -12,7 +18,8 @@ client.on('debug', (log) => {
 
 client.on('message', async (msg: any) => {
   if (msg.author.bot) return;
-  if (msg.content == 'stupid status') {
-    client.setStatus('online')
+  if (msg.content == 'stupid servers') {
+    console.log(client.cache.guilds.size)
+    msg.channel.send(`Servers: ${client.cache.guilds.size}`)
   }
 });

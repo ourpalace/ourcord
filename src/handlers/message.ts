@@ -32,5 +32,14 @@ export default function handleMessage(message: string, flag: any, websocket: any
         seq: websocket._sequenceNum,
       },
     }));
+  } else if (msg.t == 'GUILD_CREATE') {
+      if (!websocket.cache.guilds) return;
+      websocket.cache.guilds.set(msg.d.id, msg.d)
+  } else if (msg.t == 'GUILD_DELETE') {
+      if (!websocket.cache.guilds) return;
+      websocket.cache.guilds.delete(msg.d.id)
+  } else if (msg.t == 'GUILD_UPDATE') {
+      if (!websocket.cache.guilds) return;
+      websocket.cache.guilds.set(msg.d.id, msg.d)
   }
 }
