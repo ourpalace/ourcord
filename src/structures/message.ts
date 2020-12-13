@@ -23,7 +23,7 @@ export class Message {
      * @param {any} data the raw message
      * @param {any} client the client
      */
-    constructor(data: MessageRaw, client: typeof Client) {
+    constructor(data: MessageRaw, client: Client) {
       this.id = data.id;
       this.channel = {
         id: data.channel_id,
