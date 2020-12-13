@@ -1,12 +1,12 @@
 {
   "name": "ourcord",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "main": "dist/websocket.js",
   "repository": "https://github.com/ourcord/ourcord",
   "author": "ourcord",
   "license": "MIT",
   "scripts": {
-    "build": "tsc --outDir dist",
+    "build": "tsc",
     "start": "node dist/example.index.js",
     "upgrade": "node packager.js",
     "prepublish": "npm run build",
