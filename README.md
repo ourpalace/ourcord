@@ -1,6 +1,6 @@
 # ✨ ourcord ✨
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![npm](https://img.shields.io/npm/v/ourcord?color=red&style=for-the-badge)](https://npmjs.com/package/ourcord)
@@ -84,6 +84,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://animalbot.xyz "><img src="https://avatars2.githubusercontent.com/u/65732060?v=4" width="100px;" alt=""/><br /><sub><b>matthewthechickenman</b></sub></a><br /><a href="#ideas-matthewthechickenman" title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><a href="https://github.com/VoltrexMaster"><img src="https://avatars1.githubusercontent.com/u/62040526?v=4" width="100px;" alt=""/><br /><sub><b>VoltrexMaster</b></sub></a><br /><a href="https://github.com/ourcord/ourcord/commits?author=VoltrexMaster" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/alebot-dev"><img src="https://avatars2.githubusercontent.com/u/65502847?v=4" width="100px;" alt=""/><br /><sub><b>alebot-dev</b></sub></a><br /><a href="https://github.com/ourcord/ourcord/commits?author=alebot-dev" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Starman3787"><img src="https://avatars2.githubusercontent.com/u/30315137?v=4" width="100px;" alt=""/><br /><sub><b>Starman3787</b></sub></a><br /><a href="https://github.com/ourcord/ourcord/commits?author=Starman3787" title="Code">💻</a></td>
   </tr>
 </table>
 
