@@ -11,6 +11,7 @@ export class User {
     flags: number;
     premium_type: number;
     public_flags: number;
+    constructor(r: object) {}
 }
 export class Rest {
 id: string;

@@ -56,7 +56,7 @@ export class Client extends Emitter {
 	/**
 	 *
 	 * @param {string} token  the token used to login to the gateway
-	 * @param {any} options ClientOptions
+	 * @param {ClientOptions} options ClientOptions
 	 */
 	constructor(token?: string, options?: ClientOptions) {
 	  super();
