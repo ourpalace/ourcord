@@ -11,6 +11,8 @@ import { config } from 'dotenv';
 import handlers from './handlers/handlers.index';
 import { statusTypesArray, authHeader } from './utils';
 import { Cache } from './caches/base';
+import {MessageRaw} from './structures/MessageRaw';
+
 // import { connect } from "./client_functions";
 
 config();
@@ -120,7 +122,7 @@ export class Client extends Emitter {
          * @param {(string|object)} content The body of the message.
          * @returns {Promise<object>}
          */
-	async _sendMessage(channel: string, content: string | object): Promise<object> {
+	async _sendMessage(channel: string, content: string | object): Promise<MessageRaw> {
 	  const url = `https://discord.com/api/v7/channels/${channel}/messages`;
 	  let b: MessageProperties = {};
 	  if (content === null || typeof content === 'undefined' || !content.toString().length) throw new Error(`${red.bold('[ERROR/DiscordAPI Error]')} Cannot send a message with no content`);
