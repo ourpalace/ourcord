@@ -106,3 +106,4 @@ yarn.json
 package-lock.json
 target
 .markdownlint.json
+dist
