@@ -6,10 +6,8 @@
   "author": "ourcord",
   "license": "MIT",
   "scripts": {
-    "build": "tsc",
     "start": "node dist/example.index.js",
-    "upgrade": "node packager.js",
-    "prepublish": "npm run build"
+    "upgrade": "node packager.js"
   },
   "dependencies": {
     "chalk": "^4.1.0",
