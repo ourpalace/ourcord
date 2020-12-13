@@ -7,7 +7,7 @@ import os from 'os';
 import pako from 'pako';
 import {config} from 'dotenv';
 import handlers from './handlers/handlers.index';
-import {statusArray, authHeader} from './utils';
+import {statusTypesArray, authHeader} from './utils';
 // import { connect } from "./client_functions";
 
 config();
@@ -159,7 +159,7 @@ export class Client extends Emitter {
 	};
 
 	setStatus(t: 'dnd' | 'invisible' | 'online' | 'idle') {
-	  if (!statusArray.includes(t)) {
+	  if (!statusTypesArray.includes(t)) {
 	    throw new Error('[ERROR/discordAPI error] Status provided is incorrect');
 	  }
 	  try {
