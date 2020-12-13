@@ -16,6 +16,6 @@ client.on('message', async (msg: any) => {
   if (msg.author.bot) return;
   if (!msg.content.startsWith('stupid')) return;
   const p = await client.createChannel(msg.guild_id, 'test');
-  await client.sendMessage(p.id, 'Hi!');
+  await client._sendMessage(p.id, 'Hi!');
   console.log(p);
 });
