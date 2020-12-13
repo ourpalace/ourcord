@@ -1,13 +1,14 @@
 {
   "name": "ourcord",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "repository": "https://github.com/ourcord/ourcord",
   "author": "ourcord",
   "license": "MIT",
   "scripts": {
     "build": "tsc -p .",
-    "start": "node example.index.js"
+    "start": "node target/example.index.js",
+    "postinstall": "tsc -p ."
   },
   "dependencies": {
     "chalk": "^4.1.0",
