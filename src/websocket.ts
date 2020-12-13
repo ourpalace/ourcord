@@ -34,8 +34,10 @@ export interface ClientOptions {
 	browser?: string;
 	device?: string;
 	prefix?: string;
-	cacheGuilds?: boolean;
-	cacheUsers?: boolean;
+	cacheChannels?: boolean,
+    cacheGuilds?: boolean,
+    cacheUsers?: boolean,
+    cacheMembers?: boolean,
 	activity?: {name: string, type: number};
 	status?: 'dnd' | 'invisible' | 'online' | 'idle';
 }
