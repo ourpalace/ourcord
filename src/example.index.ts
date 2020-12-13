@@ -1,7 +1,5 @@
 import Client from './websocket';
-
 const client = new Client(process.env.TOKEN, {status: 'dnd'});
-
 client.connect();
 
 client.on('ready', () => {
@@ -14,6 +12,7 @@ client.on('debug', (log) => {
 
 client.on('message', async (msg: any) => {
   if (msg.author.bot) return;
-  if (!msg.content.startsWith('stupid')) return;
-  console.log(await msg.channel.send('Hi!'));
+  if (msg.content == 'stupid status') {
+    client.setStatus('online')
+  }
 });

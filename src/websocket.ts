@@ -52,6 +52,8 @@ export interface StatusInfo {
 export class Client extends Emitter {
 	token: string;
 	socket: any;
+	activities: any;
+	hb: any;
 	config: ClientOptions;
 	/**
 	 *
@@ -81,12 +83,13 @@ export class Client extends Emitter {
 	    this.socket.send(data);
 	    this.socket.once('error', (error: string) => {
 	      handlers.errorHandler(error, this);
-	    });
+		});
 	    this.socket.on('message', (message: any, flag: any) => {
 	      handlers.messageHandler(message, flag, this);
 	    });
-	    this.socket.on('close', () => {
-	      this.emit('debug', `${bold('[NOTICE/websocket]')} Connection closed unexpectedly. Re-attempting login`);
+	    this.socket.on('close', (h: any) => {
+		  clearInterval(this.hb);
+		  this.emit('debug', `${bold('[NOTICE/websocket]')} Connection closed unexpectedly (code ${h}). Re-attempting login`);
 	      this.connect();
 	    });
 	  });
@@ -195,13 +198,17 @@ export class Client extends Emitter {
 	    throw new Error('[ERROR/discordAPI error] Status provided is incorrect');
 	  }
 	  try {
-	    this.socket.send(JSON.stringify({
-	      op: 3,
-	      d: {
-	        status: t,
-	        afk: false,
-	      },
-	    }));
+		const p = JSON.stringify({
+			op: 3,
+			d: {
+			  status: t,
+			  afk: false,
+			  since: t == "idle" ? Date.now() : null,
+			  game: null,
+			},
+		  })
+		console.log(p);
+	    this.socket.send(p);
 	  } catch (err) {
 	    throw new Error(err);
 	  }
