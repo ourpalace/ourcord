@@ -241,4 +241,6 @@ export class Client extends Emitter {
 	}
 }
 
+declare module Client {};
+
 export default Client;
