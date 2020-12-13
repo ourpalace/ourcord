@@ -22,8 +22,8 @@ export interface embedProperties {
 
 export interface ClientOptions {
 	browser?: string;
-        device?: string;
-        prefix?: string;
+      device?: string;
+      prefix?: string;
 	cacheGuilds?: boolean;
 	cacheUsers?: boolean;
 	activity?: { name: string, type: number };
