@@ -1,4 +1,4 @@
-# ourcord
+# ✨ ourcord ✨
 
 ## Table of Contents
 
@@ -16,7 +16,7 @@ Ourcord is a new and alternative discord library for js that focuses on speed an
 npm i ourcord
 ```
 
-That's it for installation
+That's it for installation 🎈
 
 ## Usage  
 
@@ -32,7 +32,7 @@ client.on("ready", () => {
 
 ---  
 
-## Client Config  
+## Client Config  <a href="src/websocket.ts#L32"></></a>
 
 | Option | Type | Default | Description | Optional? |
 | --- | --- | --- | --- | --- |
