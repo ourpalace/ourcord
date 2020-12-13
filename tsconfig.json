@@ -2,10 +2,11 @@
     "compilerOptions": {
         "allowJs": true,
         "target": "ESNext",
-        "outDir": "./target",
+        "outDir": "./dist",
         "module": "CommonJS",
         "strictNullChecks": false,
         "esModuleInterop": true,
         "strict": true
     },
+    "include": ["src/*"]
 }
