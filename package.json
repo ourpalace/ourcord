@@ -6,8 +6,8 @@
   "author": "ourcord",
   "license": "MIT",
   "scripts": {
-    "build": "tsc -p .",
-    "start": "node target/websocket"
+    "start": "node target/websocket",
+    "postinstall": "tsc -p ."
   },
   "dependencies": {
     "chalk": "^4.1.0",
