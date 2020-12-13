@@ -26,7 +26,7 @@ That's it for installation 🎈
 ## Usage  
 
 ```js
-const Client = require("ourcord");
+const { Client } = require("ourcord");
 const client = new Client("your bot token here");
 client.connect();
 
