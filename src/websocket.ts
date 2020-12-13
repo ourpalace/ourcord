@@ -226,7 +226,7 @@ export class Client extends Emitter {
 	async createChannel(g: string, name: string) {
 	  const url = `https://discord.com/api/v7/guilds/${g}/channels`;
 	  const channel = await fetch(url, {
-	    method: 'post',
+	    method: 'POST',
 	    headers: {
 	      'Content-Type': 'application/json',
 	      'Authorization': authHeader(this.token),
