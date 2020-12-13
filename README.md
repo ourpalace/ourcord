@@ -61,10 +61,15 @@ client.on("ready", () => {
 ## Collaborators
 
 > [**Dice**](https://github.com/alebot-dev)  
-> [**Mattthew**](https://github.com/matthewthechickenman)  
+
+> [**Matthew**](https://github.com/matthewthechickenman)  
+
 > [**Misly**](https://github.com/Misly16)  
+
 > [**Starman**](https://github.com/Starman3787)
+
 > [**Voltrex Master**](https://github.com/VoltrexMaster)
+
 > [**null**](https://github.com/vierofernando)
 
 ## Contributors ✨
