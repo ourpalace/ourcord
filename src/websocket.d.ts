@@ -37,9 +37,9 @@ export class Client extends Emitter {
     /**
      *
      * @param {string} token the token used for auth
-     * @param {ClientOptions} options
+     * @param {ClientOptions} options options under client that do stuff
      */
-    constructor(token: string, options: ClientOptions);
+    constructor(token: string, options?: ClientOptions);
     login(): void;
     getMetaData(): {
         op: number;
@@ -57,5 +57,7 @@ export class Client extends Emitter {
     _sendMessage(channel: string, content: string | object): Promise<JSON>;
     _MessageEmbed(channel: string, options: embedProperties): Promise<JSON>;
 }
+
+declare module Client {}
 
 export default Client;

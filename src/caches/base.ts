@@ -11,7 +11,7 @@ export class Cache {
     users: User;
     members: Member;
 
-    constructor(client: Client, options?: ClientOptions) {
+    constructor(client: typeof Client, options?: ClientOptions) {
         this.channels = options.cacheChannels ? new Map() : null;
         this.guilds = options.cacheGuilds ? new Map() : null;
         this.users = options.cacheChannels ? new Map() : null;
@@ -19,7 +19,7 @@ export class Cache {
         this._bind(client);
     }
     
-    _bind(client: Client) {
+    _bind(client: typeof Client) {
         client.cache = {}
         client.cache.channels = this.channels
         client.cache.guilds = this.guilds

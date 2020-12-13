@@ -12,7 +12,7 @@ client.on('ready', () => {
   console.log('Client connected to discord API');
 });
 
-client.on('debug', (log) => {
+client.on('debug', (log: string) => {
   console.log(log);
 });
 
