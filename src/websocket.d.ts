@@ -40,7 +40,6 @@ export class Client extends Emitter {
      * @param {ClientOptions} options options under client that do stuff
      */
     constructor(token: string, options?: ClientOptions);
-    login(): void;
     getMetaData(): {
         op: number;
         d: {
