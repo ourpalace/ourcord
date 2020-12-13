@@ -1,4 +1,5 @@
 // initial imports
+/// <reference path="websocket.d.ts"/>
 import ws from 'ws';
 import fetch from 'node-fetch';
 import { EventEmitter as Emitter } from 'events';
