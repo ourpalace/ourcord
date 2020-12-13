@@ -9,7 +9,7 @@
     "build": "tsc --outDir dist",
     "start": "node dist/example.index.js",
     "upgrade": "node packager.js",
-    "publish": "npm run build"
+    "prepublish": "npm run build"
   },
   "dependencies": {
     "chalk": "^4.1.0",
