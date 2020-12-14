@@ -56,5 +56,3 @@ export class Client extends Emitter {
     _MessageEmbed(channel: string, options: embedProperties): Promise<JSON>;
 }
 }
-    
-export default Client;
