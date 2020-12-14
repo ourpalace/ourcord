@@ -22,7 +22,7 @@ Ourcord is a new and alternative discord library for js that focuses on speed an
 ## Installation  
 
 ```cmd
-npm i --save ourcord
+npm i ourcord --save
 ```
 
 That's it for installation 🎈
