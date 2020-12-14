@@ -1,12 +1,14 @@
 import Client from '../websocket';
 import {MessageRaw} from './MessageRaw';
+import { Member } from "./types";
+import { User } from "./types";
 
 export class Message {
     id: string;
     channel: object;
     guild: object;
-    author: object;
-    member: object;
+    author: User;
+    member: Member;
     content: string | object;
     timestamp: number;
     tts: boolean;
