@@ -39,10 +39,10 @@ export interface ClientOptions {
   browser?: string;
   device?: string;
   prefix?: string;
-  cacheChannels?: boolean,
-  cacheGuilds?: boolean,
-  cacheUsers?: boolean,
-  cacheMembers?: boolean,
+  cacheChannels?: boolean;
+  cacheGuilds?: boolean;
+  cacheUsers?: boolean;
+  cacheMembers?: boolean;
   activity?: { name: string, type: number };
   status?: 'online' | 'idle' | 'dnd' | 'invisible';
 }
@@ -65,7 +65,7 @@ export class Client extends Emitter {
   /**
    * The main client constructor.
    * @param {string} token The client's token used for gateway connection.
-   * @param {ClientOptions} options Options this client is instantiated with.
+   * @param {ClientOptions} [options] Options this client is instantiated with.
    */
   constructor(token: string, options?: ClientOptions) {
     super();
@@ -85,25 +85,22 @@ export class Client extends Emitter {
   }
 
   /**
-   * 
    * Requests to a specific discord API endpoint.
    * @param {string} method method, e.g: GET, POST, DELETE, PUT, etc.
-   * @param {string} path path of URL
-   * @param {object} body body/data of Request
-   * @returns {Promise<object>} JSON response
+   * @param {string} path path of URL.
+   * @param {object} body body/data of Request.
+   * @returns {Promise<object>}
    */
   async request(method: string, path: string, body: object = null): Promise<object> {
-    let response = await fetch(apiBaseURL + path, {
+    return (await fetch(apiBaseURL + path, {
       method: method,
       headers: {
-        'Content-Type': 'application/json',
         'Authorization': `Bot ${this.token}`,
+        'Content-Type': 'application/json'
       },
-      body: body ? JSON.stringify(body) : null,
-    });
-
-    return await response.json();
-  }
+      body: body ? JSON.stringify(body) : null
+    }).then(res => res.json()));
+  };
 
   /**
    * The method used to connect to the gateway.
@@ -148,18 +145,18 @@ export class Client extends Emitter {
     if (content === null || typeof content === 'undefined' || !content.toString().length) throw new Error(`${red.bold('[ERROR/DiscordAPI Error]')} Cannot send a message with no content`);
     if (typeof content === 'string') b.content = content;
     if (typeof content === 'object') b = content;
-    return await this.request("POST", `/channels/${channel}/messages`, b);
+    return (await this.request("POST", `/channels/${channel}/messages`, b));
   };
 
   /**
    * The method used to send an embed in a TextChannel.
-   * @param {string} channel ID of the TextChannel the message will be sent in.
+   * @param {string} channel ID of the TextChannel the embed will be sent in.
    * @param {EmbedProperties} options The embed data.
    * @returns {Promise<object>}
    */
   async _MessageEmbed(channel: string, options: EmbedProperties): Promise<object> {
     if (options === null || typeof options === 'undefined') throw new Error(`${red.bold('[ERROR/DiscordAPI Error]')} Cannot send a message with no content`);
-    return await this.request('POST', `/channels/${channel}/messages`, options);
+    return (await this.request('POST', `/channels/${channel}/messages`, options));
   };
 
   /**
@@ -169,7 +166,7 @@ export class Client extends Emitter {
    */
   async _GetRestUser(userID: string): Promise<object> {
     if (userID === null || typeof userID === 'undefined' || !userID.toString().length) throw new Error(`${red.bold('[ERROR/DiscordAPI Error]')} ${userID} is not snowflake`);
-    return await this.request('GET', `/users/${userID}`);
+    return (await this.request('GET', `/users/${userID}`));
   };
 
   /**
@@ -177,22 +174,21 @@ export class Client extends Emitter {
    * @returns {object}
    */
   getMetaData(): object {
-    const metaData = {
-      op: 2, // opcode of 2 means "identify"
-      d: { // d is for data
-        token: this.token,
-        properties: {
-          $os: os.platform,
-          $browser: this.config.browser,
-          $device: this.config.device,
-        },
-        presence: {
-          // activities: [{name: this.config.activity.name ? this.config.activity.name : null, type: 0}],
-          status: this.config.status
-        }
-      }
-    };
-    return metaData;
+    return {
+         op: 2, // opcode of 2 means "identify"
+         d: { // d is for data
+           token: this.token,
+           properties: {
+             $os: os.platform,
+             $browser: this.config.browser,
+             $device: this.config.device
+           },
+           presence: {
+             // activities: [{name: this.config.activity.name ? this.config.activity.name : null, type: 0}],
+             status: this.config.status
+           }
+         }
+       };
   };
 
   /**
@@ -224,8 +220,8 @@ export class Client extends Emitter {
           status: t,
           afk: false,
           since: t === 'idle' ? Date.now() : null,
-          game: null,
-        },
+          game: null
+        }
       });
       this.socket.send(p);
     } catch (err) {
@@ -234,15 +230,15 @@ export class Client extends Emitter {
   };
 
   /**
-   * The method used to create a GuildChannel
+   * The method used to create a GuildChannel.
    * @param {string} g ID of the guild where the channel will be created in.
-   * @param {string} name The name of the channel
+   * @param {string} name The name of the channel.
    * @returns {Promise<object>}
    */
   async createChannel(g: string, name: string): Promise<object> {
     if (typeof g !== 'string') throw new Error(`${red.bold('[ERROR/DiscordAPI Error]')} ${g} is not snowflake`);
-    else if (typeof name !== 'string') throw new Error(`${red.bold('[ERROR/DiscordAPI Error]')} The channel name is required`);
-    return await this.request(`POST`, `/guilds/${g}/channels`, { name });
+    if (typeof name !== 'string') throw new Error(`${red.bold('[ERROR/DiscordAPI Error]')} The channel name is required`);
+    return (await this.request(`POST`, `/guilds/${g}/channels`, { name }));
   };
 }
 
