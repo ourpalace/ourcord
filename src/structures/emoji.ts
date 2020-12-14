@@ -37,11 +37,11 @@ export class Emoji {
             const r = await client._modifyEmoji(this.guild.id, this.id, name, undefined);
             this.name = r.name || null;
             return r;
-        }
+        };
         this.delete = async () => {
             const r = await client._deleteEmoji(this.guild.id, this.id);
             return r;
-        }
+        };
         return this;
     }
 }
