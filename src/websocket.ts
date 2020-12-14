@@ -181,7 +181,7 @@ export class Client extends Emitter {
 				'Content-Type': 'application/json',
 			},
 		});
-		return await sent.status === 204;
+		return sent.status === 204;
 	}
 
 	/**
