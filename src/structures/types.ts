@@ -61,6 +61,7 @@ export interface Emoji {
     require_colons?: boolean,
     managed?: boolean,
     animated?: boolean,
+    url?: Function,
     rename?: Function,
     delete?: Function,
 }
