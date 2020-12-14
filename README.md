@@ -1,4 +1,9 @@
 # ✨ ourcord ✨
+
+
+## About  
+
+Ourcord is a new and alternative discord library for js that focuses on speed and simplicity while retaining low level functions of the discord API  
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
@@ -15,9 +20,6 @@
 - [Usage](#usage)
 - [Links](#links)
 
-## About  
-
-Ourcord is a new and alternative discord library for js that focuses on speed and simplicity while retaining low level functions of the discord API  
 
 ## Installation  
 
