@@ -52,12 +52,6 @@ export interface Emoji {
     name?: string,
     roles?: Array<Role>,
     guild?: Guild,
-    user?: {
-        username?: string,
-        discriminator?: string,
-        id?: string,
-        avatar?: string
-    },
     require_colons?: boolean,
     managed?: boolean,
     animated?: boolean,
