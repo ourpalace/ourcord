@@ -7,5 +7,4 @@
 /.all-contributorsrc
 /node_modules/
 /test/
-/src/
 .env
