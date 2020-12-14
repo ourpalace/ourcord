@@ -91,7 +91,7 @@ export class Client extends Emitter {
    * @param {object} body body/data of Request.
    * @returns {Promise<object>}
    */
-  async request(method: string, path: string, body: object = null): Promise<object> {
+  async request(method: string, path: string, body: object = null): Promise<any> {
     return (await fetch(apiBaseURL + path, {
       method: method,
       headers: {
