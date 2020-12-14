@@ -1,6 +1,6 @@
 // <reference types="node" />
 
-import {EventEmitter as Emitter} from 'events';
+import { EventEmitter as Emitter } from 'events';
 
 export interface messageProperties {
     content?: string
@@ -22,12 +22,12 @@ export interface embedProperties {
 
 export interface ClientOptions {
 	browser?: string;
-    device?: string;
-    prefix?: string;
+      device?: string;
+      prefix?: string;
 	cacheGuilds?: boolean;
 	cacheUsers?: boolean;
-	activity?: {name: string, type: number};
-	status?: 'dnd' | 'invisible' | 'online' | 'idle';
+	activity?: { name: string, type: number };
+	status?: 'online' | 'idle' | 'dnd' | 'invisible';
 }
 
 export class Client extends Emitter {
@@ -35,12 +35,11 @@ export class Client extends Emitter {
     socket: typeof Emitter;
     config: ClientOptions;
     /**
-     *
-     * @param {string} token the token used for auth
-     * @param {ClientOptions} options options under client that do stuff
+     * The main client constructor.
+     * @param {string} token The client's token used for gateway connection.
+     * @param {ClientOptions} options Options this client is instantiated with.
      */
     constructor(token: string, options?: ClientOptions);
- 		login(): void;
     getMetaData(): {
         op: number;
         d: {
@@ -58,6 +57,6 @@ export class Client extends Emitter {
     _MessageEmbed(channel: string, options: embedProperties): Promise<JSON>;
 }
 
-declare module "ourcord" {
-    export default Client;
-}
+declare module "Client" 
+    
+export default Client;
