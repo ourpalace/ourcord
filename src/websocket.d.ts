@@ -1,5 +1,3 @@
-// <reference types="node" />
-
 import { EventEmitter as Emitter } from 'events';
 
 export interface messageProperties {
@@ -30,6 +28,7 @@ export interface ClientOptions {
 	status?: 'online' | 'idle' | 'dnd' | 'invisible';
 }
 
+declare module "ourcord" {
 export class Client extends Emitter {
     token: string;
     socket: typeof Emitter;
@@ -56,7 +55,4 @@ export class Client extends Emitter {
     _sendMessage(channel: string, content: string | object): Promise<JSON>;
     _MessageEmbed(channel: string, options: embedProperties): Promise<JSON>;
 }
-
-declare module "Client" 
-    
-export default Client;
+}
