@@ -235,10 +235,13 @@ export class Client extends Emitter {
 	        $device: this.config.device,
 	      },
 	      presence: {
-	        // activities: [{name: this.config.activity.name ? this.config.activity.name : null, type: 0}],
-	        status: this.config.status
-	      }
-	    }
+	        activities: [{
+				name: this.config.activity.name || null, 
+				type: 0
+			}],
+	        status: this.config.status,
+	      },
+	    },
 	  };
 	  return metaData;
 	};
