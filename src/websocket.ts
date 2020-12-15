@@ -119,7 +119,7 @@ export class Client extends Emitter {
       this.socket.on('message', (message: any, flag: any) => handlers.messageHandler(message, flag, this));
       this.socket.on('close', (h: any) => {
         clearInterval(this.hb);
-        if (h.toString === "4004") throw new Error(`${red.bold('[NOTICE/Websocket]')} ${red(`Invalid client token`)}`);
+        if (h === 4004) throw new Error(`${red.bold('[NOTICE/Websocket]')} ${red(`Invalid client token`)}`);
         this.emit('debug', `${bold('[NOTICE/Websocket]')} ${red(`Connection closed unexpectedly (code ${h}). Re-attempting login`)}`);
         this.connect();
       });
