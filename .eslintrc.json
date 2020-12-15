@@ -19,7 +19,7 @@
         "no-mixed-spaces-and-tabs": "off",
         "no-tabs": "off",
         "max-len": "off",
-        "new-cap": "off"
-
+        "new-cap": "off",
+        "quotes": "off"
     }
 }

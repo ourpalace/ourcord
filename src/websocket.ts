@@ -1,18 +1,19 @@
 // initial imports
+// eslint-disable-next-line spaced-comment
 /// <reference types="node" />
+
 import ws from 'ws';
 import fetch from 'node-fetch';
-import { EventEmitter as Emitter } from 'events';
-import { red, yellow, bold } from 'chalk';
+import {EventEmitter as Emitter} from 'events';
+import {red, yellow, bold} from 'chalk';
 import os from 'os';
 import pako from 'pako';
 // @ts-ignore
-import zlib from 'fast-zlib';
-import { config } from 'dotenv';
+import {config} from 'dotenv';
 import handlers from './handlers/handlers.index';
-import { statusTypesArray, apiBaseURL } from './utils';
-import { Cache } from './caches/base';
-import { MessageRaw } from './structures/MessageRaw';
+import {statusTypesArray, apiBaseURL} from './utils';
+import {Cache} from './caches/base';
+import {MessageRaw} from './structures/MessageRaw';
 // import { connect } from './client_functions';
 
 config();
@@ -74,12 +75,12 @@ export class Client extends Emitter {
     Object.defineProperty(this, 'token', {
       value: token,
       writable: true,
-      enumerable: false
+      enumerable: false,
     });
     this.config = options || {
       browser: 'ourcord (https://github.com/ourcord/ourcord)',
       device: 'ourcord (https://github.com/ourcord/ourcord)',
-      status: 'dnd'
+      status: 'dnd',
     };
     this.cache = new Cache(this, this.config);
   }
@@ -89,22 +90,22 @@ export class Client extends Emitter {
    * @param {string} method method, e.g: GET, POST, DELETE, PUT, etc.
    * @param {string} path path of URL.
    * @param {object} body body/data of Request.
-   * @returns {Promise<object>}
+   * @return {Promise<object>}
    */
   async request(method: string, path: string, body: object = null): Promise<any> {
     return (await fetch(apiBaseURL + path, {
       method: method,
       headers: {
         'Authorization': `Bot ${this.token}`,
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
-      body: body ? JSON.stringify(body) : null
-    }).then(res => res.json()));
+      body: body ? JSON.stringify(body) : null,
+    }).then((res) => res.json()));
   };
 
   /**
    * The method used to connect to the gateway.
-   * @returns {undefined}
+   * @return {undefined}
    */
   connect(): void {
     this.emit('debug', `${yellow.bold('[NOTICE/Websocket]')} ${yellow('Attempting to connect to the discord gateway')}`);
@@ -118,6 +119,7 @@ export class Client extends Emitter {
       this.socket.on('message', (message: any, flag: any) => handlers.messageHandler(message, flag, this));
       this.socket.on('close', (h: any) => {
         clearInterval(this.hb);
+        if (h.toString === "4004") throw new Error(`${red.bold('[NOTICE/Websocket]')} ${red(`Invalid client token`)}`);
         this.emit('debug', `${bold('[NOTICE/Websocket]')} ${red(`Connection closed unexpectedly (code ${h}). Re-attempting login`)}`);
         this.connect();
       });
@@ -127,7 +129,7 @@ export class Client extends Emitter {
   /**
    * The method used to destroy the client and close the connection to the websocket.
    * @param {string} [reason] The reason to close the socket.
-   * @returns {undefined}
+   * @return {undefined}
    */
   destroy(reason?: string): void {
     this.socket.close();
@@ -138,7 +140,7 @@ export class Client extends Emitter {
    * The method used to send a message to a TextChannel.
    * @param {string} channel ID of the TextChannel the message will be sent in.
    * @param {(string|object)} content The body of the message.
-   * @returns {Promise<MessageRaw>}
+   * @return {Promise<MessageRaw>}
    */
   async _sendMessage(channel: string, content: string | object): Promise<MessageRaw> {
     let b: MessageProperties = {};
@@ -152,7 +154,7 @@ export class Client extends Emitter {
    * The method used to send an embed in a TextChannel.
    * @param {string} channel ID of the TextChannel the embed will be sent in.
    * @param {EmbedProperties} options The embed data.
-   * @returns {Promise<object>}
+   * @return {Promise<object>}
    */
   async _MessageEmbed(channel: string, options: EmbedProperties): Promise<object> {
     if (options === null || typeof options === 'undefined') throw new Error(`${red.bold('[ERROR/DiscordAPI Error]')} Cannot send a message with no content`);
@@ -162,7 +164,7 @@ export class Client extends Emitter {
   /**
    * The method used to fetch a user from the rest discord API.
    * @param {string} userID The ID of the user to fetch.
-   * @returns {Promise<object>}
+   * @return {Promise<object>}
    */
   async _GetRestUser(userID: string): Promise<object> {
     if (userID === null || typeof userID === 'undefined' || !userID.toString().length) throw new Error(`${red.bold('[ERROR/DiscordAPI Error]')} ${userID} is not snowflake`);
@@ -171,24 +173,24 @@ export class Client extends Emitter {
 
   /**
    * The method used to get the metadata.
-   * @returns {object}
+   * @return {object}
    */
   getMetaData(): object {
     return {
-         op: 2, // opcode of 2 means "identify"
-         d: { // d is for data
-           token: this.token,
-           properties: {
-             $os: os.platform,
-             $browser: this.config.browser,
-             $device: this.config.device
-           },
-           presence: {
-             // activities: [{name: this.config.activity.name ? this.config.activity.name : null, type: 0}],
-             status: this.config.status
-           }
-         }
-       };
+      op: 2, // opcode of 2 means "identify"
+      d: { // d is for data
+        token: this.token,
+        properties: {
+          $os: os.platform,
+          $browser: this.config.browser,
+          $device: this.config.device,
+        },
+        presence: {
+          // activities: [{name: this.config.activity.name ? this.config.activity.name : null, type: 0}],
+          status: this.config.status,
+        },
+      },
+    };
   };
 
   /**
@@ -209,7 +211,7 @@ export class Client extends Emitter {
   /**
    * The method used to set the status of the client.
    * @param {('online'|'idle'|'dnd'|'invisible')} t The status type to set client's status to.
-   * @returns {undefined}
+   * @return {undefined}
    */
   setStatus(t: 'online' | 'idle' | 'dnd' | 'invisible'): void {
     if (!statusTypesArray.includes(t)) throw new Error(`${red.bold('[ERROR/DiscordAPI Error]')} Invalid status type`);
@@ -220,8 +222,8 @@ export class Client extends Emitter {
           status: t,
           afk: false,
           since: t === 'idle' ? Date.now() : null,
-          game: null
-        }
+          game: null,
+        },
       });
       this.socket.send(p);
     } catch (err) {
@@ -233,12 +235,12 @@ export class Client extends Emitter {
    * The method used to create a GuildChannel.
    * @param {string} g ID of the guild where the channel will be created in.
    * @param {string} name The name of the channel.
-   * @returns {Promise<object>}
+   * @return {Promise<object>}
    */
   async createChannel(g: string, name: string): Promise<object> {
     if (typeof g !== 'string') throw new Error(`${red.bold('[ERROR/DiscordAPI Error]')} ${g} is not snowflake`);
     if (typeof name !== 'string') throw new Error(`${red.bold('[ERROR/DiscordAPI Error]')} The channel name is required`);
-    return (await this.request(`POST`, `/guilds/${g}/channels`, { name }));
+    return (await this.request(`POST`, `/guilds/${g}/channels`, {name}));
   };
 }
 
