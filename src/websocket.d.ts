@@ -1,32 +1,32 @@
 import { EventEmitter as Emitter } from 'events';
 
-export interface messageProperties {
-    content?: string
-}
-
-export interface embedProperties {
-	embed?: {
-		title: string;
-		author: object;
-		thumbnail: string;
-		description: string;
-		fields: object[];
-		colour: string | number;
-		color: embedProperties['embed']['colour'];
-		footer: object;
-		image: string;
-	};
-}
-
-export interface ClientOptions {
-	browser?: string;
-      device?: string;
-      prefix?: string;
-	cacheGuilds?: boolean;
-	cacheUsers?: boolean;
-	activity?: { name: string, type: number };
-	status?: 'online' | 'idle' | 'dnd' | 'invisible';
-}
+// export interface messageProperties {
+//     content?: string
+// }
+// 
+// export interface embedProperties {
+// 	embed?: {
+// 		title: string;
+// 		author: object;
+// 		thumbnail: string;
+// 		description: string;
+// 		fields: object[];
+// 		colour: string | number;
+// 		color: embedProperties['embed']['colour'];
+// 		footer: object;
+// 		image: string;
+// 	};
+// }
+// 
+// export interface ClientOptions {
+// 	browser?: string;
+//       device?: string;
+//       prefix?: string;
+// 	cacheGuilds?: boolean;
+// 	cacheUsers?: boolean;
+// 	activity?: { name: string, type: number };
+// 	status?: 'online' | 'idle' | 'dnd' | 'invisible';
+// }
 
 declare module "ourcord" {
 export class Client extends Emitter {
