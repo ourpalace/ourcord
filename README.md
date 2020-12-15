@@ -1,9 +1,8 @@
 # ✨ ourcord ✨
 
-
 ## About  
 
-Ourcord is a new and alternative discord library for js that focuses on speed and simplicity while retaining low level functions of the discord API     
+Ourcord is a new and alternative discord library for js that focuses on speed and simplicity while retaining low level functions of the discord API  
 
 [![npm](https://img.shields.io/npm/v/ourcord?color=red&style=for-the-badge)](https://npmjs.com/package/ourcord)
 [![npm](https://img.shields.io/bundlephobia/min/ourcord?color=red&style=for-the-badge)](https://npmjs.com/package/ourcord)
@@ -16,7 +15,6 @@ Ourcord is a new and alternative discord library for js that focuses on speed an
 - [Installation](#installation)
 - [Usage](#usage)
 - [Links](#links)
-
 
 ## Installation  
 
@@ -70,4 +68,3 @@ client.on("ready", () => {
 > [**Voltrex Master**](https://github.com/VoltrexMaster)
 
 > [**null**](https://github.com/vierofernando)
-
