@@ -1,3 +1,4 @@
+/* eslint-disable require-jsdoc */
 /* eslint-disable camelcase */
 export class MessageRaw {
     id: string;

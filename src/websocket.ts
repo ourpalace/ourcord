@@ -14,9 +14,12 @@ import handlers from './handlers/handlers.index';
 import {statusTypesArray, apiBaseURL} from './utils';
 import {Cache} from './caches/base';
 import {MessageRaw} from './structures/MessageRaw';
-// import { connect } from './client_functions';
 
 config();
+
+export type WSProperties = {
+  readonly ping: number;
+}
 
 export interface MessageProperties {
   content?: string;
@@ -62,6 +65,7 @@ export class Client extends Emitter {
   hb: any;
   config: ClientOptions;
   cache: any;
+  ws: WSProperties
 
   /**
    * The main client constructor.
