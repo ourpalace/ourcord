@@ -9,7 +9,7 @@ export class ChannelRaw {
    id: string;
    type: number;
    guild_id?: string;
-   position: number;
+   position?: number;
    permission_overwrites?: PermissionOverwritesRaw[];
    name?: string;
    topic?: string;
