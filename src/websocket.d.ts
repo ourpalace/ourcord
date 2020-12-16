@@ -21,6 +21,7 @@ declare module "ourcord" {
     }
 
     export interface ClientOptions {
+        intents?: number;
         browser?: string;
         device?: string;
         prefix?: string;
@@ -46,6 +47,7 @@ declare module "ourcord" {
             op: number;
             d: {
                 token: string;
+                intents?: number;
                 properties: {
                     $os: any;
                     $browser: string;
