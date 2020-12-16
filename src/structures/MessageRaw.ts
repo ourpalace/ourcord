@@ -3,6 +3,7 @@
 export class MessageRaw {
     id: string;
     channel_id: string;
+    channel_type: number;
     guild_id: string;
     author: object;
     member: object;

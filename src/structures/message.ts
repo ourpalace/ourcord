@@ -1,9 +1,11 @@
+/* eslint-disable require-jsdoc */
 import Client from '../websocket';
 import {MessageRaw} from './MessageRaw';
+import {Channel} from "./channel";
 
 export class Message {
     id: string;
-    channel: object;
+    channel: Channel;
     guild: object;
     author: object;
     member: object;
@@ -26,6 +28,7 @@ export class Message {
     constructor(data: MessageRaw, client: Client) {
       this.id = data.id;
       this.channel = {
+        type: data.channel_type,
         id: data.channel_id,
         send: async function(content: string) {
           const r = await client._sendMessage(data.channel_id, content);

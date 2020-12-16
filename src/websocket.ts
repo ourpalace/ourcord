@@ -149,7 +149,7 @@ export class Client extends Emitter {
    */
   async _sendMessage(channel: string, content: string | object): Promise<MessageRaw> {
     let b: MessageProperties = {};
-    if (content === null || typeof content === 'undefined' || !content.toString().length) throw new Error(`${red.bold('[ERROR/DiscordAPI Error]')} Cannot send a message with no content`);
+    if (content === null || typeof content === 'undefined' || !content.toString().length) throw new Error(`${red.bold('[ERROR/DiscordAPI Error]')} ${red("Cannot send a message with no content")}`);
     if (typeof content === 'string') b.content = content;
     if (typeof content === 'object') b = content;
     return (await this.request("POST", `/channels/${channel}/messages`, b));
