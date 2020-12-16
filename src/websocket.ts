@@ -79,12 +79,12 @@ export class Client extends Emitter {
     Object.defineProperty(this, 'token', {
       value: token,
       writable: true,
-      enumerable: false,
+      enumerable: false
     });
     this.config = options || {
       browser: 'ourcord (https://github.com/ourcord/ourcord)',
       device: 'ourcord (https://github.com/ourcord/ourcord)',
-      status: 'dnd',
+      status: 'dnd'
     };
     this.cache = new Cache(this, this.config);
   }
@@ -94,14 +94,14 @@ export class Client extends Emitter {
    * @param {string} method method, e.g: GET, POST, DELETE, PUT, etc.
    * @param {string} path path of URL.
    * @param {object} body body/data of Request.
-   * @return {Promise<object>}
+   * @return {Promise<any>}
    */
   async request(method: string, path: string, body: object = null): Promise<any> {
     return (await fetch(apiBaseURL + path, {
       method: method,
       headers: {
         'Authorization': `Bot ${this.token}`,
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       },
       body: body ? JSON.stringify(body) : null,
     }).then((res) => res.json()));
@@ -160,7 +160,7 @@ export class Client extends Emitter {
    * @param {EmbedProperties} options The embed data.
    * @return {Promise<object>}
    */
-  async _MessageEmbed(channel: string, options: EmbedProperties): Promise<object> {
+  async _MessageEmbed(channel: string, options: EmbedProperties): Promise<any> {
     if (options === null || typeof options === 'undefined') throw new Error(`${red.bold('[ERROR/DiscordAPI Error]')} Cannot send a message with no content`);
     return (await this.request('POST', `/channels/${channel}/messages`, options));
   };
@@ -170,7 +170,7 @@ export class Client extends Emitter {
    * @param {string} userID The ID of the user to fetch.
    * @return {Promise<object>}
    */
-  async _GetRestUser(userID: string): Promise<object> {
+  async _GetRestUser(userID: string): Promise<any> {
     if (userID === null || typeof userID === 'undefined' || !userID.toString().length) throw new Error(`${red.bold('[ERROR/DiscordAPI Error]')} ${userID} is not snowflake`);
     return (await this.request('GET', `/users/${userID}`));
   };
@@ -179,7 +179,7 @@ export class Client extends Emitter {
    * The method used to get the metadata.
    * @return {object}
    */
-  getMetaData(): object {
+  getMetaData(): any {
     return {
       op: 2, // opcode of 2 means "identify"
       d: { // d is for data
@@ -187,13 +187,13 @@ export class Client extends Emitter {
         properties: {
           $os: os.platform,
           $browser: this.config.browser,
-          $device: this.config.device,
+          $device: this.config.device
         },
         presence: {
           // activities: [{name: this.config.activity.name ? this.config.activity.name : null, type: 0}],
-          status: this.config.status,
-        },
-      },
+          status: this.config.status
+        }
+      }
     };
   };
 
@@ -203,7 +203,7 @@ export class Client extends Emitter {
    * @param {any} flag The flags for evaluation.
    * @return {string}
    */
-  evaluate(data: any, flag: any) {
+  evaluate(data: any, flag: any): string {
     if (typeof flag !== 'object') flag = {};
     if (flag.binary === null || typeof flag.binary === 'undefined') return JSON.parse(data);
     const inflateData = new pako.Inflate();
@@ -226,8 +226,8 @@ export class Client extends Emitter {
           status: t,
           afk: false,
           since: t === 'idle' ? Date.now() : null,
-          game: null,
-        },
+          game: null
+        }
       });
       this.socket.send(p);
     } catch (err) {
@@ -241,7 +241,7 @@ export class Client extends Emitter {
    * @param {string} name The name of the channel.
    * @return {Promise<object>}
    */
-  async createChannel(g: string, name: string): Promise<object> {
+  async createChannel(g: string, name: string): Promise<any> {
     if (typeof g !== 'string') throw new Error(`${red.bold('[ERROR/DiscordAPI Error]')} ${g} is not snowflake`);
     if (typeof name !== 'string') throw new Error(`${red.bold('[ERROR/DiscordAPI Error]')} The channel name is required`);
     return (await this.request(`POST`, `/guilds/${g}/channels`, {name}));
