@@ -40,6 +40,7 @@ export interface EmbedProperties {
 }
 
 export interface ClientOptions {
+  intents?: number;
   browser?: string;
   device?: string;
   prefix?: string;
@@ -181,9 +182,10 @@ export class Client extends Emitter {
    */
   getMetaData(): object {
     return {
-      op: 2, // opcode of 2 means "identify"
-      d: { // d is for data
+      op: 2,
+      d: {
         token: this.token,
+        intents: this.config.intents,
         properties: {
           $os: os.platform,
           $browser: this.config.browser,
