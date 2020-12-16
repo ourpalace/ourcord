@@ -68,3 +68,5 @@ client.on("ready", () => {
 > [**Voltrex Master**](https://github.com/VoltrexMaster)
 
 > [**null**](https://github.com/vierofernando)
+
+> [**ElCholoGamer**](https://github.com/ElCholoGamer)
