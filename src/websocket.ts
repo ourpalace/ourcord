@@ -103,7 +103,7 @@ export class Client extends Emitter {
         'Authorization': `Bot ${this.token}`,
         'Content-Type': 'application/json'
       },
-      body: body ? JSON.stringify(body) : null,
+      body: body ? JSON.stringify(body) : null
     }).then((res) => res.json()));
   };
 
