@@ -1,3 +1,4 @@
+/* eslint-disable comma-dangle */
 // initial imports
 // eslint-disable-next-line spaced-comment
 /// <reference types="node" />
