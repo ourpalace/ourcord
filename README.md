@@ -44,7 +44,7 @@ client.on("ready", () => {
 | ------------- | --------- | ----------- | ------------------------------------------------------------- | --------- |
 | browser       | `string`  | ourcord     | Specify the browser you want to connect via (can be anything) | `yes`     |
 | device        | `string`  | ourcord     | The device you want to connect with (can be anything)         | `yes`     |
-| prefix        | `string`  | `Null`      | Specify the prefix for the bot                                | `yes`     |
+| prefix        | `string`  | `null`      | Specify the prefix for the bot                                | `yes`     |
 | cacheChannels | `boolean` | `false`     | Whether or not to cache channels                              | `yes`     |
 | cacheGuilds   | `boolean` | `false`     | Whether or not to cache guilds                                | `yes`     |
 | cacheUsers    | `boolean` | `false`     | Whether or not to cache users                                 | `yes`     |
