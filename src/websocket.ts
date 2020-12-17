@@ -20,6 +20,7 @@ config();
 
 export type WSProperties = {
   readonly ping: number;
+  intents: object;
 }
 
 export interface MessageProperties {
@@ -40,6 +41,10 @@ export interface EmbedProperties {
   }
 }
 
+export interface SecurityProperties {
+  token?: {filter: boolean, replaceWith?: string};
+}
+
 export interface ClientOptions {
   intents?: number;
   browser?: string;
@@ -50,6 +55,7 @@ export interface ClientOptions {
   cacheUsers?: boolean;
   cacheMembers?: boolean;
   activity?: { name: string, type: number };
+  security?: SecurityProperties;
   status?: 'online' | 'idle' | 'dnd' | 'invisible';
 }
 
@@ -61,13 +67,14 @@ export interface StatusInfo {}
  * @param {any} config The configurations.
  */
 export class Client extends Emitter {
-  token: string;
+  readonly token: string;
+  readonly hb: NodeJS.Timeout;
   socket: any;
   activities: any;
-  hb: any;
   config: ClientOptions;
   cache: any;
-  ws: WSProperties
+  ws: WSProperties;
+  security: SecurityProperties;
 
   /**
    * The main client constructor.
@@ -76,6 +83,22 @@ export class Client extends Emitter {
    */
   constructor(token: string, options?: ClientOptions) {
     super();
+    this.token = token;
+    if (!options) {
+      this.security = {
+        token: {
+          filter: false
+        }
+      };
+    } else if (!options.security) {
+      this.security = {
+        token: {
+          filter: false
+        }
+      };
+    } else {
+      this.security = options.security;
+    }
     if (!token) throw new Error(`${red.bold('[ERROR/Websocket]')} ${red('Expected a client token')}`);
     // Using 'Object.defineProperty()' to prevent the token from being enumerable.
     Object.defineProperty(this, 'token', {
@@ -86,7 +109,8 @@ export class Client extends Emitter {
     this.config = options || {
       browser: 'ourcord (https://github.com/ourcord/ourcord)',
       device: 'ourcord (https://github.com/ourcord/ourcord)',
-      status: 'dnd'
+      status: 'dnd',
+      security: {},
     };
     this.cache = new Cache(this, this.config);
   }
@@ -151,7 +175,13 @@ export class Client extends Emitter {
   async _sendMessage(channel: string, content: string | object): Promise<MessageRaw> {
     let b: MessageProperties = {};
     if (content === null || typeof content === 'undefined' || !content.toString().length) throw new Error(`${red.bold('[ERROR/DiscordAPI Error]')} ${red("Cannot send a message with no content")}`);
-    if (typeof content === 'string') b.content = content;
+    if (typeof content === 'string') {
+      b.content = content;
+      if (content.includes(this.token) && this.security.token.filter) {
+        const replacement = this.security.token.replaceWith || "token";
+        b.content = content.replace(new RegExp(this.token), replacement);
+      }
+    };
     if (typeof content === 'object') b = content;
     return (await this.request("POST", `/channels/${channel}/messages`, b));
   };
