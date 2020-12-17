@@ -15,6 +15,8 @@ import handlers from './handlers/handlers.index';
 import {statusTypesArray, apiBaseURL} from './utils';
 import {Cache} from './caches/base';
 import {MessageRaw} from './structures/MessageRaw';
+import {Message} from './structures/Message';
+import {User} from './structures/rest';
 
 config();
 
@@ -60,6 +62,13 @@ export interface ClientOptions {
 }
 
 export interface StatusInfo {}
+
+export interface Client {
+  on(event: 'ready', listener: (user: User) => void): this;
+  on(event: 'debug', listener: (message: string) => void): this;
+  on(event: 'message', listener: (message: Message) => void): this;
+  on(event: 'error', listener: (error: any) => void): this;
+}
 
 /**
  * @param {string} token The client's token used for gateway connection.
