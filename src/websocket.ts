@@ -4,7 +4,7 @@
 /// <reference types="node" />
 
 import ws from 'ws';
-import fetch from 'node-fetch';
+import fetch, {Response} from 'node-fetch';
 import {EventEmitter as Emitter} from 'events';
 import {red, yellow, bold} from 'chalk';
 import os from 'os';
@@ -96,9 +96,9 @@ export class Client extends Emitter {
    * @param {string} method method, e.g: GET, POST, DELETE, PUT, etc.
    * @param {string} path path of URL.
    * @param {object} body body/data of Request.
-   * @return {Promise<any>}
+   * @return {Promise<(Response|any)>}
    */
-  async request(method: string, path: string, body: object = null): Promise<any> {
+  async request(method: string, path: string, body: object = null): Promise<Response|any> {
     return (await fetch(apiBaseURL + path, {
       method: method,
       headers: {
@@ -111,7 +111,7 @@ export class Client extends Emitter {
 
   /**
    * The method used to connect to the gateway.
-   * @return {undefined}
+   * @return {void}
    */
   connect(): void {
     this.emit('debug', `${yellow.bold('[NOTICE/Websocket]')} ${yellow('Attempting to connect to the discord gateway')}`);
@@ -135,7 +135,7 @@ export class Client extends Emitter {
   /**
    * The method used to destroy the client and close the connection to the websocket.
    * @param {string} [reason] The reason to close the socket.
-   * @return {undefined}
+   * @return {void}
    */
   destroy(reason?: string): void {
     this.socket.close();
@@ -163,7 +163,7 @@ export class Client extends Emitter {
    * @return {Promise<object>}
    */
   async _MessageEmbed(channel: string, options: EmbedProperties): Promise<any> {
-    if (options === null || typeof options === 'undefined') throw new Error(`${red.bold('[ERROR/DiscordAPI Error]')} Cannot send a message with no content`);
+    if (options === null || typeof options === 'undefined') throw new Error(`${red.bold('[ERROR/DiscordAPI Error]')} ${red("Cannot send a message with no content")}`);
     return (await this.request('POST', `/channels/${channel}/messages`, options));
   };
 
@@ -218,10 +218,10 @@ export class Client extends Emitter {
   /**
    * The method used to set the status of the client.
    * @param {('online'|'idle'|'dnd'|'invisible')} t The status type to set client's status to.
-   * @return {undefined}
+   * @return {void}
    */
   setStatus(t: 'online' | 'idle' | 'dnd' | 'invisible'): void {
-    if (!statusTypesArray.includes(t)) throw new Error(`${red.bold('[ERROR/DiscordAPI Error]')} Invalid status type`);
+    if (!statusTypesArray.includes(t)) throw new Error(`${red.bold('[ERROR/DiscordAPI Error]')} ${red("Invalid status type")}`);
     try {
       const p = JSON.stringify({
         op: 3,
