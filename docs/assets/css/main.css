@@ -1794,6 +1794,7 @@ ul.tsd-descriptions>li>:last-child>:last-child>:last-child,
     background-position: -221px -187px
 }
 
+
 @keyframes fade-in {
     from {
         opacity: 0
@@ -1889,13 +1890,21 @@ body {
     background: #fdfdfd;
     font-family: "Segoe UI", sans-serif;
     font-size: 16px;
-    color: #222
+    color: #23272A
 }
 
-a {
-    color: #4da6ff;
-    text-decoration: none
+
+
+.tsd-dark-mode {
+    background-color: #2C2F33;
+    border: none;
+    color: #FFF2CC;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
+
 
 a:hover {
     text-decoration: underline
