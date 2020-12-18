@@ -16,7 +16,7 @@ import {statusTypesArray, apiBaseURL} from './utils';
 import {Cache} from './caches/base';
 import {MessageRaw} from './structures/MessageRaw';
 import {Message} from './structures/Message';
-import {User} from './structures/rest';
+import User from './structures/user';
 
 config();
 
@@ -211,7 +211,7 @@ export class Client extends Emitter {
    * @param {string} userID The ID of the user to fetch.
    * @return {Promise<object>}
    */
-  async _GetRestUser(userID: string): Promise<any> {
+  async _GetRestUser(userID: string): Promise<User> {
     if (userID === null || typeof userID === 'undefined' || !userID.toString().length) throw new Error(`${red.bold('[ERROR/DiscordAPI Error]')} ${userID} is not snowflake`);
     return (await this.request('GET', `/users/${userID}`));
   };
