@@ -28,6 +28,7 @@ export class Message {
      * @param {any} client the client
      */
     constructor(data: MessageRaw, client: Client) {
+      this._client = client;
       this.id = data.id;
       this.channel = {
         type: data.channel_type,
@@ -59,5 +60,14 @@ export class Message {
       this.stickers = data.stickers;
       this.replyTo = data.referenced_message;
       return this;
+    }
+    
+    /**
+     * The method used to delete the message.
+     * @param {string} reason The reason for deleting the message.
+     * @return {Promise<Object>}
+     */
+    async delete(reason: string): Promise<any> {
+      return (await this._client.request("DELETE", `/channels/${this.channel.id}/messages/${this.id}`, { reason }));
     }
 }
