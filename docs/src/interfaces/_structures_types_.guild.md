@@ -1,0 +1,5 @@
+# Interface: Guild
+
+## Hierarchy
+
+* **Guild**

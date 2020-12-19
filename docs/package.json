@@ -1,0 +1,24 @@
+{
+  "name": "vuepress-typedoc-test",
+  "version": "0.0.1",
+  "description": "Testing the typedoc plugin for Vuepress.",
+  "main": "index.js",
+  "authors": {
+    "name": "Khaleel Gibran",
+    "email": "khalby786@gmail.com"
+  },
+  "repository": "/vuepress-typedoc-test",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "typedoc": "^0.19.2",
+    "typedoc-plugin-markdown": "^3.1.1",
+    "vuepress": "^1.5.3",
+    "vuepress-plugin-auto-sidebar": "^1.5.0",
+    "vuepress-plugin-typedoc": "^0.1.1",
+    "vuepress-theme-yuu": "^2.3.0"
+  }
+}
