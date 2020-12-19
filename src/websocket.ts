@@ -11,7 +11,7 @@ import os from 'os';
 import pako from 'pako';
 // @ts-ignore
 import {config} from 'dotenv';
-import handlers from './handlers/handlers.index';
+import * as handlers from './handlers/handlers.index';
 import {statusTypesArray, apiBaseURL} from './utils';
 import {Cache} from './caches/base';
 import {MessageRaw} from './structures/MessageRaw';
