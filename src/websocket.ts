@@ -16,7 +16,7 @@ import {statusTypesArray, apiBaseURL} from './utils';
 import {Cache} from './caches/base';
 import {MessageRaw} from './structures/MessageRaw';
 import {Message} from './structures/Message';
-import {SlashConfig} from "./structures/slash_command";
+import SlashCommand, {SlashConfig} from "./structures/slash_command";
 import User from './structures/user';
 
 config();
@@ -178,9 +178,17 @@ export class Client extends Emitter {
   };
 
   /**
+   * @param {SlashConfig} [SlashConfig]
+   * @return {Promise<SlashCommand>}
+   */
+  async createSlashCommand(SlashConfig: SlashConfig): Promise<SlashCommand> {
+    return new SlashCommand(this, SlashConfig);
+  }
+
+  /**
    * @return {SlashConfig}
    */
-  async getGlobalSlashcommands(): Promise<SlashConfig> {
+  async getGlobalSlashcommands(): Promise<Array<SlashConfig>> {
     const res = await fetch(`https://discord.com/api/v8/applications/${this.user.id}/commands`, {
       headers: {
         'Authorization': `Bot ${this.token}`,
