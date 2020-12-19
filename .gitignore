@@ -107,3 +107,4 @@ dist
 .idea/
 
 # User definded
+dist/

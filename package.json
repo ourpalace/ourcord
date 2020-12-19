@@ -1,11 +1,11 @@
 {
   "name": "ourcord",
   "version": "1.1.7",
-  "main": "dist/websocket.js",
+  "main": "dist/export.js",
   "repository": "https://github.com/ourcord/ourcord",
   "author": "ourcord",
   "license": "MIT",
-  "types": "dist/websocket.d.ts",
+  "types": "dist/export.d.ts",
   "runkitExampleFilename": "./examples/example.js",
   "scripts": {
     "docs": "typedoc --out docs src",
@@ -17,7 +17,7 @@
   "dependencies": {
     "chalk": "^4.1.0",
     "dotenv": "^8.2.0",
-    "fast-zlib": "^1.0.3",
+    "fast-zlib": "^1.0.5",
     "node-fetch": "^2.6.1",
     "pako": "^2.0.2",
     "ws": "^7.4.1"
@@ -27,9 +27,9 @@
     "@types/node-fetch": "^2.5.7",
     "@types/pako": "^1.0.1",
     "@types/ws": "^7.4.0",
-    "@typescript-eslint/eslint-plugin": "^4.9.1",
-    "@typescript-eslint/parser": "^4.9.1",
-    "eslint": "^7.15.0",
+    "@typescript-eslint/eslint-plugin": "^4.10.0",
+    "@typescript-eslint/parser": "^4.10.0",
+    "eslint": "^7.16.0",
     "eslint-config-google": "^0.14.0",
     "inquirer": "^7.3.3",
     "run-script-os": "^1.1.3",
