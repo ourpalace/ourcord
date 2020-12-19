@@ -181,7 +181,7 @@ export class Client extends Emitter {
    * @return {SlashConfig}
    */
   async getGlobalSlashcommands(): Promise<SlashConfig> {
-    const res = await fetch(`https://discord.com/api/v8/applications/734517371859107880/commands`, {
+    const res = await fetch(`https://discord.com/api/v8/applications/${this.user.id}/commands`, {
       headers: {
         'Authorization': `Bot ${this.token}`,
       }

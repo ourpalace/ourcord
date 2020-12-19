@@ -28,8 +28,8 @@ export interface SlashConfig {
 }
 
 export default class SlashCommand {
-  constructor(client: Client, clientID: string, config: SlashConfig) {
-    const postUrl = utils.v8BaseURl + `/applications/${clientID}/commands`;
+  constructor(client: Client, config: SlashConfig) {
+    const postUrl = utils.v8BaseURl + `/applications/${client.user.id}/commands`;
     if (/ /g.test(config.name) || config.options.some(opt => / /g.test(opt.name))) {
       throw new Error(`${bold.red("[ERROR/DISCORDAPI Error]")} ${red("Slash command names can't have spaces")}`);
     }

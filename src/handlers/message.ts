@@ -13,7 +13,7 @@ export default function handleMessage(message: string, flag: any, websocket: any
   websocket._sequenceNum = msg.s;
   if (msg.t === 'READY') {
     websocket.emit('debug', `${green.bold('[NOTICE/websocket]')} ${green('Connected to the Discord API')}`);
-    websocket.user = msg.d;
+    websocket.user = msg.d.user;
     websocket._sessionId = msg.d.session_id;
     return websocket.emit('ready', msg.d.user);
   } else if (msg.t === 'MESSAGE_CREATE') {
