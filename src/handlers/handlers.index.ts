@@ -1,6 +1,2 @@
-import error from './error';
-import message from './message';
-export default {
-  errorHandler: error,
-  messageHandler: message,
-};
+export { default as errorHandler } from './error';
+export { default as messageHandler } from './message';
