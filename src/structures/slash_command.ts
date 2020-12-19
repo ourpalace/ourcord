@@ -28,8 +28,6 @@ export interface SlashConfig {
 }
 
 export default class SlashCommand {
-  applicationID: string;
-  config: SlashConfig;
   constructor(client: Client, clientID: string, config: SlashConfig) {
     const postUrl = utils.v8BaseURl + `/applications/${clientID}/commands`;
     if (/ /g.test(config.name) || config.options.some(opt => / /g.test(opt.name))) {
