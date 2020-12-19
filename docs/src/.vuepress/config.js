@@ -1,10 +1,4 @@
 const { description } = require('../../package');
-// const menuConfig = require("vuepress-bar")();                                 // Call directly with default values.  
-const { nav, sideBar } = require("vuepress-bar")({
-  maxLevel: 10,
-  skipEmptySidebar: false,
-  skipEmptyNavbar: false
-});                    // With options
 
 module.exports = {
   /**
