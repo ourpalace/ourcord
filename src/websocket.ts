@@ -16,6 +16,7 @@ import {statusTypesArray, apiBaseURL} from './utils';
 import {Cache} from './caches/base';
 import {MessageRaw} from './structures/MessageRaw';
 import {Message} from './structures/Message';
+import {SlashConfig} from "./structures/slash_command";
 import User from './structures/user';
 
 config();
@@ -78,6 +79,7 @@ export interface Client {
 export class Client extends Emitter {
   readonly token: string;
   readonly hb: NodeJS.Timeout;
+  readonly user: User;
   socket: any;
   activities: any;
   config: ClientOptions;
@@ -174,6 +176,19 @@ export class Client extends Emitter {
     this.socket.close();
     this.emit('debug', `${red.bold('[NOTICE/Websocket]')} ${red(reason || 'The websocket was closed')}`);
   };
+
+  /**
+   * @return {SlashConfig}
+   */
+  async getGlobalSlashcommands(): Promise<SlashConfig> {
+    const res = await fetch(`https://discord.com/api/v8/applications/734517371859107880/commands`, {
+      headers: {
+        'Authorization': `Bot ${this.token}`,
+      }
+    });
+    const body = await res.json();
+    return body;
+  }
 
   /**
    * The method used to send a message to a TextChannel.
