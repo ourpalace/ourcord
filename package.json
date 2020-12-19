@@ -9,7 +9,10 @@
   "scripts": {
     "start": "node dist/example.index.js",
     "upgrade": "node packager.js",
-    "prepublish": "tsc"
+    "prepublish": "tsc",
+    "docs:gen": "bash docs.sh",
+    "docs:dev": "cd docs && npm run dev",
+    "docs:build": "npm run docs:gen && cd docs && npm run build"
   },
   "dependencies": {
     "chalk": "^4.1.0",
@@ -22,6 +25,7 @@
   "devDependencies": {
     "@types/chalk": "^2.2.0",
     "@types/dotenv": "^8.2.0",
+    "@types/node": "^14.14.14",
     "@types/node-fetch": "^2.5.7",
     "@types/pako": "^1.0.1",
     "@types/ws": "^7.4.0",
@@ -29,6 +33,10 @@
     "@typescript-eslint/parser": "^4.9.1",
     "eslint": "^7.15.0",
     "eslint-config-google": "^0.14.0",
-    "inquirer": "^7.3.3"
+    "inquirer": "^7.3.3",
+    "typedoc": "^0.19.2",
+    "typedoc-plugin-markdown": "^3.1.1",
+    "typescript": "^4.1.3",
+    "vuepress-bar": "^0.3.1"
   }
 }
