@@ -1,4 +1,4 @@
-# ✨ ourcord ✨
+<div style="text-align:center"><img src="https://cdn.discordapp.com/attachments/782311323467776000/789866018302066728/Frame_2.svg" /></div>
 
 ## About
 
