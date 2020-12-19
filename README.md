@@ -1,4 +1,6 @@
-<div style="text-align:center"><img src="https://cdn.discordapp.com/attachments/782311323467776000/789866018302066728/Frame_2.svg" /></div>
+<p align="center">
+  <img src="https://cdn.discordapp.com/attachments/754311708448915526/789867096263753728/Frame_2.svg" />
+</p>
 
 ## About
 
