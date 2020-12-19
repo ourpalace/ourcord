@@ -12,7 +12,7 @@
 
 ▸ **handleMessage**(`message`: string, `flag`: any, `websocket`: any): any
 
-*Defined in [src/handlers/message.ts:10](https://github.com/ourcord/ourcord/blob/5570a2b/src/handlers/message.ts#L10)*
+*Defined in [src/handlers/message.ts:11](https://github.com/ourcord/ourcord/blob/175a597/src/handlers/message.ts#L11)*
 
 #### Parameters:
 

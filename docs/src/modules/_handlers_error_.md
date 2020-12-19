@@ -12,7 +12,7 @@
 
 ▸ **handleErr**(`err`: string, `emitter`: EventEmitter): boolean
 
-*Defined in [src/handlers/error.ts:3](https://github.com/ourcord/ourcord/blob/5570a2b/src/handlers/error.ts#L3)*
+*Defined in [src/handlers/error.ts:3](https://github.com/ourcord/ourcord/blob/175a597/src/handlers/error.ts#L3)*
 
 #### Parameters:
 

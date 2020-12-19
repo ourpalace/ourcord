@@ -16,4 +16,4 @@
 
 • `Optional` **content**: string
 
-*Defined in [src/websocket.ts:21](https://github.com/ourcord/ourcord/blob/5570a2b/src/websocket.ts#L21)*
+*Defined in [src/websocket.ts:30](https://github.com/ourcord/ourcord/blob/175a597/src/websocket.ts#L30)*

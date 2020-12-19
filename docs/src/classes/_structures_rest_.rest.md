@@ -22,7 +22,7 @@
 
 \+ **new Rest**(`data`: [Rest](_structures_rest_.rest.md), `client`: [Client](_websocket_.client.md)): [Rest](_structures_rest_.rest.md)
 
-*Defined in [src/structures/rest.ts:19](https://github.com/ourcord/ourcord/blob/5570a2b/src/structures/rest.ts#L19)*
+*Defined in [src/structures/rest.ts:9](https://github.com/ourcord/ourcord/blob/175a597/src/structures/rest.ts#L9)*
 
 #### Parameters:
 
@@ -39,7 +39,7 @@ Name | Type | Description |
 
 •  **id**: string
 
-*Defined in [src/structures/rest.ts:17](https://github.com/ourcord/ourcord/blob/5570a2b/src/structures/rest.ts#L17)*
+*Defined in [src/structures/rest.ts:7](https://github.com/ourcord/ourcord/blob/175a597/src/structures/rest.ts#L7)*
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 •  **user**: object
 
-*Defined in [src/structures/rest.ts:19](https://github.com/ourcord/ourcord/blob/5570a2b/src/structures/rest.ts#L19)*
+*Defined in [src/structures/rest.ts:9](https://github.com/ourcord/ourcord/blob/175a597/src/structures/rest.ts#L9)*
 
 ___
 
@@ -55,4 +55,4 @@ ___
 
 •  **user\_id**: string
 
-*Defined in [src/structures/rest.ts:18](https://github.com/ourcord/ourcord/blob/5570a2b/src/structures/rest.ts#L18)*
+*Defined in [src/structures/rest.ts:8](https://github.com/ourcord/ourcord/blob/175a597/src/structures/rest.ts#L8)*

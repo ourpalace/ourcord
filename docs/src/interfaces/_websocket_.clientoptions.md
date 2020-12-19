@@ -15,7 +15,9 @@
 * [cacheMembers](_websocket_.clientoptions.md#cachemembers)
 * [cacheUsers](_websocket_.clientoptions.md#cacheusers)
 * [device](_websocket_.clientoptions.md#device)
+* [intents](_websocket_.clientoptions.md#intents)
 * [prefix](_websocket_.clientoptions.md#prefix)
+* [security](_websocket_.clientoptions.md#security)
 * [status](_websocket_.clientoptions.md#status)
 
 ## Properties
@@ -24,7 +26,7 @@
 
 • `Optional` **activity**: { name: string ; type: number  }
 
-*Defined in [src/websocket.ts:46](https://github.com/ourcord/ourcord/blob/5570a2b/src/websocket.ts#L46)*
+*Defined in [src/websocket.ts:60](https://github.com/ourcord/ourcord/blob/175a597/src/websocket.ts#L60)*
 
 #### Type declaration:
 
@@ -39,7 +41,7 @@ ___
 
 • `Optional` **browser**: string
 
-*Defined in [src/websocket.ts:39](https://github.com/ourcord/ourcord/blob/5570a2b/src/websocket.ts#L39)*
+*Defined in [src/websocket.ts:53](https://github.com/ourcord/ourcord/blob/175a597/src/websocket.ts#L53)*
 
 ___
 
@@ -47,7 +49,7 @@ ___
 
 • `Optional` **cacheChannels**: boolean
 
-*Defined in [src/websocket.ts:42](https://github.com/ourcord/ourcord/blob/5570a2b/src/websocket.ts#L42)*
+*Defined in [src/websocket.ts:56](https://github.com/ourcord/ourcord/blob/175a597/src/websocket.ts#L56)*
 
 ___
 
@@ -55,7 +57,7 @@ ___
 
 • `Optional` **cacheGuilds**: boolean
 
-*Defined in [src/websocket.ts:43](https://github.com/ourcord/ourcord/blob/5570a2b/src/websocket.ts#L43)*
+*Defined in [src/websocket.ts:57](https://github.com/ourcord/ourcord/blob/175a597/src/websocket.ts#L57)*
 
 ___
 
@@ -63,7 +65,7 @@ ___
 
 • `Optional` **cacheMembers**: boolean
 
-*Defined in [src/websocket.ts:45](https://github.com/ourcord/ourcord/blob/5570a2b/src/websocket.ts#L45)*
+*Defined in [src/websocket.ts:59](https://github.com/ourcord/ourcord/blob/175a597/src/websocket.ts#L59)*
 
 ___
 
@@ -71,7 +73,7 @@ ___
 
 • `Optional` **cacheUsers**: boolean
 
-*Defined in [src/websocket.ts:44](https://github.com/ourcord/ourcord/blob/5570a2b/src/websocket.ts#L44)*
+*Defined in [src/websocket.ts:58](https://github.com/ourcord/ourcord/blob/175a597/src/websocket.ts#L58)*
 
 ___
 
@@ -79,7 +81,15 @@ ___
 
 • `Optional` **device**: string
 
-*Defined in [src/websocket.ts:40](https://github.com/ourcord/ourcord/blob/5570a2b/src/websocket.ts#L40)*
+*Defined in [src/websocket.ts:54](https://github.com/ourcord/ourcord/blob/175a597/src/websocket.ts#L54)*
+
+___
+
+### intents
+
+• `Optional` **intents**: number
+
+*Defined in [src/websocket.ts:52](https://github.com/ourcord/ourcord/blob/175a597/src/websocket.ts#L52)*
 
 ___
 
@@ -87,7 +97,15 @@ ___
 
 • `Optional` **prefix**: string
 
-*Defined in [src/websocket.ts:41](https://github.com/ourcord/ourcord/blob/5570a2b/src/websocket.ts#L41)*
+*Defined in [src/websocket.ts:55](https://github.com/ourcord/ourcord/blob/175a597/src/websocket.ts#L55)*
+
+___
+
+### security
+
+• `Optional` **security**: [SecurityProperties](_websocket_.securityproperties.md)
+
+*Defined in [src/websocket.ts:61](https://github.com/ourcord/ourcord/blob/175a597/src/websocket.ts#L61)*
 
 ___
 
@@ -95,4 +113,4 @@ ___
 
 • `Optional` **status**: \"online\" \| \"idle\" \| \"dnd\" \| \"invisible\"
 
-*Defined in [src/websocket.ts:47](https://github.com/ourcord/ourcord/blob/5570a2b/src/websocket.ts#L47)*
+*Defined in [src/websocket.ts:62](https://github.com/ourcord/ourcord/blob/175a597/src/websocket.ts#L62)*

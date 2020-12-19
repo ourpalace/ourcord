@@ -15,6 +15,7 @@
 * [attachments](_structures_message_.message.md#attachments)
 * [author](_structures_message_.message.md#author)
 * [channel](_structures_message_.message.md#channel)
+* [channel\_type](_structures_message_.message.md#channel_type)
 * [content](_structures_message_.message.md#content)
 * [embeds](_structures_message_.message.md#embeds)
 * [guild](_structures_message_.message.md#guild)
@@ -35,7 +36,7 @@
 
 \+ **new Message**(`data`: [MessageRaw](_structures_messageraw_.messageraw.md), `client`: [Client](_websocket_.client.md)): [Message](_structures_message_.message.md)
 
-*Defined in src/structures/Message.ts:20*
+*Defined in src/structures/Message.ts:24*
 
 #### Parameters:
 
@@ -52,7 +53,7 @@ Name | Type | Description |
 
 •  **attachments**: object
 
-*Defined in src/structures/Message.ts:14*
+*Defined in src/structures/Message.ts:18*
 
 ___
 
@@ -60,15 +61,23 @@ ___
 
 •  **author**: object
 
-*Defined in src/structures/Message.ts:8*
+*Defined in src/structures/Message.ts:12*
 
 ___
 
 ### channel
 
-•  **channel**: object
+•  **channel**: [Channel](_structures_channel_.channel.md)
 
-*Defined in src/structures/Message.ts:6*
+*Defined in src/structures/Message.ts:9*
+
+___
+
+### channel\_type
+
+•  **channel\_type**: number
+
+*Defined in src/structures/Message.ts:10*
 
 ___
 
@@ -76,7 +85,7 @@ ___
 
 •  **content**: string \| object
 
-*Defined in src/structures/Message.ts:10*
+*Defined in src/structures/Message.ts:14*
 
 ___
 
@@ -84,7 +93,7 @@ ___
 
 •  **embeds**: object
 
-*Defined in src/structures/Message.ts:15*
+*Defined in src/structures/Message.ts:19*
 
 ___
 
@@ -92,7 +101,7 @@ ___
 
 •  **guild**: object
 
-*Defined in src/structures/Message.ts:7*
+*Defined in src/structures/Message.ts:11*
 
 ___
 
@@ -100,7 +109,7 @@ ___
 
 •  **id**: string
 
-*Defined in src/structures/Message.ts:5*
+*Defined in src/structures/Message.ts:8*
 
 ___
 
@@ -108,7 +117,7 @@ ___
 
 •  **member**: object
 
-*Defined in src/structures/Message.ts:9*
+*Defined in src/structures/Message.ts:13*
 
 ___
 
@@ -116,7 +125,7 @@ ___
 
 •  **mentions**: object
 
-*Defined in src/structures/Message.ts:13*
+*Defined in src/structures/Message.ts:17*
 
 ___
 
@@ -124,7 +133,7 @@ ___
 
 •  **pinned**: boolean
 
-*Defined in src/structures/Message.ts:17*
+*Defined in src/structures/Message.ts:21*
 
 ___
 
@@ -132,7 +141,7 @@ ___
 
 •  **reactions**: object
 
-*Defined in src/structures/Message.ts:16*
+*Defined in src/structures/Message.ts:20*
 
 ___
 
@@ -140,7 +149,7 @@ ___
 
 •  **replyTo**: object
 
-*Defined in src/structures/Message.ts:20*
+*Defined in src/structures/Message.ts:24*
 
 ___
 
@@ -148,7 +157,7 @@ ___
 
 •  **stickers**: object
 
-*Defined in src/structures/Message.ts:19*
+*Defined in src/structures/Message.ts:23*
 
 ___
 
@@ -156,7 +165,7 @@ ___
 
 •  **timestamp**: number
 
-*Defined in src/structures/Message.ts:11*
+*Defined in src/structures/Message.ts:15*
 
 ___
 
@@ -164,7 +173,7 @@ ___
 
 •  **tts**: boolean
 
-*Defined in src/structures/Message.ts:12*
+*Defined in src/structures/Message.ts:16*
 
 ___
 
@@ -172,4 +181,4 @@ ___
 
 •  **type**: string
 
-*Defined in src/structures/Message.ts:18*
+*Defined in src/structures/Message.ts:22*

@@ -52,10 +52,6 @@ module.exports = {
       {
         text: 'Globals',
         link: '/globals'
-      },
-      {
-        text: 'VuePress',
-        link: 'https://v1.vuepress.vuejs.org'
       }
     ],
     // sidebar: [

@@ -1,21 +1,30 @@
+/* eslint-disable comma-dangle */
 // initial imports
+// eslint-disable-next-line spaced-comment
 /// <reference types="node" />
+
 import ws from 'ws';
-import fetch from 'node-fetch';
-import { EventEmitter as Emitter } from 'events';
-import { red, yellow, bold } from 'chalk';
+import fetch, {Response} from 'node-fetch';
+import {EventEmitter as Emitter} from 'events';
+import {red, yellow, bold} from 'chalk';
 import os from 'os';
 import pako from 'pako';
 // @ts-ignore
-import zlib from 'fast-zlib';
-import { config } from 'dotenv';
-import handlers from './handlers/handlers.index';
-import { statusTypesArray, apiBaseURL } from './utils';
-import { Cache } from './caches/base';
-import { MessageRaw } from './structures/MessageRaw';
-// import { connect } from './client_functions';
+import {config} from 'dotenv';
+import * as handlers from './handlers/handlers.index';
+import {statusTypesArray, apiBaseURL} from './utils';
+import {Cache} from './caches/base';
+import {MessageRaw} from './structures/MessageRaw';
+import {Message} from './structures/Message';
+import {SlashConfig} from "./structures/slash_command";
+import User from './structures/user';
 
 config();
+
+export type WSProperties = {
+  readonly ping: number;
+  intents: object;
+}
 
 export interface MessageProperties {
   content?: string;
@@ -35,7 +44,12 @@ export interface EmbedProperties {
   }
 }
 
+export interface SecurityProperties {
+  token?: {filter: boolean, replaceWith?: string};
+}
+
 export interface ClientOptions {
+  intents?: number;
   browser?: string;
   device?: string;
   prefix?: string;
@@ -44,10 +58,18 @@ export interface ClientOptions {
   cacheUsers?: boolean;
   cacheMembers?: boolean;
   activity?: { name: string, type: number };
+  security?: SecurityProperties;
   status?: 'online' | 'idle' | 'dnd' | 'invisible';
 }
 
 export interface StatusInfo {}
+
+export interface Client {
+  on(event: 'ready', listener: (user: User) => void): this;
+  on(event: 'debug', listener: (message: string) => void): this;
+  on(event: 'message', listener: (message: Message) => void): this;
+  on(event: 'error', listener: (error: any) => void): this;
+}
 
 /**
  * @param {string} token The client's token used for gateway connection.
@@ -55,12 +77,15 @@ export interface StatusInfo {}
  * @param {any} config The configurations.
  */
 export class Client extends Emitter {
-  token: string;
+  readonly token: string;
+  readonly hb: NodeJS.Timeout;
+  readonly user: User;
   socket: any;
   activities: any;
-  hb: any;
   config: ClientOptions;
   cache: any;
+  ws: WSProperties;
+  security: SecurityProperties;
 
   /**
    * The main client constructor.
@@ -69,6 +94,22 @@ export class Client extends Emitter {
    */
   constructor(token: string, options?: ClientOptions) {
     super();
+    this.token = token;
+    if (!options) {
+      this.security = {
+        token: {
+          filter: false
+        }
+      };
+    } else if (!options.security) {
+      this.security = {
+        token: {
+          filter: false
+        }
+      };
+    } else {
+      this.security = options.security;
+    }
     if (!token) throw new Error(`${red.bold('[ERROR/Websocket]')} ${red('Expected a client token')}`);
     // Using 'Object.defineProperty()' to prevent the token from being enumerable.
     Object.defineProperty(this, 'token', {
@@ -79,7 +120,8 @@ export class Client extends Emitter {
     this.config = options || {
       browser: 'ourcord (https://github.com/ourcord/ourcord)',
       device: 'ourcord (https://github.com/ourcord/ourcord)',
-      status: 'dnd'
+      status: 'dnd',
+      security: {},
     };
     this.cache = new Cache(this, this.config);
   }
@@ -89,9 +131,9 @@ export class Client extends Emitter {
    * @param {string} method method, e.g: GET, POST, DELETE, PUT, etc.
    * @param {string} path path of URL.
    * @param {object} body body/data of Request.
-   * @returns {Promise<object>}
+   * @return {Promise<(Response|any)>}
    */
-  async request(method: string, path: string, body: object = null): Promise<any> {
+  async request(method: string, path: string, body: object = null): Promise<Response|any> {
     return (await fetch(apiBaseURL + path, {
       method: method,
       headers: {
@@ -99,12 +141,12 @@ export class Client extends Emitter {
         'Content-Type': 'application/json'
       },
       body: body ? JSON.stringify(body) : null
-    }).then(res => res.json()));
+    }).then((res) => res.json()));
   };
 
   /**
    * The method used to connect to the gateway.
-   * @returns {undefined}
+   * @return {void}
    */
   connect(): void {
     this.emit('debug', `${yellow.bold('[NOTICE/Websocket]')} ${yellow('Attempting to connect to the discord gateway')}`);
@@ -118,6 +160,7 @@ export class Client extends Emitter {
       this.socket.on('message', (message: any, flag: any) => handlers.messageHandler(message, flag, this));
       this.socket.on('close', (h: any) => {
         clearInterval(this.hb);
+        if (h === 4004) throw new Error(`${red.bold('[NOTICE/Websocket]')} ${red(`Invalid client token`)}`);
         this.emit('debug', `${bold('[NOTICE/Websocket]')} ${red(`Connection closed unexpectedly (code ${h}). Re-attempting login`)}`);
         this.connect();
       });
@@ -127,7 +170,7 @@ export class Client extends Emitter {
   /**
    * The method used to destroy the client and close the connection to the websocket.
    * @param {string} [reason] The reason to close the socket.
-   * @returns {undefined}
+   * @return {void}
    */
   destroy(reason?: string): void {
     this.socket.close();
@@ -135,15 +178,34 @@ export class Client extends Emitter {
   };
 
   /**
+   * @return {SlashConfig}
+   */
+  async getGlobalSlashcommands(): Promise<SlashConfig> {
+    const res = await fetch(`https://discord.com/api/v8/applications/${this.user.id}/commands`, {
+      headers: {
+        'Authorization': `Bot ${this.token}`,
+      }
+    });
+    const body = await res.json();
+    return body;
+  }
+
+  /**
    * The method used to send a message to a TextChannel.
    * @param {string} channel ID of the TextChannel the message will be sent in.
    * @param {(string|object)} content The body of the message.
-   * @returns {Promise<MessageRaw>}
+   * @return {Promise<MessageRaw>}
    */
   async _sendMessage(channel: string, content: string | object): Promise<MessageRaw> {
     let b: MessageProperties = {};
-    if (content === null || typeof content === 'undefined' || !content.toString().length) throw new Error(`${red.bold('[ERROR/DiscordAPI Error]')} Cannot send a message with no content`);
-    if (typeof content === 'string') b.content = content;
+    if (content === null || typeof content === 'undefined' || !content.toString().length) throw new Error(`${red.bold('[ERROR/DiscordAPI Error]')} ${red("Cannot send a message with no content")}`);
+    if (typeof content === 'string') {
+      b.content = content;
+      if (content.includes(this.token) && this.security.token.filter) {
+        const replacement = this.security.token.replaceWith || "token";
+        b.content = content.replace(new RegExp(this.token), replacement);
+      }
+    };
     if (typeof content === 'object') b = content;
     return (await this.request("POST", `/channels/${channel}/messages`, b));
   };
@@ -152,43 +214,44 @@ export class Client extends Emitter {
    * The method used to send an embed in a TextChannel.
    * @param {string} channel ID of the TextChannel the embed will be sent in.
    * @param {EmbedProperties} options The embed data.
-   * @returns {Promise<object>}
+   * @return {Promise<object>}
    */
-  async _MessageEmbed(channel: string, options: EmbedProperties): Promise<object> {
-    if (options === null || typeof options === 'undefined') throw new Error(`${red.bold('[ERROR/DiscordAPI Error]')} Cannot send a message with no content`);
+  async _MessageEmbed(channel: string, options: EmbedProperties): Promise<any> {
+    if (options === null || typeof options === 'undefined') throw new Error(`${red.bold('[ERROR/DiscordAPI Error]')} ${red("Cannot send a message with no content")}`);
     return (await this.request('POST', `/channels/${channel}/messages`, options));
   };
 
   /**
    * The method used to fetch a user from the rest discord API.
    * @param {string} userID The ID of the user to fetch.
-   * @returns {Promise<object>}
+   * @return {Promise<object>}
    */
-  async _GetRestUser(userID: string): Promise<object> {
+  async _GetRestUser(userID: string): Promise<User> {
     if (userID === null || typeof userID === 'undefined' || !userID.toString().length) throw new Error(`${red.bold('[ERROR/DiscordAPI Error]')} ${userID} is not snowflake`);
     return (await this.request('GET', `/users/${userID}`));
   };
 
   /**
    * The method used to get the metadata.
-   * @returns {object}
+   * @return {object}
    */
-  getMetaData(): object {
+  getMetaData(): any {
     return {
-         op: 2, // opcode of 2 means "identify"
-         d: { // d is for data
-           token: this.token,
-           properties: {
-             $os: os.platform,
-             $browser: this.config.browser,
-             $device: this.config.device
-           },
-           presence: {
-             // activities: [{name: this.config.activity.name ? this.config.activity.name : null, type: 0}],
-             status: this.config.status
-           }
-         }
-       };
+      op: 2,
+      d: {
+        token: this.token,
+        intents: this.config.intents,
+        properties: {
+          $os: os.platform,
+          $browser: this.config.browser,
+          $device: this.config.device
+        },
+        presence: {
+          // activities: [{name: this.config.activity.name ? this.config.activity.name : null, type: 0}],
+          status: this.config.status
+        }
+      }
+    };
   };
 
   /**
@@ -197,7 +260,7 @@ export class Client extends Emitter {
    * @param {any} flag The flags for evaluation.
    * @return {string}
    */
-  evaluate(data: any, flag: any) {
+  evaluate(data: any, flag: any): string {
     if (typeof flag !== 'object') flag = {};
     if (flag.binary === null || typeof flag.binary === 'undefined') return JSON.parse(data);
     const inflateData = new pako.Inflate();
@@ -209,10 +272,10 @@ export class Client extends Emitter {
   /**
    * The method used to set the status of the client.
    * @param {('online'|'idle'|'dnd'|'invisible')} t The status type to set client's status to.
-   * @returns {undefined}
+   * @return {void}
    */
   setStatus(t: 'online' | 'idle' | 'dnd' | 'invisible'): void {
-    if (!statusTypesArray.includes(t)) throw new Error(`${red.bold('[ERROR/DiscordAPI Error]')} Invalid status type`);
+    if (!statusTypesArray.includes(t)) throw new Error(`${red.bold('[ERROR/DiscordAPI Error]')} ${red("Invalid status type")}`);
     try {
       const p = JSON.stringify({
         op: 3,
@@ -233,12 +296,12 @@ export class Client extends Emitter {
    * The method used to create a GuildChannel.
    * @param {string} g ID of the guild where the channel will be created in.
    * @param {string} name The name of the channel.
-   * @returns {Promise<object>}
+   * @return {Promise<object>}
    */
-  async createChannel(g: string, name: string): Promise<object> {
+  async createChannel(g: string, name: string): Promise<any> {
     if (typeof g !== 'string') throw new Error(`${red.bold('[ERROR/DiscordAPI Error]')} ${g} is not snowflake`);
     if (typeof name !== 'string') throw new Error(`${red.bold('[ERROR/DiscordAPI Error]')} The channel name is required`);
-    return (await this.request(`POST`, `/guilds/${g}/channels`, { name }));
+    return (await this.request(`POST`, `/guilds/${g}/channels`, {name}));
   };
 }
 
