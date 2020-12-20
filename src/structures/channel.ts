@@ -1,5 +1,4 @@
 /* eslint-disable camelcase */
-/* eslint-disable object-curly-spacing*/
 /* eslint-disable require-jsdoc */
 import { Message } from "./message";
 import { MessageRaw } from "./MessageRaw";
