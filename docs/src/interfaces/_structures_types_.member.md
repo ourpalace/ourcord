@@ -1,5 +1,0 @@
-# Interface: Member
-
-## Hierarchy
-
-* **Member**

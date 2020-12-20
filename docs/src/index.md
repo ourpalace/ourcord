@@ -2,12 +2,12 @@
 sidebar: auto
 ---
 <p align="center">
-  <img src="https://cdn.discordapp.com/attachments/754311708448915526/789867096263753728/Frame_2.svg" />
+  <img src="assets/logo.svg" />
 </p>
 
 ## About
 
-Ourcord is a new and alternative discord library for js that focuses on speed and simplicity while retaining low level functions of the discord API
+Ourcord is a new and alternative discord library for js that focuses on speed and simplicity while retaining low level functions of the discord API.
 
 [![npm](https://img.shields.io/npm/v/ourcord?color=red&style=for-the-badge)](https://npmjs.com/package/ourcord)
 [![npm](https://img.shields.io/bundlephobia/min/ourcord?color=red&style=for-the-badge)](https://npmjs.com/package/ourcord)

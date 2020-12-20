@@ -1,5 +1,0 @@
-# Interface: Channel
-
-## Hierarchy
-
-* **Channel**

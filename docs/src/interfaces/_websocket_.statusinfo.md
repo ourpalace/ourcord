@@ -1,5 +1,0 @@
-# Interface: StatusInfo
-
-## Hierarchy
-
-* **StatusInfo**
