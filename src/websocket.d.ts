@@ -1,6 +1,5 @@
 /* eslint-disable require-jsdoc */
 
-// eslint-disable-next-line object-curly-spacing
 import { EventEmitter as Emitter } from "events";
 
 declare module "ourcord" {
