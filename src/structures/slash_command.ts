@@ -49,7 +49,7 @@ export default class SlashCommand {
       throw new Error(`${bold.red("[ERROR/DISCORDAPI Error]")} ${red("You need to pass in a config argument")}`);
     } else if (!config.options || !config.name || !config.description) {
       throw new Error(`${bold.red("[ERROR/DISCORDAPI Error]")} ${red("Missing argument")}`);
-    } else if (!config.options.every(conf => typeof conf.name !==  "undefined") || !config.options.every(conf => typeof conf.description !== "undefined") || !config.options.every(conf => typeof conf.typeID !== "undefined")) {
+    } else if (!config.options.every(conf => typeof conf.name !== "undefined") || !config.options.every(conf => typeof conf.description !== "undefined") || !config.options.every(conf => typeof conf.typeID !== "undefined")) {
       throw new Error(`${bold.red("[ERROR/DISCORDAPI Error]")} ${red("Missing argument")}`);
     } else if (config.options.filter(o => o.default).length > 1) {
       throw new Error(`${bold.red("[ERROR/DISCORDAPI Error]")} ${red("There can only be one default option")}`);
@@ -75,4 +75,3 @@ async function getSlash(client: Client, postUrl: string, config: SlashConfig): P
   });
   return res.json();
 }
-
