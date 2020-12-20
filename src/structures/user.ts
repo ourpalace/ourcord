@@ -1,4 +1,4 @@
-/* eslint-disable */
+/* eslint-disable camelcase, require-jsdoc */
 
 export default class User {
     id: string;

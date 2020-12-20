@@ -1,3 +1,4 @@
+/* eslint-disable camelcase, require-jsdoc */
 declare interface PermissionOverwritesRaw {
    id: string;
    type: number;

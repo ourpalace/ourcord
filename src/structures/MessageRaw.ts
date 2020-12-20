@@ -1,5 +1,4 @@
-/* eslint-disable require-jsdoc */
-/* eslint-disable camelcase */
+/* eslint-disable camelcase, require-jsdoc */
 export class MessageRaw {
     id: string;
     channel_id: string;

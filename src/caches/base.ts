@@ -3,7 +3,7 @@ import {Channel} from "../structures/types";
 import {Guild} from "../structures/types";
 import {User} from "../structures/types";
 import {Member} from "../structures/types";
-import Client, {ClientOptions} from "../websocket";
+import {Client, ClientOptions} from "../websocket";
 
 export class Cache {
     options: ClientOptions;

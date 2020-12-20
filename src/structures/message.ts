@@ -1,6 +1,5 @@
-/* eslint-disable camelcase */
-/* eslint-disable require-jsdoc */
-import Client from '../websocket';
+/* eslint-disable camelcase, require-jsdoc */
+import {Client} from '../websocket';
 import {MessageRaw} from './MessageRaw';
 import {Channel} from "./channel";
 

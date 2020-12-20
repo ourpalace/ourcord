@@ -1,5 +1,4 @@
-/* eslint-disable camelcase */
-/* eslint-disable require-jsdoc */
+/* eslint-disable camelcase, require-jsdoc */
 import {Message} from "./message";
 import {MessageRaw} from "./MessageRaw";
 import {Client} from "../websocket";
@@ -32,4 +31,4 @@ export class Channel {
     };
     return this;
   }
-};
+}

@@ -1,11 +1,11 @@
 {
   "name": "ourcord",
   "version": "1.1.7",
-  "main": "dist/export.js",
+  "main": "dist/websocket.js",
   "repository": "https://github.com/ourcord/ourcord",
   "author": "ourcord",
   "license": "MIT",
-  "types": "dist/export.d.ts",
+  "types": "dist/websocket.d.ts",
   "runkitExampleFilename": "./examples/example.js",
   "scripts": {
     "start": "node dist/example.index.js",
@@ -29,7 +29,6 @@
     "ws": "^7.4.1"
   },
   "devDependencies": {
-    "@types/chalk": "^2.2.0",
     "@types/node": "^14.14.14",
     "@types/node-fetch": "^2.5.7",
     "@types/pako": "^1.0.1",
