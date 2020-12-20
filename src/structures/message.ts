@@ -1,4 +1,3 @@
-/* eslint-disable object-curly-spacing */
 /* eslint-disable camelcase */
 /* eslint-disable require-jsdoc */
 import Client from '../websocket';
