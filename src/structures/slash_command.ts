@@ -26,7 +26,7 @@ export interface SlashConfig {
   name: string;
   description: string;
   options: Array<OptionsProps>;
-};
+}
 
 const CommandTypes = {
   SUB_COMMAND: 1,

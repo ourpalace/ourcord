@@ -151,7 +151,7 @@ export class Client extends Emitter {
   connect(): void {
     this.emit('debug', `${yellow.bold('[NOTICE/Websocket]')} ${yellow('Attempting to connect to the discord gateway')}`);
     // eslint-disable-next-line new-cap
-    this.socket = new ws('wss://gateway.discord.gg/?v=6&encoding=json');
+    this.socket = new ws('wss://gateway.discord.gg/?v=6&encoding=json&compress=zlib-stream');
     this.socket.once('open', () => {
       this.emit('debug', `${yellow.bold('[NOTICE/Websocket]')} ${yellow('Attempting to login')}`);
       const data = JSON.stringify(this.getMetaData());
@@ -312,5 +312,3 @@ export class Client extends Emitter {
     return (await this.request(`POST`, `/guilds/${g}/channels`, {name}));
   };
 }
-
-export default Client;
