@@ -1,4 +1,3 @@
-/* eslint-disable object-curly-spacing*/
 import { green, bold } from 'chalk';
 import { Message } from '../structures/Message';
 
