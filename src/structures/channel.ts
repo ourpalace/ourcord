@@ -24,7 +24,6 @@ export class Channel {
   readonly last_pin_timestamp?: string;
   send: (content: string) => Promise<Message>
   constructor() {
-    // eslint-disable-next-line space-before-function-paren
     this.send = async function (content: string) {
       const client = Client.prototype;
       const data = MessageRaw.prototype;
