@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 declare interface PermissionOverwritesRaw {
    id: string;
    type: number;
@@ -5,6 +6,7 @@ declare interface PermissionOverwritesRaw {
    deny: string;
 }
 
+// eslint-disable-next-line require-jsdoc
 export class ChannelRaw {
    id: string;
    type: number;

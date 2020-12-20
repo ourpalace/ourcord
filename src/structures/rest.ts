@@ -16,6 +16,7 @@ export class Rest {
     this.id = data.id;
     this.user = {
       id: data.user_id,
+      // eslint-disable-next-line space-before-function-paren
       user: async function () {
         const r = await client._GetRestUser(data.user_id);
         return new User(r);

@@ -1,3 +1,4 @@
+/* eslint-disable object-curly-spacing */
 /* eslint-disable camelcase */
 /* eslint-disable require-jsdoc */
 import Client from '../websocket';
@@ -32,6 +33,7 @@ export class Message {
     this.channel = {
       type: data.channel_type,
       id: data.channel_id,
+      // eslint-disable-next-line space-before-function-paren
       send: async function (content: string) {
         const r = await client._sendMessage(data.channel_id, content);
         return new Message(r, client);

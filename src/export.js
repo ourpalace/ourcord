@@ -1,6 +1,6 @@
 /* eslint-disable require-jsdoc */
 const {
-  Client
+  Client,
 } = require("./websocket");
 const Utils = require("./utils");
 module.exports = {
