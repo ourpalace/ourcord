@@ -1,6 +1,6 @@
 {
   "name": "ourcord",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "main": "dist/export.js",
   "repository": "https://github.com/ourcord/ourcord",
   "author": "ourcord",
