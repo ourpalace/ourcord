@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 /* eslint-disable comma-dangle */
 // initial imports
 // eslint-disable-next-line spaced-comment
@@ -62,7 +63,16 @@ export interface ClientOptions {
   status?: 'online' | 'idle' | 'dnd' | 'invisible';
 }
 
-export interface StatusInfo {}
+export interface RawMessageProps {
+  embed: EmbedProperties["embed"];
+}
+
+export interface ReplyProps {
+  reply: {
+    message_id?: string;
+    channel_id?: string;
+  }
+}
 
 export interface Client {
   on(event: 'ready', listener: (user: User) => void): this;
@@ -201,10 +211,10 @@ export class Client extends Emitter {
   /**
    * The method used to send a message to a TextChannel.
    * @param {string} channel ID of the TextChannel the message will be sent in.
-   * @param {(string|object)} content The body of the message.
+   * @param {(string|RawMessageProps)} content The body of the message.
    * @return {Promise<MessageRaw>}
    */
-  async _sendMessage(channel: string, content: string | object): Promise<MessageRaw> {
+  async _sendMessage(channel: string, content: string | MessageProperties): Promise<MessageRaw> {
     let b: MessageProperties = {};
     if (content === null || typeof content === 'undefined' || !content.toString().length) throw new Error(`${red.bold('[ERROR/DiscordAPI Error]')} ${red("Cannot send a message with no content")}`);
     if (typeof content === 'string') {

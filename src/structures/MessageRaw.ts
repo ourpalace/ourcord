@@ -1,5 +1,7 @@
 /* eslint-disable require-jsdoc */
 /* eslint-disable camelcase */
+import {RawMessageProps, ReplyProps} from "../websocket";
+
 export class MessageRaw {
     id: string;
     channel_id: string;
@@ -20,5 +22,7 @@ export class MessageRaw {
     pinned: boolean;
     type: string;
     stickers: object;
+    message_reference: ReplyProps;
     referenced_message: object;
+    embed: RawMessageProps["embed"];
 }

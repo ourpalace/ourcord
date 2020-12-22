@@ -22,6 +22,7 @@ export class Message {
     type: string;
     stickers: object;
     replyTo: object;
+    reply: () => Message;
     _client: Client;
     /**
      *

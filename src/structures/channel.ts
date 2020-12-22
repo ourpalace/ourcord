@@ -3,6 +3,7 @@
 import {Message} from "./message";
 import {MessageRaw} from "./MessageRaw";
 import {Client} from "../websocket";
+import {RawMessageProps, ReplyProps} from "../websocket";
 
 export class Channel {
   readonly id: string;
@@ -22,7 +23,7 @@ export class Channel {
   readonly application_id?: string;
   readonly parent_id?: string;
   readonly last_pin_timestamp?: string;
-  send: (content: string) => Promise<Message>
+  send: (content: string | RawMessageProps | ReplyProps) => Promise<Message>
   constructor() {
     this.send = async function(content: string) {
       const client = Client.prototype;

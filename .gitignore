@@ -108,3 +108,6 @@ dist
 
 # User definded
 dist/
+
+# Local test files
+test.js
