@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 /* eslint-disable require-jsdoc */
-import Client from '../websocket';
+import {Client} from '../websocket';
 import {MessageRaw} from './MessageRaw';
 import {Channel} from "./channel";
 
@@ -22,10 +22,11 @@ export class Message {
     type: string;
     stickers: object;
     replyTo: object;
+    _client: Client;
     /**
      *
-     * @param {any} data the raw message
-     * @param {any} client the client
+     * @param {MessageRaw} data the raw message
+     * @param {Client} client the client
      */
     constructor(data: MessageRaw, client: Client) {
       this._client = client;
@@ -61,13 +62,13 @@ export class Message {
       this.replyTo = data.referenced_message;
       return this;
     }
-    
+
     /**
      * The method used to delete the message.
      * @param {string} reason The reason for deleting the message.
      * @return {Promise<Object>}
      */
     async delete(reason: string): Promise<any> {
-      return (await this._client.request("DELETE", `/channels/${this.channel.id}/messages/${this.id}`, { reason }));
+      return (await this._client.request("DELETE", `/channels/${this.channel.id}/messages/${this.id}`, {reason}));
     }
 }

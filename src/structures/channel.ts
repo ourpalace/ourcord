@@ -1,5 +1,4 @@
-/* eslint-disable camelcase */
-/* eslint-disable require-jsdoc */
+/* eslint-disable camelcase, require-jsdoc */
 import {Message} from "./message";
 import {MessageRaw} from "./MessageRaw";
 import {Client} from "../websocket";
@@ -22,7 +21,8 @@ export class Channel {
   readonly application_id?: string;
   readonly parent_id?: string;
   readonly last_pin_timestamp?: string;
-  send: (content: string) => Promise<Message>
+  send: (content: string) => Promise<Message>;
+
   constructor() {
     this.send = async function(content: string) {
       const client = Client.prototype;
@@ -32,4 +32,4 @@ export class Channel {
     };
     return this;
   }
-};
+}

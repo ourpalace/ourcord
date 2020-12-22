@@ -1,5 +1,12 @@
-import {green, bold} from 'chalk';
+import {bold, green} from 'chalk';
 import {Message} from '../structures/Message';
+import fastZlib from "fast-zlib";
+import zlib from "zlib";
+import {rawEvent} from "../structures/rawEvent";
+
+const inflate = fastZlib("inflate");
+const ZLIB_SUFFIX = Buffer.from('\x00\x00\xff\xff', 'utf-8');
+const ZLIB_FLUSH_FLAG = zlib.constants.Z_SYNC_FLUSH;
 
 /**
  *
@@ -8,8 +15,13 @@ import {Message} from '../structures/Message';
  * @param {any} websocket
  * @return {any} heartbeat
  */
-export default function handleMessage(message: string, flag: any, websocket: any) {
-  const msg = websocket.evaluate(message, flag);
+export default function handleMessage(message: Buffer, flag: any, websocket: any) {
+  let msg: rawEvent;
+  if (Buffer.compare(message.subarray(message.length - ZLIB_SUFFIX.length, message.length), ZLIB_SUFFIX) == 1) {
+    msg = websocket.evaluate(inflate(message, ZLIB_FLUSH_FLAG).toString(), flag);
+  } else {
+    msg = websocket.evaluate(message, flag);
+  }
   websocket._sequenceNum = msg.s;
   if (msg.t === 'READY') {
     websocket.emit('debug', `${green.bold('[NOTICE/websocket]')} ${green('Connected to the Discord API')}`);
