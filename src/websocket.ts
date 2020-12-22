@@ -68,7 +68,7 @@ export interface RawMessageProps {
 }
 
 export interface ReplyProps {
-  reply: {
+  message_reference: {
     message_id?: string;
     channel_id?: string;
   }
