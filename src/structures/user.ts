@@ -12,16 +12,16 @@ export default class User {
     premium_type: number;
     public_flags: number;
     constructor(r: object) {
-        this.id = object.id;
-        this.username = object.username;
-        this.name = object.username; // alias for this.username;
-        this.discriminator = object.discriminator;
-        this.avatar = object.avatar;
-        this.verified = object.verified;
-        this.email = object.email;
-        this.bot = object.bot;
-        this.flags = object.flags;
-        this.premium_type = object.premium_type;
-        this.public_flags = object.public_flags;
+        this.id = r.id;
+        this.username = r.username;
+        this.name = r.username; // alias for this.username;
+        this.discriminator = r.discriminator;
+        this.avatar = r.avatar;
+        this.verified = r.verified;
+        this.email = r.email;
+        this.bot = r.bot;
+        this.flags = r.flags;
+        this.premium_type = r.premium_type;
+        this.public_flags = r.public_flags;
     }
 }
