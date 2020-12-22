@@ -38,6 +38,8 @@ client.on("ready", () => {
 });
 ```
 
+View the full documentation [here](https://ourcord.js.org).
+
 ---
 
 ## Client Config <a href="src/websocket.ts#L33"></></a>
@@ -58,6 +60,7 @@ client.on("ready", () => {
 
 [**Discord server**](https://discord.gg/3yDQKDXXdk)  
 [**Examples**](https://github.com/ourcord/examples)
+[**Documentation**](https://ourcord.js.org)
 
 ---
 
