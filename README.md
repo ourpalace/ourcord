@@ -60,7 +60,9 @@ View the full documentation [here](https://ourcord.js.org).
 ## Links
 
 [**Discord server**](https://discord.gg/3yDQKDXXdk)  
+
 [**Examples**](https://github.com/ourcord/examples)
+
 [**Documentation**](https://ourcord.js.org)
 
 ---
