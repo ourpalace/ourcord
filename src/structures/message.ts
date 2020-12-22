@@ -22,6 +22,7 @@ export class Message {
     type: string;
     stickers: object;
     replyTo: object;
+    _client: Client;
     /**
      *
      * @param {any} data the raw message
@@ -61,13 +62,13 @@ export class Message {
       this.replyTo = data.referenced_message;
       return this;
     }
-    
+
     /**
      * The method used to delete the message.
      * @param {string} reason The reason for deleting the message.
      * @return {Promise<Object>}
      */
     async delete(reason: string): Promise<any> {
-      return (await this._client.request("DELETE", `/channels/${this.channel.id}/messages/${this.id}`, { reason }));
+      return (await this._client.request("DELETE", `/channels/${this.channel.id}/messages/${this.id}`, {reason}));
     }
 }
