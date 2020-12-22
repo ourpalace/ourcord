@@ -134,6 +134,7 @@ export class Client extends Emitter {
       security: {},
     };
     this.cache = new Cache(this, this.config);
+    this.connect()
   }
 
   /**
