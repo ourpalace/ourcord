@@ -69,6 +69,6 @@ export class Message {
      * @return {Promise<Object>}
      */
     async delete(reason: string): Promise<any> {
-      return (await this._client.request("DELETE", `/channels/${this.channel.id}/messages/${this.id}`, { reason }));
+      return (await this._client.request("DELETE", `/channels/${this.channel.id}/messages/${this.id}`, {reason}));
     }
 }
