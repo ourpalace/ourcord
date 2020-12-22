@@ -106,7 +106,8 @@ dist
 # IntelliJ project files
 .idea/
 
-yarn.json
-package-lock.json
-target
-.markdownlint.json
+# User definded
+dist/
+
+# Local test files
+test.js
