@@ -1,5 +1,6 @@
 /* eslint-disable require-jsdoc */
-import {EventEmitter as Emitter} from "events";
+
+import { EventEmitter as Emitter } from "events";
 
 declare module "ourcord" {
     export interface MessageProperties {

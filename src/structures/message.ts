@@ -1,8 +1,8 @@
 /* eslint-disable camelcase */
 /* eslint-disable require-jsdoc */
 import Client from '../websocket';
-import {MessageRaw} from './MessageRaw';
-import {Channel} from "./channel";
+import { MessageRaw } from './MessageRaw';
+import { Channel } from "./channel";
 
 export class Message {
     id: string;

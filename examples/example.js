@@ -19,7 +19,7 @@ client.on('debug', (log) => {
 client.on('message', async (msg) => {
   if (msg.author.bot) return;
   if (msg.content == 'stupid servers') {
-    console.log(client.cache.guilds.size)
-    msg.channel.send(`Servers: ${client.cache.guilds.size}`)
+    console.log(client.cache.guilds.size);
+    msg.channel.send(`Servers: ${client.cache.guilds.size}`);
   }
 });
