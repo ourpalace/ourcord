@@ -60,6 +60,8 @@ export interface ClientOptions {
   activity?: { name: string, type: number };
   security?: SecurityProperties;
   status?: 'online' | 'idle' | 'dnd' | 'invisible';
+  defaultImageFormat?: string;
+  defaultImageSize?: number;
 }
 
 export interface StatusInfo {}
