@@ -7,10 +7,10 @@ import Client, {ClientOptions} from "../websocket";
 
 export class Cache {
     options: ClientOptions;
-    channels: Channel;
-    guilds: Guild;
-    users: User;
-    members: Member;
+    channels: Map<string, Channel>;
+    guilds: Map<string, Guild>;
+    users: Map<string, User>;
+    members: Map<string, Member>;
 
     constructor(client: Client, options?: ClientOptions) {
       this.channels = options.cacheChannels ? new Map() : null;

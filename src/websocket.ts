@@ -17,6 +17,7 @@ import {statusTypesArray, apiBaseURL} from './utils';
 import {Cache} from './caches/base';
 import {MessageRaw} from './structures/MessageRaw';
 import {Message} from './structures/Message';
+import { EmojiRaw } from './structures/EmojiRaw';
 import SlashCommand, {SlashConfig} from "./structures/slash_command";
 import User from './structures/user';
 
@@ -156,7 +157,31 @@ export class Client extends Emitter {
       body: body ? JSON.stringify(body) : null
     }).then((res) => res.json()));
   };
-
+   /**
+	 * Method to update an Emoji
+	 * @param {string} guild ID of the Guild that the Emoji belongs to
+	 * @param {string} emoji ID of the Emoji that is to be modified
+	 * @param {string} name New name of the Emoji 
+	 * @param {Array<string>} roles Array of all Role ids which should be whitelisted to the emoji
+	 */
+	async _modifyEmoji(guild: string, emoji: string, name?: string, roles?: Array<string>): Promise<EmojiRaw> {
+		const url = `https://discord.com/api/v7/guilds/${guild}/emojis/${emoji}`;
+		let b: ModifyEmoji = {};
+		if (name) b.name = name;
+		if (roles) b.roles = roles;
+    const sent = await this.request("PATCH", `/guilds/${guild}/emojis/${emoji}`, b)
+		return await sent.json();
+	}
+	/**
+	 * Method to delete an emoji
+	 * @param guild ID of the Guild that the Emoji belongs to
+	 * @param emoji ID of the Emoji that is to be deleted
+	 */
+	async _deleteEmoji(guild: string, emoji: string): Promise<boolean> {
+		const url = `https://discord.com/api/v7/guilds/${guild}/emojis/${emoji}`;
+		const sent = await this.request("DELETE", `/${guild}/emojis/${emoji}`)
+		return sent.status === 204;
+	}
   /**
    * The method used to connect to the gateway.
    * @return {void}
