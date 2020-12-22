@@ -11,6 +11,7 @@ import { Message } from '../structures/Message';
 export default function handleMessage(message: string, flag: any, websocket: any) {
   const msg = websocket.evaluate(message, flag);
   websocket._sequenceNum = msg.s;
+  websocket.emit('raw', msg.d)
   if (msg.t === 'READY') {
     websocket.emit('debug', `${green.bold('[NOTICE/websocket]')} ${green('Connected to the Discord API')}`);
     websocket.user = msg.d.user;
