@@ -64,19 +64,3 @@ View the full documentation [here](https://ourcord.js.org).
 [**Examples**](https://github.com/ourcord/examples)
 
 [**Documentation**](https://ourcord.js.org)
-
----
-
-## Collaborators
-
-> [**Dice**](https://github.com/alebot-dev)
-
-> [**Matthew**](https://github.com/matthewthechickenman)
-
-> [**Misly**](https://github.com/Misly16)
-
-> [**Starman**](https://github.com/Starman3787)
-
-> [**Voltrex Master**](https://github.com/VoltrexMaster)
-
-> [**null**](https://github.com/vierofernando)
