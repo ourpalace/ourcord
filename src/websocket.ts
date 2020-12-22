@@ -278,7 +278,7 @@ export class Client extends Emitter {
     if (flag.binary === null || typeof flag.binary === 'undefined') return JSON.parse(data);
     const inflateData = new pako.Inflate();
     inflateData.push(data);
-    if (inflateData.err) throw new Error(`${red.bold('[ERROR/Pako Error]')} An error occured while decompressing data`);
+    if (inflateData.err) throw new Error(`${red.bold('[ERROR/Pako Error]')} An error occurred while decompressing data`);
     return JSON.parse(inflateData.toString());
   };
 
