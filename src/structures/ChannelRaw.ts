@@ -22,7 +22,7 @@ export class ChannelRaw {
   recipients?: object[]; // This will be replaced later with a user class interface.
   icon?: string;
   owner_id?: string;
-  applcation_id?: string;
+  application_id?: string;
   parent_id?: string;
   last_pin_timestamp?: Date;
 }

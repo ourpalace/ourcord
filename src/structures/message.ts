@@ -25,8 +25,8 @@ export class Message {
     _client: Client;
     /**
      *
-     * @param {any} data the raw message
-     * @param {any} client the client
+     * @param {MessageRaw} data the raw message
+     * @param {Client} client the client
      */
     constructor(data: MessageRaw, client: Client) {
       this._client = client;
