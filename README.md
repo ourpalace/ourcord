@@ -44,17 +44,19 @@ View the full documentation [here](https://ourcord.js.org).
 
 ## Client Config <a href="src/websocket.ts#L33"></></a>
 
-| Option        | Type      | Default     | Description                                                   | Optional? |
-| ------------- | --------- | ----------- | ------------------------------------------------------------- | --------- |
-| browser       | `string`  | ourcord     | Specify the browser you want to connect via (can be anything) | `yes`     |
-| device        | `string`  | ourcord     | The device you want to connect with (can be anything)         | `yes`     |
-| prefix        | `string`  | `null`      | Specify the prefix for the bot                                | `yes`     |
-| cacheChannels | `boolean` | `false`     | Whether or not to cache channels                              | `yes`     |
-| cacheGuilds   | `boolean` | `false`     | Whether or not to cache guilds                                | `yes`     |
-| cacheUsers    | `boolean` | `false`     | Whether or not to cache users                                 | `yes`     |
-| cacheMembers  | `boolean` | `false`     | Whether or not to cache guild members                         | `yes`     |
-| activity      | `object`  | No activity | The activity you want to appear on your client on connect     | `yes`     |
-| status        | `string`  | dnd         | The status you want your client to connect with               | `yes`     |
+| Option             | Type      | Default     | Description                                                   | Optional? |
+| ------------------ | --------- | ----------- | ------------------------------------------------------------- | --------- |
+| browser            | `string`  | ourcord     | Specify the browser you want to connect via (can be anything) | `yes`     |
+| device             | `string`  | ourcord     | The device you want to connect with (can be anything)         | `yes`     |
+| prefix             | `string`  | `null`      | Specify the prefix for the bot                                | `yes`     |
+| cacheChannels      | `boolean` | `false`     | Whether or not to cache channels                              | `yes`     |
+| cacheGuilds        | `boolean` | `false`     | Whether or not to cache guilds                                | `yes`     |
+| cacheUsers         | `boolean` | `false`     | Whether or not to cache users                                 | `yes`     |
+| cacheMembers       | `boolean` | `false`     | Whether or not to cache guild members                         | `yes`     |
+| activity           | `object`  | No activity | The activity you want to appear on your client on connect     | `yes`     |
+| status             | `string`  | dnd         | The status you want your client to connect with               | `yes`     |
+| defaultImageFormat | `string`  | `null`      | Default image extension to display.                           | `yes`     |
+| defaultImageSize   | `number`  | `null`      | Default image size to display.                                | `yes`     |
 
 ## Links
 
