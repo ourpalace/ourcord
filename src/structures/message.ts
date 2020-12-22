@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 /* eslint-disable require-jsdoc */
-import Client from '../websocket';
+import {Client} from '../websocket';
 import {MessageRaw} from './MessageRaw';
 import {Channel} from "./channel";
 
@@ -22,6 +22,7 @@ export class Message {
     type: string;
     stickers: object;
     replyTo: object;
+    _client: Client;
     /**
      *
      * @param {any} data the raw message
@@ -61,7 +62,7 @@ export class Message {
       this.replyTo = data.referenced_message;
       return this;
     }
-    
+
     /**
      * The method used to delete the message.
      * @param {string} reason The reason for deleting the message.
