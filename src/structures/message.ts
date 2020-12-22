@@ -72,4 +72,13 @@ export class Message {
     async delete(reason: string): Promise<Message> {
       return (await this._client.request("DELETE", `/channels/${this.channel.id}/messages/${this.id}`, {reason}));
     }
+    
+    /**
+     * Edits the message.
+     * @param {string} content New content of the message.
+     * @return {Promise<Object>}
+     */
+    async edit(content: string): Promise<any> {
+      return (await this._client.request("PATCH", `/channels/${this.channel.id}/messages/${this.id}`, { content }));
+    }
 }

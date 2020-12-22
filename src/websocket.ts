@@ -61,6 +61,8 @@ export interface ClientOptions {
   activity?: { name: string, type: number };
   security?: SecurityProperties;
   status?: 'online' | 'idle' | 'dnd' | 'invisible';
+  defaultImageFormat?: "png" | "jpg" | "jpeg" | "webp" | "gif";
+  defaultImageSize?: number;
 }
 
 export interface RawMessageProps {
