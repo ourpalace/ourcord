@@ -21,7 +21,8 @@ export class Channel {
   readonly application_id?: string;
   readonly parent_id?: string;
   readonly last_pin_timestamp?: string;
-  send: (content: string) => Promise<Message>
+  send: (content: string) => Promise<Message>;
+
   constructor() {
     this.send = async function(content: string) {
       const client = Client.prototype;

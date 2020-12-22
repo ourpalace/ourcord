@@ -6,13 +6,13 @@
 import ws from 'ws';
 import fetch, {Response} from 'node-fetch';
 import {EventEmitter as Emitter} from 'events';
-import {red, yellow, bold} from 'chalk';
+import {bold, red, yellow} from 'chalk';
 import os from 'os';
 import pako from 'pako';
 // @ts-ignore
 import {config} from 'dotenv';
 import * as handlers from './handlers/handlers.index';
-import {statusTypesArray, apiBaseURL} from './utils';
+import {apiBaseURL, statusTypesArray} from './utils';
 import {Cache} from './caches/base';
 import {MessageRaw} from './structures/MessageRaw';
 import {Message} from './structures/Message';
@@ -45,7 +45,7 @@ export interface EmbedProperties {
 }
 
 export interface SecurityProperties {
-  token?: {filter: boolean, replaceWith?: string};
+  token?: { filter: boolean, replaceWith?: string };
 }
 
 export interface ClientOptions {
@@ -62,12 +62,16 @@ export interface ClientOptions {
   status?: 'online' | 'idle' | 'dnd' | 'invisible';
 }
 
-export interface StatusInfo {}
+export interface StatusInfo {
+}
 
 export interface Client {
   on(event: 'ready', listener: (user: User) => void): this;
+
   on(event: 'debug', listener: (message: string) => void): this;
+
   on(event: 'message', listener: (message: Message) => void): this;
+
   on(event: 'error', listener: (error: any) => void): this;
 }
 
@@ -98,14 +102,14 @@ export class Client extends Emitter {
     if (!options) {
       this.security = {
         token: {
-          filter: false
-        }
+          filter: false,
+        },
       };
     } else if (!options.security) {
       this.security = {
         token: {
-          filter: false
-        }
+          filter: false,
+        },
       };
     } else {
       this.security = options.security;
@@ -115,7 +119,7 @@ export class Client extends Emitter {
     Object.defineProperty(this, 'token', {
       value: token,
       writable: true,
-      enumerable: false
+      enumerable: false,
     });
     this.config = options || {
       browser: 'ourcord (https://github.com/ourcord/ourcord)',
@@ -133,14 +137,14 @@ export class Client extends Emitter {
    * @param {object} body body/data of Request.
    * @return {Promise<(Response|any)>}
    */
-  async request(method: string, path: string, body: object = null): Promise<Response|any> {
+  async request(method: string, path: string, body: object = null): Promise<Response | any> {
     return (await fetch(apiBaseURL + path, {
       method: method,
       headers: {
         'Authorization': `Bot ${this.token}`,
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
-      body: body ? JSON.stringify(body) : null
+      body: body ? JSON.stringify(body) : null,
     }).then((res) => res.json()));
   };
 
@@ -192,7 +196,7 @@ export class Client extends Emitter {
     const res = await fetch(`https://discord.com/api/v8/applications/${this.user.id}/commands`, {
       headers: {
         'Authorization': `Bot ${this.token}`,
-      }
+      },
     });
     const body = await res.json();
     return body;
@@ -213,7 +217,8 @@ export class Client extends Emitter {
         const replacement = this.security.token.replaceWith || "token";
         b.content = content.replace(new RegExp(this.token), replacement);
       }
-    };
+    }
+
     if (typeof content === 'object') b = content;
     return (await this.request("POST", `/channels/${channel}/messages`, b));
   };
@@ -252,13 +257,13 @@ export class Client extends Emitter {
         properties: {
           $os: os.platform,
           $browser: this.config.browser,
-          $device: this.config.device
+          $device: this.config.device,
         },
         presence: {
           // activities: [{name: this.config.activity.name ? this.config.activity.name : null, type: 0}],
-          status: this.config.status
-        }
-      }
+          status: this.config.status,
+        },
+      },
     };
   };
 
@@ -291,8 +296,8 @@ export class Client extends Emitter {
           status: t,
           afk: false,
           since: t === 'idle' ? Date.now() : null,
-          game: null
-        }
+          game: null,
+        },
       });
       this.socket.send(p);
     } catch (err) {

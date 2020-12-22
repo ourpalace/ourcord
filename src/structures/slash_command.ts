@@ -2,20 +2,20 @@
 import * as utils from "../utils";
 import fetch from "node-fetch";
 import {Client} from "../websocket";
-import {red, bold} from "chalk";
+import {bold, red} from "chalk";
 
 export interface OptionsProps {
   name: string;
   description: string;
   typeID:
-  | "SUB_COMMAND"
-  | "SUB_COMMAND_GROUP"
-  | "STRING"
-  | "INTEGER"
-  | "BOOLEAN"
-  | "USER"
-  | "CHANNEL"
-  | "ROLE";
+    | "SUB_COMMAND"
+    | "SUB_COMMAND_GROUP"
+    | "STRING"
+    | "INTEGER"
+    | "BOOLEAN"
+    | "USER"
+    | "CHANNEL"
+    | "ROLE";
   type?: number;
   required?: boolean;
   choices?: Array<{ name: string; value: string }>;

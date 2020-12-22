@@ -6,6 +6,7 @@ export class Rest {
   id: string;
   user_id: string;
   user: object;
+
   /**
    *
    * @param {Rest} data
