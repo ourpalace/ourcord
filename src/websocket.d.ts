@@ -1,5 +1,6 @@
 /* eslint-disable require-jsdoc */
-import {EventEmitter as Emitter} from "events";
+
+import { EventEmitter as Emitter } from "events";
 
 declare module "ourcord" {
     export interface MessageProperties {
@@ -31,6 +32,8 @@ declare module "ourcord" {
         cacheMembers?: boolean;
         activity?: { name: string; type: number };
         status?: "online" | "idle" | "dnd" | "invisible";
+        defaultImageFormat?: "png" | "jpg" | "jpeg" | "webp" | "gif";
+        defaultImageSize?: number;
     }
 
     export class Client extends Emitter {

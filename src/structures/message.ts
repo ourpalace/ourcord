@@ -1,8 +1,8 @@
 /* eslint-disable camelcase */
 /* eslint-disable require-jsdoc */
 import Client from '../websocket';
-import {MessageRaw} from './MessageRaw';
-import {Channel} from "./channel";
+import { MessageRaw } from './MessageRaw';
+import { Channel } from "./channel";
 
 export class Message {
     id: string;
@@ -71,5 +71,14 @@ export class Message {
      */
     async delete(reason: string): Promise<Message> {
       return (await this._client.request("DELETE", `/channels/${this.channel.id}/messages/${this.id}`, {reason}));
+    }
+    
+    /**
+     * Edits the message.
+     * @param {string} content New content of the message.
+     * @return {Promise<Object>}
+     */
+    async edit(content: string): Promise<any> {
+      return (await this._client.request("PATCH", `/channels/${this.channel.id}/messages/${this.id}`, { content }));
     }
 }

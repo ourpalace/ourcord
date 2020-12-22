@@ -1,9 +1,8 @@
 /* eslint-disable camelcase */
 /* eslint-disable require-jsdoc */
-import {Message} from "./message";
-import {MessageRaw} from "./MessageRaw";
-import {Client} from "../websocket";
-import {RawMessageProps, ReplyProps} from "../websocket";
+import { Message } from "./message";
+import { MessageRaw } from "./MessageRaw";
+import { Client } from "../websocket";
 
 export class Channel {
   readonly id: string;
@@ -25,7 +24,7 @@ export class Channel {
   readonly last_pin_timestamp?: string;
   send: (content: string | RawMessageProps | ReplyProps) => Promise<Message>
   constructor() {
-    this.send = async function(content: string) {
+    this.send = async function (content: string) {
       const client = Client.prototype;
       const data = MessageRaw.prototype;
       const r = await client._sendMessage(data.channel_id, content);
