@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 /* eslint-disable require-jsdoc */
-import { Message } from "./message";
+import { Message } from "./Message";
 import { MessageRaw } from "./MessageRaw";
 import { Client } from "../websocket";
 

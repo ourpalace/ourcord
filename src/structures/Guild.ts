@@ -1,4 +1,6 @@
+import { Channel } from './Channel';
 import {Emoji} from './Emoji'
+import Member from './Member';
 import {Role} from './Role';
 export interface Guild {
     id?: string,
