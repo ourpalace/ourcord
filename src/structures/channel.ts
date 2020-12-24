@@ -22,7 +22,7 @@ export class Channel {
   readonly application_id?: string;
   readonly parent_id?: string;
   readonly last_pin_timestamp?: string;
-  send: (content: string | RawMessageProps | ReplyProps) => Promise<Message>
+  send: (content: string | MessageRaw) => Promise<Message>
   constructor() {
     this.send = async function (content: string) {
       const client = Client.prototype;
