@@ -1,7 +1,7 @@
 /* eslint-disable require-jsdoc */
 /* eslint-disable camelcase */
 import Client from "../websocket";
-import User from "./user";
+import {User} from "./User";
 
 export class Rest {
   id: string;

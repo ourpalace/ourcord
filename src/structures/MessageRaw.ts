@@ -1,13 +1,14 @@
 /* eslint-disable require-jsdoc */
 /* eslint-disable camelcase */
 import {RawMessageProps, ReplyProps} from "../websocket";
+import { User } from "./User";
 
 export class MessageRaw {
     id: string;
     channel_id: string;
     channel_type: number;
     guild_id: string;
-    author: object;
+    author: User;
     member: object;
     content: string | object;
     timestamp: number;

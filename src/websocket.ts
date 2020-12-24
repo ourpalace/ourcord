@@ -19,7 +19,8 @@ import {MessageRaw} from './structures/MessageRaw';
 import {Message} from './structures/Message';
 import { EmojiRaw } from './structures/EmojiRaw';
 import SlashCommand, {SlashConfig} from "./structures/slash_command";
-import User from './structures/user';
+import {User} from './structures/User';
+import { Emoji } from './structures/emoji';
 
 config();
 
@@ -166,7 +167,7 @@ export class Client extends Emitter {
 	 */
 	async _modifyEmoji(guild: string, emoji: string, name?: string, roles?: Array<string>): Promise<EmojiRaw> {
 		const url = `https://discord.com/api/v7/guilds/${guild}/emojis/${emoji}`;
-		let b: ModifyEmoji = {};
+		let b: Emoji = {};
 		if (name) b.name = name;
 		if (roles) b.roles = roles;
     const sent = await this.request("PATCH", `/guilds/${guild}/emojis/${emoji}`, b)

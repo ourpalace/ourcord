@@ -1,5 +1,5 @@
-export interface Channel {}
-
+import {Emoji} from './Emoji'
+import {Role} from './Role';
 export interface Guild {
     id?: string,
     name?: string,
@@ -37,25 +37,4 @@ export interface Guild {
     approximate_presence_count?: number,
     channels?: Map<string, Channel>,
     members?: Map<string, Member>,
-}
-
-export interface User {}
-
-export interface Member {}
-
-export interface Channel {}
-
-export interface Role {}
-
-export interface Emoji {
-    id?: string,
-    name?: string,
-    roles?: Array<Role>,
-    guild?: Guild,
-    require_colons?: boolean,
-    managed?: boolean,
-    animated?: boolean,
-    url?: Function,
-    rename?: Function,
-    delete?: Function,
 }
