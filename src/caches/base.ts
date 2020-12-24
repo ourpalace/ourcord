@@ -13,10 +13,10 @@ export class Cache {
     members: Map<string, Member>;
 
     constructor(client: Client, options?: ClientOptions) {
-      this.channels = options.cacheChannels ? new Map() : null;
-      this.guilds = options.cacheGuilds ? new Map() : null;
-      this.users = options.cacheChannels ? new Map() : null;
-      this.members = options.cacheMembers ? new Map() : null;
+      this.channels = options.cacheChannels === false ? null : new Map();
+      this.guilds = options.cacheGuilds === false ? null : new Map();
+      this.users = options.cacheChannels === false ? null : new Map();
+      this.members = options.cacheMembers === false ? null : new Map();
       this._bind(client);
     }
 
