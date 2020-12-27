@@ -1,4 +1,4 @@
-import {Rest, User} from '../structures/rest';
+import { Rest } from '../structures/rest';
 
 export default function restClient(id: string) {
 

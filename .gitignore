@@ -103,7 +103,11 @@ dist
 # TernJS port file
 .tern-port
 
-yarn.json
-package-lock.json
-target
-.markdownlint.json
+# IntelliJ project files
+.idea/
+
+# User definded
+dist/
+
+# Local test files
+test.js

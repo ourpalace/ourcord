@@ -1,0 +1,5 @@
+# Interface: User
+
+## Hierarchy
+
+* **User**

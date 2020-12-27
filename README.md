@@ -1,4 +1,10 @@
-# ✨ ourcord ✨
+<p align="center">
+  <img src="assets/logo.svg" />
+</p>
+
+## About
+
+Ourcord is a new and alternative discord library for js that focuses on speed and simplicity while retaining low level functions of the discord API.
 
 [![npm](https://img.shields.io/npm/v/ourcord?color=red&style=for-the-badge)](https://npmjs.com/package/ourcord)
 [![npm](https://img.shields.io/bundlephobia/min/ourcord?color=red&style=for-the-badge)](https://npmjs.com/package/ourcord)
@@ -12,11 +18,7 @@
 - [Usage](#usage)
 - [Links](#links)
 
-## About  
-
-Ourcord is a new and alternative discord library for js that focuses on speed and simplicity while retaining low level functions of the discord API  
-
-## Installation  
+## Installation
 
 ```cmd
 npm i ourcord
@@ -24,39 +26,41 @@ npm i ourcord
 
 That's it for installation 🎈
 
-## Usage  
+## Usage
 
 ```js
 const { Client } = require("ourcord");
 const client = new Client("your bot token here");
-client.connect();
 
 client.on("ready", () => {
-    console.log("Client connected!");
+  console.log("Client connected!");
 });
-```  
+```
 
----  
-
-## Client Config  <a href="src/websocket.ts#L33"></></a>
-
-| Option | Type | Default | Description | Optional? |
-| --- | --- | --- | --- | --- |
-| browser | `string` | ourcord | Specify the browser you want to connect via (can be anything) | `yes`
-| device | `string` | ourcord | The device you want to connect with (can be anything) | `yes`
-| prefix | `string` | `Null` | Specify the prefix for the bot | `yes`
-| activity | `object` | No activity | The activity you want to appear on your client on connect | `yes`
-| status | `string` | dnd | The status you want your client to connect with | `yes`
-
-## Links
-
-[__Discord server__](https://discord.gg/3yDQKDXXdk)  
+View the full documentation [here](https://ourcord.js.org).
 
 ---
 
-## Collaborators
+## Client Config <a href="src/websocket.ts#L33"></></a>
 
-> [**Dice**](https://github.com/alebot-dev)  
-> [**Mattthew**](https://github.com/matthewthechickenman)  
-> [**Misly**](https://github.com/Misly16)  
-> [**Starman**](https://github.com/Starman3787)
+| Option             | Type      | Default     | Description                                                   | Optional? |
+| ------------------ | --------- | ----------- | ------------------------------------------------------------- | --------- |
+| browser            | `string`  | ourcord     | Specify the browser you want to connect via (can be anything) | `yes`     |
+| device             | `string`  | ourcord     | The device you want to connect with (can be anything)         | `yes`     |
+| prefix             | `string`  | `null`      | Specify the prefix for the bot                                | `yes`     |
+| cacheChannels      | `boolean` | `false`     | Whether or not to cache channels                              | `yes`     |
+| cacheGuilds        | `boolean` | `false`     | Whether or not to cache guilds                                | `yes`     |
+| cacheUsers         | `boolean` | `false`     | Whether or not to cache users                                 | `yes`     |
+| cacheMembers       | `boolean` | `false`     | Whether or not to cache guild members                         | `yes`     |
+| activity           | `object`  | No activity | The activity you want to appear on your client on connect     | `yes`     |
+| status             | `string`  | dnd         | The status you want your client to connect with               | `yes`     |
+| defaultImageFormat | `string`  | `null`      | Default image extension to display.                           | `yes`     |
+| defaultImageSize   | `number`  | `null`      | Default image size to display.                                | `yes`     |
+
+## Links
+
+[**Discord server**](https://discord.gg/3yDQKDXXdk)  
+
+[**Examples**](https://github.com/ourcord/examples)
+
+[**Documentation**](https://ourcord.js.org)
