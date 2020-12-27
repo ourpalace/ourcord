@@ -73,7 +73,7 @@ export interface ClientOptions {
   activity?: ActivityObject;
   security?: SecurityProperties;
   status?: 'online' | 'idle' | 'dnd' | 'invisible';
-  defaultImageFormat?: 'gif | 'png' | 'jpg' | 'jpeg' | 'webp';
+  defaultImageFormat?: 'gif' | 'png' | 'jpg' | 'jpeg' | 'webp';
   defaultImageSize?: number;
 }
 
