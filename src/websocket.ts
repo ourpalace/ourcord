@@ -18,7 +18,7 @@ import {Cache} from './caches/base';
 import {MessageRaw} from './structures/MessageRaw';
 import {Message} from './structures/Message';
 import {EmojiRaw} from './structures/EmojiRaw';
-import SlashCommand, {SlashConfig} from "./structures/slash_command";
+import SlashCommand, {SlashConfig} from "./structures/SlashCommand";
 import {User} from './structures/User';
 import {Emoji} from './structures/Emoji';
 
