@@ -15,3 +15,5 @@ You are here to help on ourcord? Epic, feel welcome and read the following secti
 - What contributions you **DON'T** want?
   - Please don't use the issue tracker for any support-related questions, instead ~~raid~~ join our [Discord]() for support or consider using Stack Overflow.
 ----
+
+## Ground Rules
