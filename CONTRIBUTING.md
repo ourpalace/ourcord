@@ -1,3 +1,2 @@
 # Contributing
-Thank you for considering contributing to ourcord! It's people like you that make ourcord the most awesome Discord library.
-
+You are here to help on ourcord? Epic, feel welcome and read the following sections in order to know how to start contributing and make this the most awesome Discord library!
