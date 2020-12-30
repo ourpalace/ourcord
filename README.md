@@ -57,6 +57,9 @@ View the full documentation [here](https://ourcord.js.org).
 | defaultImageFormat | `string`  | `null`      | Default image extension to display.                           | `yes`     |
 | defaultImageSize   | `number`  | `null`      | Default image size to display.                                | `yes`     |
 
+## Contributing
+Please read [Contributing.md](CONTRIBUTING.md)
+
 ## Links
 
 [**Discord server**](https://discord.gg/3yDQKDXXdk)  
