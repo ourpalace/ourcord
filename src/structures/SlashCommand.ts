@@ -1,4 +1,3 @@
-/* eslint-disable */
 import * as utils from '../utils';
 import fetch from 'node-fetch';
 import Client from '../websocket';
@@ -45,7 +44,7 @@ export default class SlashCommand {
     if (typeof config.description !== 'string') throw new Error(`${bold.red('[ERROR/DiscordAPIError]')} ${red('\'config.description\' must be a string')}`);
     if (!Array.isArray(config.options)) throw new Error(`${bold.red('[ERROR/DiscordAPIError]')} ${red('\'config.options\' must be an array')}`);
     if (config.options.length > 10) throw new Error(`${bold.red('[ERROR/DiscordAPIError]')} ${red('Cannot have more than 10 options in \'config.options\'')}`);
-    if (config.options.filter(({ default }) => default).length > 1) throw new Error(`${bold.red('[ERROR/DiscordAPIError]')} ${red('There can only be 1 default command option')}`);
+    if (config.options.filter(option => option.default).length > 1) throw new Error(`${bold.red('[ERROR/DiscordAPIError]')} ${red('There can only be 1 default command option')}`);
     let properties = ['typeID', 'name', 'description'];
     if (!properties.slice(1).some(property => property in config) || !properties.some(property => config.options.every(c => typeof c[property] !== 'undefined'))) throw new Error(`${bold.red('[ERROR/DiscordAPIError]')} ${red('Missing arguments in \'config\'')}`);
     if (!config.options.some(({ typeID }) => typeof typeID === 'number') || !config.options.some(({ typeID }) => CommandTypes[typeID])) throw new Error(`${bold.red('[ERROR/DiscordAPIError]')} ${red('Invalid command option type')}`);
