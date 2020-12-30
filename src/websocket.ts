@@ -177,24 +177,22 @@ export class Client extends Emitter {
    * @param {string[]} roles Array of all role IDs which should be whitelisted to the emoji.
    */
   async _modifyEmoji(guild: string, emoji: string, name?: string, roles?: string[]): Promise<EmojiRaw> {
-    const url = `https://discord.com/api/v7/guilds/${guild}/emojis/${emoji}`;
-    let b: Emoji = {};
+    const b: Emoji = {};
     if (name) b.name = name;
     if (roles) b.roles = roles;
-    return (await this.request("PATCH", `/guilds/${guild}/emojis/${emoji}`, b).then(res => res.json()));
+    return (await this.request("PATCH", `/guilds/${guild}/emojis/${emoji}`, b).then((res) => res.json()));
   };
 
-   /**
+  /**
     * Method to delete an emoji.
     * @param {string} guild ID of the guild that the emoji belongs to.
     * @param {string} emoji ID of the emoji that is to be deleted.
-    * @returns {Promise<boolean>}
+    * @return {Promise<boolean>}
     */
-   async _deleteEmoji(guild: string, emoji: string): Promise<boolean> {
-     const url = `https://discord.com/api/v7/guilds/${guild}/emojis/${emoji}`;
-     const sent = await this.request("DELETE", `/${guild}/emojis/${emoji}`);
-     return sent.status === 204;
-   };
+  async _deleteEmoji(guild: string, emoji: string): Promise<boolean> {
+    const sent = await this.request("DELETE", `/${guild}/emojis/${emoji}`);
+    return sent.status === 204;
+  };
 
   /**
    * The method used to connect to the gateway.
