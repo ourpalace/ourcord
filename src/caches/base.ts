@@ -1,9 +1,9 @@
 /* eslint-disable require-jsdoc */
-import {Channel} from '../structures/Channel';
-import {Guild} from '../structures/Guild';
-import {User} from '../structures/User';
-import {Member} from '../structures/Member';
-import Client, {ClientOptions} from '../websocket';
+import { Channel } from '../structures/Channel';
+import { Guild } from '../structures/Guild';
+import { User } from '../structures/User';
+import { Member } from '../structures/Member';
+import Client, { ClientOptions } from '../websocket';
 
 export class Cache {
     options: ClientOptions;
