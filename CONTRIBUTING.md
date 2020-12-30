@@ -3,19 +3,5 @@ You are here to help on ourcord? Epic, feel welcome and read the following secti
 
 ## Some FAQ Things
 
-**Q.** ourcord bad
-
-**A.** no 
-
-Q. ourcord bad
-
-A. no 
-
-- Q. ourcord bad  
-  - A. no 
-  
-- **Q.** ourcord bad
-  - **A.** no 
-  
 - ourcord bad  
   - no 
