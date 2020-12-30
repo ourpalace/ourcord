@@ -1,6 +1,8 @@
 # Contributing
 You are here to help on ourcord? Epic, feel welcome and read the following sections to know how to start contributing and make this the most awesome Discord library!
 
+
+
 ## Some FAQ Things
 
 ----
@@ -16,4 +18,4 @@ You are here to help on ourcord? Epic, feel welcome and read the following secti
   - Please don't use the issue tracker for any support-related questions, instead ~~raid~~ join our [Discord]() for support or consider using Stack Overflow.
 ----
 
-## Ground Rules [testtest](about:blank "this a test i repeat we are going to nuke the world")
+## Ground Rules
