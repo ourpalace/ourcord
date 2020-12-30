@@ -1,7 +1,7 @@
 /* eslint-disable require-jsdoc */
 /* eslint-disable camelcase */
-import {RawMessageProps, ReplyProps} from "../websocket";
-import { User } from "./User";
+import { RawMessageProps, ReplyProps } from '../websocket';
+import { User } from './User';
 
 export class MessageRaw {
     id: string;
@@ -25,5 +25,6 @@ export class MessageRaw {
     stickers: object;
     message_reference: ReplyProps;
     referenced_message: object;
-    embed: RawMessageProps["embed"];
+    embed: RawMessageProps['embed'];
 }
+
