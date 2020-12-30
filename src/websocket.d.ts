@@ -1,8 +1,7 @@
 /* eslint-disable require-jsdoc */
+import { EventEmitter as Emitter } from 'events';
 
-import { EventEmitter as Emitter } from "events";
-
-declare module "ourcord" {
+declare module 'ourcord' {
     export interface MessageProperties {
         content?: string;
     }
@@ -14,12 +13,17 @@ declare module "ourcord" {
             thumbnail?: string;
             description?: string;
             fields?: object[];
-            colour?: string | number;
-            color?: EmbedProperties["embed"]["colour"];
+            color?: string | number;
+            colour?: EmbedProperties['embed']['color'];
             footer?: object;
             image?: string;
         };
     }
+
+   declare interface Activity {
+     name: string;
+     type: number;
+   }
 
     export interface ClientOptions {
         intents?: number;
@@ -30,9 +34,9 @@ declare module "ourcord" {
         cacheGuilds?: boolean;
         cacheUsers?: boolean;
         cacheMembers?: boolean;
-        activity?: { name: string; type: number };
-        status?: "online" | "idle" | "dnd" | "invisible";
-        defaultImageFormat?: "png" | "jpg" | "jpeg" | "webp" | "gif";
+        activity?: Activity;
+        status?: 'online' | 'idle' | 'dnd' | 'invisible';
+        defaultImageFormat?: 'gif' | 'png' | 'jpg' | 'jpeg' | 'webp';
         defaultImageSize?: number;
     }
 
@@ -40,10 +44,11 @@ declare module "ourcord" {
         token: string;
         socket: typeof Emitter;
         config: ClientOptions;
+
         /**
          * The main client constructor.
          * @param {string} token The client's token used for gateway connection.
-         * @param {ClientOptions} options Options this client is instantiated with.
+         * @param {ClientOptions} [options] Options this client is instantiated with.
          */
         constructor(token: string, options?: ClientOptions);
         getMetaData(): {
