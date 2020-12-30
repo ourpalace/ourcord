@@ -19,3 +19,5 @@ You are here to help on ourcord? Epic, feel welcome and read the following secti
 ----
 
 ## Ground Rules
+_This section will set expectations for behavior for everyone_
+
