@@ -1,6 +1,6 @@
 import Client from '../websocket';
 import { EmojiRaw } from './EmojiRaw';
-import {Guild} from './Guild';
+import { Guild } from './Guild';
 
 export class Emoji {
     id?: string;
