@@ -1,4 +1,4 @@
-import { Rest } from '../structures/rest';
+import { Rest } from '../structures/Rest';
 
 export default function restClient(id: string) {
 

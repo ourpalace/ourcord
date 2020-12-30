@@ -17,10 +17,10 @@ import {statusTypesArray, apiBaseURL} from './utils';
 import {Cache} from './caches/base';
 import {MessageRaw} from './structures/MessageRaw';
 import {Message} from './structures/Message';
-import { EmojiRaw } from './structures/EmojiRaw';
-import SlashCommand, {SlashConfig} from "./structures/slash_command";
+import {EmojiRaw} from './structures/EmojiRaw';
+import SlashCommand, {SlashConfig} from "./structures/SlashCommand";
 import {User} from './structures/User';
-import { Emoji } from './structures/emoji';
+import {Emoji} from './structures/Emoji';
 
 config();
 
@@ -40,15 +40,25 @@ export interface EmbedProperties {
     thumbnail?: string;
     description?: string;
     fields?: object[];
-    colour?: string | number;
-    color?: EmbedProperties['embed']['colour'];
+    color?: string | number;
+    colour?: EmbedProperties['embed']['color'];
     footer?: object;
     image?: string;
   }
 }
 
+interface SecurityObject {
+  filter: boolean;
+  replaceWith?: string;
+}
+
 export interface SecurityProperties {
-  token?: {filter: boolean, replaceWith?: string};
+  token?: SecurityObject;
+}
+
+interface ActivityObject {
+  name: string;
+  type: number;
 }
 
 export interface ClientOptions {
@@ -60,22 +70,24 @@ export interface ClientOptions {
   cacheGuilds?: boolean;
   cacheUsers?: boolean;
   cacheMembers?: boolean;
-  activity?: { name: string, type: number };
+  activity?: ActivityObject;
   security?: SecurityProperties;
   status?: 'online' | 'idle' | 'dnd' | 'invisible';
-  defaultImageFormat?: "png" | "jpg" | "jpeg" | "webp" | "gif";
+  defaultImageFormat?: 'gif' | 'png' | 'jpg' | 'jpeg' | 'webp';
   defaultImageSize?: number;
 }
 
 export interface RawMessageProps {
-  embed: EmbedProperties["embed"];
+  embed: EmbedProperties['embed'];
+}
+
+interface ReplyObject {
+  message_id?: string;
+  channel_id?: string;
 }
 
 export interface ReplyProps {
-  message_reference: {
-    message_id?: string;
-    channel_id?: string;
-  }
+  message_reference: ReplyObject;
 }
 
 export interface Client {
@@ -108,7 +120,6 @@ export class Client extends Emitter {
    */
   constructor(token: string, options?: ClientOptions) {
     super();
-    this.token = token;
     if (!options) {
       this.security = {
         token: {
@@ -158,31 +169,34 @@ export class Client extends Emitter {
       body: body ? JSON.stringify(body) : null
     }).then((res) => res.json()));
   };
+
+  /**
+   * Method to update an Emoji.
+   * @param {string} guild ID of the guild that the emoji belongs to.
+   * @param {string} emoji ID of the emoji that is to be modified.
+   * @param {string} name New name of the emoji.
+   * @param {string[]} roles Array of all role IDs which should be whitelisted to the emoji.
+   */
+  async _modifyEmoji(guild: string, emoji: string, name?: string, roles?: string[]): Promise<EmojiRaw> {
+    const url = `https://discord.com/api/v7/guilds/${guild}/emojis/${emoji}`;
+    let b: Emoji = {};
+    if (name) b.name = name;
+    if (roles) b.roles = roles;
+    return (await this.request("PATCH", `/guilds/${guild}/emojis/${emoji}`, b).then(res => res.json()));
+  };
+
    /**
-	 * Method to update an Emoji
-	 * @param {string} guild ID of the Guild that the Emoji belongs to
-	 * @param {string} emoji ID of the Emoji that is to be modified
-	 * @param {string} name New name of the Emoji 
-	 * @param {Array<string>} roles Array of all Role ids which should be whitelisted to the emoji
-	 */
-	async _modifyEmoji(guild: string, emoji: string, name?: string, roles?: Array<string>): Promise<EmojiRaw> {
-		const url = `https://discord.com/api/v7/guilds/${guild}/emojis/${emoji}`;
-		let b: Emoji = {};
-		if (name) b.name = name;
-		if (roles) b.roles = roles;
-    const sent = await this.request("PATCH", `/guilds/${guild}/emojis/${emoji}`, b)
-		return await sent.json();
-	}
-	/**
-	 * Method to delete an emoji
-	 * @param guild ID of the Guild that the Emoji belongs to
-	 * @param emoji ID of the Emoji that is to be deleted
-	 */
-	async _deleteEmoji(guild: string, emoji: string): Promise<boolean> {
-		const url = `https://discord.com/api/v7/guilds/${guild}/emojis/${emoji}`;
-		const sent = await this.request("DELETE", `/${guild}/emojis/${emoji}`)
-		return sent.status === 204;
-	}
+    * Method to delete an emoji.
+    * @param {string} guild ID of the guild that the emoji belongs to.
+    * @param {string} emoji ID of the emoji that is to be deleted.
+    * @returns {Promise<boolean>}
+    */
+   async _deleteEmoji(guild: string, emoji: string): Promise<boolean> {
+     const url = `https://discord.com/api/v7/guilds/${guild}/emojis/${emoji}`;
+     const sent = await this.request("DELETE", `/${guild}/emojis/${emoji}`);
+     return sent.status === 204;
+   };
+
   /**
    * The method used to connect to the gateway.
    * @return {void}
