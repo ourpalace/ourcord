@@ -1,16 +1,17 @@
 /* eslint-disable require-jsdoc */
 /* eslint-disable camelcase */
-import Client from "../websocket";
-import {User} from "./User";
+import Client from '../websocket';
+import { User } from './User';
 
 export class Rest {
   id: string;
   user_id: string;
   user: object;
+
   /**
-   *
-   * @param {Rest} data
-   * @param {Client} client
+   * The rest constructor.
+   * @param {Rest} data The rest data.
+   * @param {Client} client The client.
    */
   constructor(data: Rest, client: Client) {
     this.id = data.id;
@@ -19,7 +20,7 @@ export class Rest {
       user: async function () {
         const r = await client._GetRestUser(data.user_id);
         return new User(r);
-      },
+      }
     };
   }
 }
