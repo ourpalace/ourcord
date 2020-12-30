@@ -28,11 +28,13 @@ export class Emoji {
                 switch (format) {
                     case "png": cf = "png"; break;
                     case "webp": cf = "webp"; break;
-                    default: this.animated == true ? cf = "gif" : "png"; break;
+                    default: cf = this.animated ? "gif" : "png"; break;
                 }
                 return `https://cdn.discordapp.com/emojis/${this.id}.${cf}`;
             };
-        } else this.url = null;
+        } else {
+            this.url = this.name ? `https://twemoji.maxcdn.com/v/latest/72x72/${this.name.codePointAt().toString(16)}.png` : null;
+        }
         this.rename = async (name:string) => {
             const r = await client._modifyEmoji(this.guild.id, this.id, name, undefined);
             this.name = r.name || null;
