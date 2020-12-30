@@ -11,8 +11,8 @@ export class Emoji {
     managed?: boolean;
     animated?: boolean;
     url?: (format?: string) => string;
-    rename: (name: string) => Promise<EmojiRaw>;
-    delete: () => Promise<boolean>;
+    rename?: (name: string) => Promise<EmojiRaw>;
+    delete?: () => Promise<boolean>;
 
     constructor(data: EmojiRaw, client: Client, guild: Guild) {
         this.id = data.id || null;
