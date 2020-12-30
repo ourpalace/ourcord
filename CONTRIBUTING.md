@@ -16,4 +16,4 @@ You are here to help on ourcord? Epic, feel welcome and read the following secti
   - Please don't use the issue tracker for any support-related questions, instead ~~raid~~ join our [Discord]() for support or consider using Stack Overflow.
 ----
 
-## Ground Rules
+## Ground Rules [testtest]("this a test i repeat we are going to nuke the world")
