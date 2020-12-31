@@ -1,61 +1,53 @@
-# Contributing
+# 1. Contributing
 You are here to help on OurCord? Epic, feel welcome, and read the following sections to know how to start contributing and make this the most awesome Discord library!
 
 
-### Table of Contents
-- [Contributing](#contributing)
-- [Some FAQ Things](#some-faq-things)
-  - [#1 Why should I read your guidelines?](#1-why-should-i-read-your-guidelines)
-  - [#2 What do you want me to contribute?](#2-what-do-you-want-me-to-contribute)
-  - [#3 What contributions you DON'T want?](#3-what-contributions-you-dont-want)
-  - [#4 Do we have to use gitmoji for our commits and PRs?](#4-do-we-have-to-use-gitmoji-for-our-commits-and-prs)
-  - [#5 Why do we have to email you guys for security vulnerability's instead of opening an issue?](#5-why-do-we-have-to-email-you-guys-for-security-vulnerabilitys-instead-of-opening-an-issue)
-  - [#6 How do I determine whether i'm are dealing with a security issue or a normal issue?](#6-how-do-i-determine-whether-im-are-dealing-with-a-security-issue-or-a-normal-issue)
-- [Ground Rules](#ground-rules)
-- [Your First Contribution](#your-first-contribution)
-- [Getting started](#getting-started)
-- [How to report a bug](#how-to-report-a-bug)
-- [How to suggest a feature or enhancement](#how-to-suggest-a-feature-or-enhancement)
-- [Code review process](#code-review-process)
-- [Code Style](#code-style)
+# 2. Table of Contents
+- [1. Contributing](#1-contributing)
+- [2. Table of Contents](#2-table-of-contents)
+- [3. Some FAQ Things](#3-some-faq-things)
+  - [3.1. Why should I read your guidelines?](#31-why-should-i-read-your-guidelines)
+  - [3.2. What do you want me to contribute?](#32-what-do-you-want-me-to-contribute)
+  - [3.3. What contributions you __DON'T__ want?](#33-what-contributions-you-dont-want)
+  - [3.4. Do we have to use gitmoji for our commits and PRs?](#34-do-we-have-to-use-gitmoji-for-our-commits-and-prs)
+  - [3.5. Why do we have to email you guys for security vulnerability's instead of opening an issue?](#35-why-do-we-have-to-email-you-guys-for-security-vulnerabilitys-instead-of-opening-an-issue)
+  - [3.6. How do I determine whether i'm are dealing with a security issue or a normal issue?](#36-how-do-i-determine-whether-im-are-dealing-with-a-security-issue-or-a-normal-issue)
+- [4. Ground Rules](#4-ground-rules)
+- [5. Your First Contribution](#5-your-first-contribution)
+- [6. Getting started](#6-getting-started)
+- [7. How to suggest a feature or enhancement](#7-how-to-suggest-a-feature-or-enhancement)
+- [8. Code review process](#8-code-review-process)
+- [9. Code Style](#9-code-style)
+
+# 3. Some FAQ Things
 
 
-## Some FAQ Things
-
-----
-
-#### __#1__ Why should I read your guidelines?
+#### 3.1. Why should I read your guidelines?
   - Following these guidelines helps to communicate that you respect the time of the developers managing and developing this open-source project. In return, they should reciprocate that respect in addressing your issue, assessing changes, and helping you finalize your pull requests.
 
----- 
-
-#### __#2__ What do you want me to contribute?
+#### 3.2. What do you want me to contribute?
   - Keep an open mind! Improving documentation, bug triaging, or improving ~~our bad code~~ are all examples of helpful contributions that mean less work for you.
 
----- 
 
-#### __#3__ What contributions you __DON'T__ want?
+
+#### 3.3. What contributions you __DON'T__ want?
   - Please don't use the issue tracker for any support-related questions, instead, ~~raid~~ join our [Discord](https://discord.gg/3yDQKDXXdk "Discord Invite- Our Palce")for support or consider using Stack Overflow.
-----
 
-#### __#4__ Do we have to use [gitmoji](https://gitmoji.dev/ "Gitmoji") for our commits and PRs?
+#### 3.4. Do we have to use [gitmoji](https://gitmoji.dev/ "Gitmoji") for our commits and PRs?
   - It's not necessary but recommended. 
   
-----
 
-#### __#5__ Why do we have to email you guys for security vulnerability's instead of opening an issue?
+#### 3.5. Why do we have to email you guys for security vulnerability's instead of opening an issue?
   - For security reasons, as if you used the issue tracker, everyone can see it, but in email only we can see it.
   
-----
 
-#### __#6__ How do I determine whether i'm are dealing with a security issue or a normal issue?
+#### 3.6. How do I determine whether i'm are dealing with a security issue or a normal issue?
   - Ask yourself these questions:
     - Can I access something that's not mine, or something I shouldn't have access to?
     - Can I disable something for other people?
   
-----
 
-## Ground Rules
+# 4. Ground Rules
 > _This section will set expectations for behavior for everyone_
 
 * Each pull request should implement __ONE__ feature or bug fix. If you want to add or fix more than one thing, submit more than one pull request.
@@ -67,7 +59,7 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
 
 ----
 
-## Your First Contribution
+# 5. Your First Contribution
 Unsure where to begin contributing to OurCord? You can start by looking through these beginner and help-wanted issues:
 
 
@@ -92,7 +84,7 @@ _At this point, you're ready to make your changes! Feel free to ask for help, ev
 
 ----
 
-## Getting started
+# 6. Getting started
 > _This section is a quick walkthrough of how to submit a contribution._
 
 For something that is bigger than a one or two-line fix:
@@ -116,19 +108,19 @@ As a rule of thumb, changes are obvious fixes if they do not introduce any new f
 
 ----
 
-## How to report a bug
+##How to report a bug
 > __!IMPORTANT!:__ If you find a security vulnerability, __DO NOT__ open an issue. Email [] instead. 
 
 ----
 
-## How to suggest a feature or enhancement
+# 7. How to suggest a feature or enhancement
 
 ----
 
-## Code review process
+# 8. Code review process
 
 ----
 
-## Code Style
+# 9. Code Style
 
 ----
