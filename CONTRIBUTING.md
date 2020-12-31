@@ -124,7 +124,7 @@ As a rule of thumb, changes are obvious fixes if they do not introduce any new f
 <summary>
 <details>
 
-```md
+```markdown
 <!--
 If you need help with ourcord please join the discord server: https://discord.gg/3yDQKDXXdk
 This issue tracker is only for bug reports and enhancement suggestions.
@@ -176,8 +176,8 @@ the problem a lot easier for us, so please do so if possible. ;)
 
 ## 8. How to suggest a feature or enhancement
 
-> _This section will give contributors context before they make suggestions that may not align with the project’s needs._
-_
+> _This section will give a desired process for suggesting a feature_
+
 ---
 
 ## 9. Code review process
