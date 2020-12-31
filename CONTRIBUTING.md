@@ -40,3 +40,6 @@ Both issue lists are sorted by total number of comments. While not perfect, numb
 
 If you want to read about using OurCord or developing tutorials for OurCord bots, the OurCord documentation is free and available online. You can find the source to the documentation [here](https://ourcord.js.org "OurCord Documentation").
 
+If your still stuck here are a couple of tutorials: 
+* [makeapullrequest.com](http://makeapullrequest.com/ "Make a Pull Request") 
+* [firsttimersonly.com](http://www.firsttimersonly.com/ "First Timers Only")
