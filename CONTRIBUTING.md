@@ -21,9 +21,9 @@ You are here to help on ourcord? Epic, feel welcome and read the following secti
 ## Ground Rules
 _This section will set expectations for behavior for everyone_
 
-* Be welcoming to newcomers and encourage diverse new contributors from all backgrounds.
-* Create issues for any major changes and enhancements that you wish to make. Discuss things transparently and get community feedback.
-* Do not commit changes to files that are irrelevant to your feature or bugfix (`.gitignore``).
-* Be aware that the pull request review process is not immediate, and is generally proportional to the size of the pull request.
-* Be willing to accept criticism and work on improving your code. 
 * Each pull request should implement **ONE** feature or bugfix. If you want to add or fix more than one thing, submit more than one pull request.
+* Create issues for any major changes and enhancements that you wish to make. Discuss things transparently and get community feedback.
+* Be aware that the pull request review process is not immediate, and is generally proportional to the size of the pull request.
+* Do not commit changes to files that are irrelevant to your feature or bugfix (`.gitignore``).
+* Be welcoming to newcomers and encourage diverse new contributors from all backgrounds.
+* Be willing to accept criticism and work on improving your code. 
