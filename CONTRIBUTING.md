@@ -45,4 +45,4 @@ If your still stuck here are a couple of tutorials:
 * [First Timers Only](http://www.firsttimersonly.com/ "First Timers Only")
 * [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github "How to Contribute to an Open Source Project on GitHub")\
 
-> At this point, you're ready to make your changes! Feel free to ask for help; everyone is a beginner at first :D 
+> At this point, you're ready to make your changes! Feel free to ask for help, everyone is a beginner at first :D 
