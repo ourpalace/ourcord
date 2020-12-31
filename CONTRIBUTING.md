@@ -36,7 +36,7 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
 
 ### 3.3. What contributions you DON'T want?
 
-- Please don't use the issue tracker for any support-related questions, instead, ~~raid~~ join our [Discord](https://discord.gg/3yDQKDXXdk "Discord Invite- Our Palce")for support or consider using Stack Overflow.
+- Please don't use the issue tracker for any support-related questions, instead, ~~raid~~ join our [Discord](https://discord.gg/3yDQKDXXdk "Discord Invite- Our Palce") for support or consider using Stack Overflow.
 
 ### 3.4. Do we have to use [gitmoji](https://gitmoji.dev/ "Gitmoji") for our commits and PRs?
 
