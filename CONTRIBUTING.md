@@ -5,16 +5,19 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
 ### Table of Contents
 - [Contributing](#contributing)
 - [Some FAQ Things](#some-faq-things)
-  - [#1](#)
-  - [#2](#)
-  - [#3](#)
-  - [#4](#)
-  - [#5](#)
-  - [#6](#)
+  - [#1](#1-why-should-i-read-your-guidelines)
+  - [#2](#2-what-do-you-want-me-to-contribute)
+  - [#3](#3-what-contributions-you-dont-want)
+  - [#4](#4-do-we-have-to-use-gitmoji-for-our-commits-and-prs)
+  - [#5](#5-why-do-we-have-to-email-you-guys-for-security-vulnerabilitys-instead-of-opening-an-issue)
+  - [#6](#6-how-do-i-determine-whether-im-are-dealing-with-a-security-issue-or-a-normal-issue)
 - [Ground Rules](#ground-rules)
 - [Your First Contribution](#your-first-contribution)
-- 
-
+- [Getting started](#getting-started)
+- [How to report a bug](#how-to-report-a-bug)
+- [How to suggest a feature or enhancement](#how-to-suggest-a-feature-or-enhancement)
+- [Code review process](#code-review-process)
+- [Code Style](#code-style)
 
 
 ## Some FAQ Things
