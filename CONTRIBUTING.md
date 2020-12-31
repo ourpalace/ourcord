@@ -230,33 +230,17 @@ After we requested feedback, we expect responses within two weeks. After two wee
 
 ## 10. Conventions
 
-> _This sectoin explains the preferred style of commit messages and code!_
+> _This section explains the preferred style of commit messages and code!_
 
 ### 10.1. Code
 
-> __NOTE:__ We have code formatter config files so every formatter formats (hopefully) the same. If your formatter isn't listed [here](#1011-current-formatting-config-files) then feel free to suggest it!
+WIP
 
-#### 10.1.1. Current Formatting Config Files
-
-- foo
-- bar
-- baz
-  
 ---
 
 ### 10.2. Commit messages
 
-Its __reccomended__ to use [gitmoji](https://gitmoji.dev/ "Gitmoji") for your commit messages and it should look like this:
-
-```none
-[emoji] [Commit message]
-```
-
-Your commit message should be a summary of what you did, for example:
-
-- 🐛 Fixed #[issueNumber]
-
----
+WIP also
 
 ## 11. Developer Certificate of Origin
 
