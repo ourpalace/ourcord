@@ -20,7 +20,7 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
 
 
 - What contributions you __DON'T__ want?
-  - Please don't use the issue tracker for any support-related questions, instead, ~~raid~~ join our [^discord] for support or consider using Stack Overflow.
+  - Please don't use the issue tracker for any support-related questions, instead, ~~raid~~ join our Discord[^discord] for support or consider using Stack Overflow.
 ----
 
 - Do we have to use [gitmoji](https://gitmoji.dev/ "Gitmoji") for our commits and PRs?
