@@ -1,82 +1,86 @@
-# 1. Contributing
+# OurCords Contributing Guildlines
+
+## 1. Contributing
+
 You are here to help on OurCord? Epic, feel welcome, and read the following sections to know how to start contributing and make this the most awesome Discord library!
 
+## 2. Table of Contents
 
-# 2. Table of Contents
-- [1. Contributing](#1-contributing)
-- [2. Table of Contents](#2-table-of-contents)
-- [3. Some FAQ Things](#3-some-faq-things)
-  - [3.1. Why should I read your guidelines?](#31-why-should-i-read-your-guidelines)
-  - [3.2. What do you want me to contribute?](#32-what-do-you-want-me-to-contribute)
-  - [3.3. What contributions you __DON'T__ want?](#33-what-contributions-you-dont-want)
-  - [3.4. Do we have to use gitmoji for our commits and PRs?](#34-do-we-have-to-use-gitmoji-for-our-commits-and-prs)
-  - [3.5. Why do we have to email you guys for security vulnerability's instead of opening an issue?](#35-why-do-we-have-to-email-you-guys-for-security-vulnerabilitys-instead-of-opening-an-issue)
-  - [3.6. How do I determine whether i'm are dealing with a security issue or a normal issue?](#36-how-do-i-determine-whether-im-are-dealing-with-a-security-issue-or-a-normal-issue)
-- [4. Ground Rules](#4-ground-rules)
-- [5. Your First Contribution](#5-your-first-contribution)
-- [6. Getting started](#6-getting-started)
-- [7. How to suggest a feature or enhancement](#7-how-to-suggest-a-feature-or-enhancement)
-- [8. Code review process](#8-code-review-process)
-- [9. Code Style](#9-code-style)
+- [OurCords Contributing Guildlines](#ourcords-contributing-guildlines)
+  - [1. Contributing](#1-contributing)
+  - [2. Table of Contents](#2-table-of-contents)
+  - [3. Some FAQ Things](#3-some-faq-things)
+    - [3.1. Why should I read your guidelines?](#31-why-should-i-read-your-guidelines)
+    - [3.2. What do you want me to contribute?](#32-what-do-you-want-me-to-contribute)
+    - [3.3. What contributions you __DON'T__ want?](#33-what-contributions-you-dont-want)
+    - [3.4. Do we have to use gitmoji for our commits and PRs?](#34-do-we-have-to-use-gitmoji-for-our-commits-and-prs)
+    - [3.5. Why do we have to email you guys for security vulnerability's instead of opening an issue?](#35-why-do-we-have-to-email-you-guys-for-security-vulnerabilitys-instead-of-opening-an-issue)
+    - [3.6. How do I determine whether i'm are dealing with a security issue or a normal issue?](#36-how-do-i-determine-whether-im-are-dealing-with-a-security-issue-or-a-normal-issue)
+  - [4. Ground Rules](#4-ground-rules)
+  - [5. Your First Contribution](#5-your-first-contribution)
+  - [6. Getting started](#6-getting-started)
+  - [7. How to report a bug](#7-how-to-report-a-bug)
+  - [8. How to suggest a feature or enhancement](#8-how-to-suggest-a-feature-or-enhancement)
+  - [9. Code review process](#9-code-review-process)
+  - [10. Code Style](#10-code-style)
 
-# 3. Some FAQ Things
+## 3. Some FAQ Things
 
+### 3.1. Why should I read your guidelines?
 
-#### 3.1. Why should I read your guidelines?
-  - Following these guidelines helps to communicate that you respect the time of the developers managing and developing this open-source project. In return, they should reciprocate that respect in addressing your issue, assessing changes, and helping you finalize your pull requests.
+- Following these guidelines helps to communicate that you respect the time of the developers managing and developing this open-source project. In return, they should reciprocate that respect in addressing your issue, assessing changes, and helping you finalize your pull requests.
 
-#### 3.2. What do you want me to contribute?
-  - Keep an open mind! Improving documentation, bug triaging, or improving ~~our bad code~~ are all examples of helpful contributions that mean less work for you.
+### 3.2. What do you want me to contribute?
 
+- Keep an open mind! Improving documentation, bug triaging, or improving ~~our bad code~~ are all examples of helpful contributions that mean less work for you.
 
+### 3.3. What contributions you __DON'T__ want?
 
-#### 3.3. What contributions you __DON'T__ want?
-  - Please don't use the issue tracker for any support-related questions, instead, ~~raid~~ join our [Discord](https://discord.gg/3yDQKDXXdk "Discord Invite- Our Palce")for support or consider using Stack Overflow.
+- Please don't use the issue tracker for any support-related questions, instead, ~~raid~~ join our [Discord](https://discord.gg/3yDQKDXXdk "Discord Invite- Our Palce")for support or consider using Stack Overflow.
 
-#### 3.4. Do we have to use [gitmoji](https://gitmoji.dev/ "Gitmoji") for our commits and PRs?
-  - It's not necessary but recommended. 
+### 3.4. Do we have to use [gitmoji](https://gitmoji.dev/ "Gitmoji") for our commits and PRs?
+
+- It's not necessary but recommended.
   
+### 3.5. Why do we have to email you guys for security vulnerability's instead of opening an issue?
 
-#### 3.5. Why do we have to email you guys for security vulnerability's instead of opening an issue?
-  - For security reasons, as if you used the issue tracker, everyone can see it, but in email only we can see it.
+- For security reasons, as if you used the issue tracker, everyone can see it, but in email only we can see it.
   
+### 3.6. How do I determine whether i'm are dealing with a security issue or a normal issue?
 
-#### 3.6. How do I determine whether i'm are dealing with a security issue or a normal issue?
-  - Ask yourself these questions:
-    - Can I access something that's not mine, or something I shouldn't have access to?
-    - Can I disable something for other people?
+- Ask yourself these questions:
+  - Can I access something that's not mine, or something I shouldn't have access to?
+  - Can I disable something for other people?
   
+## 4. Ground Rules
 
-# 4. Ground Rules
 > _This section will set expectations for behavior for everyone_
 
-* Each pull request should implement __ONE__ feature or bug fix. If you want to add or fix more than one thing, submit more than one pull request.
-* Create issues for any major changes and enhancements that you wish to make. Discuss things transparently and get community feedback.
-* Be aware that the pull request review process is not immediate, and is generally proportional to the number of comments of the pull request.
-* Do not commit changes to files that are irrelevant to your feature or bug fix (`.gitignore`).
-* Be welcoming to newcomers and encourage diverse new contributors from all backgrounds.
-* Be willing to accept criticism and work on improving your code.
+- Each pull request should implement __ONE__ feature or bug fix. If you want to add or fix more than one thing, submit more than one pull request.
+- Create issues for any major changes and enhancements that you wish to make. Discuss things transparently and get community feedback.
+- Be aware that the pull request review process is not immediate, and is generally proportional to the number of comments of the pull request.
+- Do not commit changes to files that are irrelevant to your feature or bug fix (`.gitignore`).
+- Be welcoming to newcomers and encourage diverse new contributors from all backgrounds.
+- Be willing to accept criticism and work on improving your code.
 
 ----
 
-# 5. Your First Contribution
+## 5. Your First Contribution
+
 Unsure where to begin contributing to OurCord? You can start by looking through these beginner and help-wanted issues:
 
-
-* Beginner issues (Issues that should only require a few lines of code, and a test or two).
-* Help wanted issues (Issues which should be a bit more involved than beginner issues).
-
+- Beginner issues (Issues that should only require a few lines of code, and a test or two).
+- Help wanted issues (Issues which should be a bit more involved than beginner issues).
 
 While not perfect, a number of comments are a reasonable proxy for the impact a given change will have.
 
 If you want to read about using OurCord or developing tutorials for OurCord bots, the OurCord documentation is free and available online. You can find the source to the documentation [here](https://ourcord.js.org "OurCord Documentation").
 
-If you're still stuck here are a couple of tutorials: 
+If you're still stuck here are a couple of tutorials:
 
-* [Make a Pull Request](http://makeapullrequest.com/ "Make a Pull Request") 
-* [First Timers Only](http://www.firsttimersonly.com/ "First Timers Only")
-* [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github "How to Contribute to an Open Source Project on GitHub")
-
+- [Make a Pull Request](http://makeapullrequest.com/ "Make a Pull Request")
+- [First Timers Only](http://www.firsttimersonly.com/ "First Timers Only")
+- [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github "How to Contribute to an Open Source Project on GitHub")
 
 _At this point, you're ready to make your changes! Feel free to ask for help, everyone is a beginner at first :D._
 
@@ -84,43 +88,47 @@ _At this point, you're ready to make your changes! Feel free to ask for help, ev
 
 ----
 
-# 6. Getting started
+## 6. Getting started
+
 > _This section is a quick walkthrough of how to submit a contribution._
 
 For something that is bigger than a one or two-line fix:
+
 1. [Create a fork](https://help.github.com/forking/) of `ourcord/ourcord`.
 2. Edit your changes in your fork (`<your_username>/ourcord`).
 3. If you like the change and think the project could use it:
-  * Be really really sure your code follows our [code style](#code-style)
-  * After that you can now send a pull request and join the contributor gang B).
 
+- Be really really sure your code follows our [code style](#code-style)
+- After that you can now send a pull request and join the contributor gang B).
 
 > __NOTE:__ Small contributions such as fixing spelling errors, where the content is small enough to not be considered intellectual property, can be submitted by a contributor as a patch.
 
 As a rule of thumb, changes are obvious fixes if they do not introduce any new functionality or creative thinking. As long as the change does not affect functionality, some likely examples include the following:
-* Spelling/grammar fixes
-* Typo correction, white space, and formatting changes
-* Comment clean up
-* Bug fixes that change default return values or error codes stored in constants
-* Adding logging messages or debugging output
-* Changes to ‘metadata’ files like Gemfile, .gitignore, build scripts, etc.
-* Moving source files from one directory or package to another
+
+- Spelling/grammar fixes
+- Typo correction, white space, and formatting changes
+- Comment clean up
+- Bug fixes that change default return values or error codes stored in constants
+- Adding logging messages or debugging output
+- Changes to ‘metadata’ files like Gemfile, .gitignore, build scripts, etc.
+- Moving source files from one directory or package to another
 
 ----
 
-##How to report a bug
-> __!IMPORTANT!:__ If you find a security vulnerability, __DO NOT__ open an issue. Email [] instead. 
+## 7. How to report a bug
+
+> __!IMPORTANT!:__ If you find a security vulnerability, __DO NOT__ open an issue. Email [] instead.
 
 ----
 
-# 7. How to suggest a feature or enhancement
+## 8. How to suggest a feature or enhancement
 
 ----
 
-# 8. Code review process
+## 9. Code review process
 
 ----
 
-# 9. Code Style
+## 10. Code Style
 
 ----
