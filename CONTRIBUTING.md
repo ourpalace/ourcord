@@ -17,9 +17,8 @@ You are here to help on OurCord? Epic, feel welcome and read the following secti
 - What contributions you __DON'T__ want?
   - Please don't use the issue tracker for any support-related questions, instead ~~raid~~ join our [Discord](https://discord.gg/3yDQKDXXdk "Discord Invite- Our Palce") for support or consider using Stack Overflow.
 ----
-
 ## Ground Rules
-_This section will set expectations for behavior for everyone_
+> _This section will set expectations for behavior for everyone_
 
 * Each pull request should implement __ONE__ feature or bugfix. If you want to add or fix more than one thing, submit more than one pull request.
 * Create issues for any major changes and enhancements that you wish to make. Discuss things transparently and get community feedback.
