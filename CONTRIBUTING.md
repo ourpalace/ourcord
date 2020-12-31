@@ -27,3 +27,6 @@ _This section will set expectations for behavior for everyone_
 * Do not commit changes to files that are irrelevant to your feature or bugfix (`.gitignore``).
 * Be welcoming to newcomers and encourage diverse new contributors from all backgrounds.
 * Be willing to accept criticism and work on improving your code. 
+----
+
+## Your First Contribution
