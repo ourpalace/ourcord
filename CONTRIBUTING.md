@@ -43,3 +43,4 @@ If you want to read about using OurCord or developing tutorials for OurCord bots
 If your still stuck here are a couple of tutorials: 
 * [Make a Pull Request](http://makeapullrequest.com/ "Make a Pull Request") 
 * [First Timers Only](http://www.firsttimersonly.com/ "First Timers Only")
+* [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github "How to Contribute to an Open Source Project on GitHub")
