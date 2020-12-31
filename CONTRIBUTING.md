@@ -76,6 +76,15 @@ For something that is bigger than a one or two-line fix:
 
 > __NOTE:__ Small contributions such as fixing spelling errors, where the content is small enough to not be considered intellectual property, can be submitted by a contributor as a patch.
 
+As a rule of thumb, changes are obvious fixes if they do not introduce any new functionality or creative thinking. As long as the change does not affect functionality, some likely examples include the following:
+* Spelling / grammar fixes
+* Typo correction, white space and formatting changes
+* Comment clean up
+* Bug fixes that change default return values or error codes stored in constants
+* Adding logging messages or debugging output
+* Changes to ‘metadata’ files like Gemfile, .gitignore, build scripts, etc.
+* Moving source files from one directory or package to another
+
 ## How to report a bug
 
 
