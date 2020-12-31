@@ -5,11 +5,15 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
 ### Table of Contents
 - [Contributing](#contributing)
 - [Some FAQ Things](#some-faq-things)
+  - [#1](#)
+  - [#2](#)
+  - [#3](#)
+  - [#4](#)
+  - [#5](#)
+  - [#6](#)
 - [Ground Rules](#ground-rules)
 - [Your First Contribution](#your-first-contribution)
 - 
-
-
 
 
 
@@ -17,27 +21,34 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
 
 ----
 
-- Why should I read your guidelines?
+#### __#1__ Why should I read your guidelines?
   - Following these guidelines helps to communicate that you respect the time of the developers managing and developing this open-source project. In return, they should reciprocate that respect in addressing your issue, assessing changes, and helping you finalize your pull requests.
 
 ---- 
 
-- What do you want me to contribute?
+#### __#2__ What do you want me to contribute?
   - Keep an open mind! Improving documentation, bug triaging, or improving ~~our bad code~~ are all examples of helpful contributions that mean less work for you.
 
 ---- 
 
-- What contributions you __DON'T__ want?
+#### __#3__ What contributions you __DON'T__ want?
   - Please don't use the issue tracker for any support-related questions, instead, ~~raid~~ join our [Discord](https://discord.gg/3yDQKDXXdk "Discord Invite- Our Palce")for support or consider using Stack Overflow.
 ----
 
-- Do we have to use [gitmoji](https://gitmoji.dev/ "Gitmoji") for our commits and PRs?
+#### __#4__ Do we have to use [gitmoji](https://gitmoji.dev/ "Gitmoji") for our commits and PRs?
   - It's not necessary but recommended. 
   
 ----
 
-- Why do we have to email you guys for security vulnerability's instead of opening an issue?
+#### __#5__ Why do we have to email you guys for security vulnerability's instead of opening an issue?
   - For security reasons, as if you used the issue tracker, everyone can see it, but in email only we can see it.
+  
+----
+
+#### __#6__ How do I determine whether i'm are dealing with a security issue or a normal issue?
+  - Ask yourself these questions:
+    - Can I access something that's not mine, or something I shouldn't have access to?
+    - Can I disable something for other people?
   
 ----
 
@@ -103,7 +114,7 @@ As a rule of thumb, changes are obvious fixes if they do not introduce any new f
 ----
 
 ## How to report a bug
-> __!IMPORTANT!:__ If you find a security vulnerability, __DO NOT__ open an issue. Email [] instead.
+> __!IMPORTANT!:__ If you find a security vulnerability, __DO NOT__ open an issue. Email [] instead. 
 
 ----
 
