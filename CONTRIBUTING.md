@@ -41,9 +41,9 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
 
 
 ## Your First Contribution
-
 Unsure where to begin contributing to OurCord? You can start by looking through these beginner and help-wanted issues:
 
+[a](##-code-review-process)
 * Beginner issues (Issues that should only require a few lines of code, and a test or two).
 * Help wanted issues (Issues which should be a bit more involved than beginner issues).
 
