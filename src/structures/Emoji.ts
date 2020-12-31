@@ -1,12 +1,12 @@
 import Client from '../websocket';
 import { EmojiRaw } from './EmojiRaw';
-import { Guild } from './Guild';
+import { GuildRaw } from './GuildRaw';
 
 export class Emoji {
     id?: string;
     name?: string;
     roles?: string[];
-    guild?: Guild;
+    guild?: GuildRaw;
     require_colons?: boolean;
     managed?: boolean;
     animated?: boolean;
@@ -14,7 +14,7 @@ export class Emoji {
     rename?: (name: string) => Promise<EmojiRaw>;
     delete?: () => Promise<boolean>;
 
-    constructor(data: EmojiRaw, client: Client, guild: Guild) {
+    constructor(data: EmojiRaw, client: Client, guild: GuildRaw) {
         this.id = data.id || null;
         this.name = data.name || null;
         this.roles = data.roles || null;
