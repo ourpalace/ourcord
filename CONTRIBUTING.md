@@ -27,6 +27,10 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
 - [8. How to suggest a feature or enhancement](#8-how-to-suggest-a-feature-or-enhancement)
 - [9. Code review process](#9-code-review-process)
 - [10. Conventions](#10-conventions)
+  - [10.1. Code](#101-code)
+    - [10.1.1. Current Formatting Config Files](#1011-current-formatting-config-files)
+  - [10.2. Commit messages](#102-commit-messages)
+- [11. Developer Certificate of Origin](#11-developer-certificate-of-origin)
 
 ## 3. Some FAQ Things
 
@@ -230,8 +234,56 @@ After we requested feedback, we expect responses within two weeks. After two wee
 
 ### 10.1. Code
 
+> __NOTE:__ We have code formatter config files so every formatter formats (hopefully) the same. If your formatter isn't listed [here](#1011-current-formatting-config-files) then feel free to suggest it!
+
+#### 10.1.1. Current Formatting Config Files
+
+- foo
+- bar
+- baz
+  
 ---
 
 ### 10.2. Commit messages
 
+Its __reccomended__ to use [gitmoji](https://gitmoji.dev/ "Gitmoji") for your commit messages and it should look like this:
+
+```none
+[emoji] [Commit message]
+```
+
+Your commit message should be a summary of what you did, for example:
+
+- 🐛 Fixed #[issueNumber]
+
 ---
+
+## 11. Developer Certificate of Origin
+
+Developer's Certificate of Origin 1.1
+
+By making a contribution to this project, I certify that:
+
+(a) The contribution was created in whole or in part by me and I
+    have the right to submit it under the open source license
+    indicated in the file; or
+
+(b) The contribution is based upon previous work that, to the best
+    of my knowledge, is covered under an appropriate open source
+    license and I have the right under that license to submit that
+    work with modifications, whether created in whole or in part
+    by me, under the same open source license (unless I am
+    permitted to submit under a different license), as indicated
+    in the file; or
+
+(c) The contribution was provided directly to me by some other
+    person who certified (a), (b) or (c) and I have not modified
+    it.
+
+(d) I understand and agree that this project and the contribution
+    are public and that a record of the contribution (including all
+    personal information I submit with it, including my sign-off) is
+    maintained indefinitely and may be redistributed consistent with
+    this project or the open source license(s) involved.
+
+> Copyright (C) 2020 OurCord and its contributors.
