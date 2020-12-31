@@ -39,7 +39,6 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
 * Be welcoming to newcomers and encourage diverse new contributors from all backgrounds.
 * Be willing to accept criticism and work on improving your code.
 
-----
 
 ## Your First Contribution
 
@@ -68,6 +67,13 @@ _At this point, you're ready to make your changes! Feel free to ask for help, ev
 ## Getting started
 > _This section is a quick walkthrough of how to submit a contribution._
 
+For something that is bigger than a one or two line fix:
+1. [Create a fork](https://help.github.com/forking/) of `ourcord/ourcord`.
+2. Edit your changes in your fork (`<your_username>/ourcord`).
+3. If you like the change and think the project could use it:
+  * Be really really really sure your code follows our [code style]()
+  * After that you can now send a pull request and join the contributor gang B).
+  
 ## How to report a bug
 
 
