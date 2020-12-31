@@ -127,7 +127,7 @@ As a rule of thumb, changes are obvious fixes if they do not introduce any new f
 ```markdown
 <!--
 If you need help with ourcord please join the discord server: https://discord.gg/3yDQKDXXdk
-This issue tracker is only for bug reports and enhancement suggestions.
+This issue tracker is only for bug reports and feature suggestions.
 You won't receive any basic help here.
 
 Replace "x" with the information
@@ -176,8 +176,37 @@ the problem a lot easier for us, so please do so if possible. ;)
 
 ## 8. How to suggest a feature or enhancement
 
-> _This section will give a desired process for suggesting a feature_
+> _This section will give a process for suggesting a feature_
 
+If you find yourself wishing for a feature that doesn't exist in OurCord, you are probably not alone. There are bound to be others out there with similar needs. Many of the features that OurCord has today have been added because our users saw the need. Open an issue on our issues list on GitHub which describes the feature you would like to see, why you need it, and how it should work.
+
+> __INFO:__ The template below for your feature suggesting needs! To open click the arrow with "details" on it.
+
+<details>
+<summary>
+
+```markdown
+<!--
+If you need help with ourcord please join the discord server: https://discord.gg/3yDQKDXXdk
+This issue tracker is only for bug reports and feature suggestions.
+You won't receive any basic help here.
+-->
+
+**Is your feature request related to a problem? Please describe.**
+A clear and concise description of what the problem is. Eg. I'm always frustrated when [...]
+
+**Describe the ideal solution**
+A clear and concise description of what you want to happen.
+
+**Describe alternatives you've considered**
+A clear and concise description of any alternative solutions or features you've considered.
+
+**Additional context**
+Add any other context or screenshots about the feature request here.
+```
+
+</details>
+</summary>
 ---
 
 ## 9. Code review process
