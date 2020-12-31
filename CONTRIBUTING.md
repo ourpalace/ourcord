@@ -72,7 +72,10 @@ For something that is bigger than a one or two-line fix:
 3. If you like the change and think the project could use it:
   * Be really really really sure your code follows our [code style](#code-style)
   * After that you can now send a pull request and join the contributor gang B).
-  
+
+
+> __NOTE:__ Small contributions such as fixing spelling errors, where the content is small enough to not be considered intellectual property, can be submitted by a contributor as a patch.
+
 ## How to report a bug
 
 
