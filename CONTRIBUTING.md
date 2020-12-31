@@ -30,7 +30,6 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
 ----
 
 ## Ground Rules
-
 > _This section will set expectations for behavior for everyone_
 
 * Each pull request should implement __ONE__ feature or bug fix. If you want to add or fix more than one thing, submit more than one pull request.
@@ -67,7 +66,7 @@ _At this point, you're ready to make your changes! Feel free to ask for help, ev
 
 
 ## Getting started
-
+> _This section is a quick walkthrough of how to submit a contribution._
 
 ## How to report a bug
 
