@@ -38,5 +38,5 @@ Unsure where to begin contributing to OurCord? You can start by looking through 
 
 Both issue lists are sorted by total number of comments. While not perfect, number of comments is a reasonable proxy for impact a given change will have.
 
-If you want to read about using OurCord or developing tutorials for OurCord bots, the OurCord documentation is free and available online. You can find the source to the documentation [here]().
+If you want to read about using OurCord or developing tutorials for OurCord bots, the OurCord documentation is free and available online. You can find the source to the documentation [here](https://ourcord.js.org "OurCord Documentation").
 
