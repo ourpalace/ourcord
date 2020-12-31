@@ -22,13 +22,10 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
 
 ---- 
 
-
-
 - What do you want me to contribute?
   - Keep an open mind! Improving documentation, bug triaging, or improving ~~our bad code~~ are all examples of helpful contributions that mean less work for you.
 
 ---- 
-
 
 - What contributions you __DON'T__ want?
   - Please don't use the issue tracker for any support-related questions, instead, ~~raid~~ join our [Discord](https://discord.gg/3yDQKDXXdk "Discord Invite- Our Palce")for support or consider using Stack Overflow.
@@ -106,7 +103,7 @@ As a rule of thumb, changes are obvious fixes if they do not introduce any new f
 ----
 
 ## How to report a bug
-If you find a security vulnerability, __DO NOT__ open an issue. Email [] instead.
+> __!IMPORTANT!:__ If you find a security vulnerability, __DO NOT__ open an issue. Email [] instead.
 
 ----
 
