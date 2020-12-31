@@ -1,37 +1,33 @@
 /* eslint-disable require-jsdoc */
 import Client from '../websocket';
-import {EmojiRaw} from './EmojiRaw';
-import {Guild} from './Guild';
+import { EmojiRaw } from './EmojiRaw';
+import { Guild } from './Guild';
 
 export class Emoji {
-    id?: string
-    name?: string
-    roles?: Array<string>
-    guild?: Guild
-    requireColons?: boolean
-    managed?: boolean
-    animated?: boolean
-    url?: Function
-    rename?: Function
-    delete?: Function
+    id?: string;
+    name?: string;
+    roles?: string[];
+    guild?: Guild;
+    require_colons?: boolean;
+    managed?: boolean;
+    animated?: boolean;
+    url?: (format?: string) => string;
+    rename?: (name: string) => Promise<EmojiRaw>;
+    delete?: () => Promise<boolean>;
 
     constructor(data: EmojiRaw, client: Client, guild: Guild) {
-      this.id = data.id || null;
-      this.name = data.name || null;
-      this.roles = data.roles || null;
-      this.guild = guild;
-      this.requireColons = data.require_colons || null;
-      this.managed = data.managed || null;
-      this.animated = data.animated || null;
-      if (this.id) {
-        this.url = (format?:string) => {
-          let cf: string;
-          switch (format) {
-            case "png": cf = "png"; break;
-            case "webp": cf = "webp"; break;
-            default: cf = this.animated ? "gif" : "png"; break;
-          }
-          return `https://cdn.discordapp.com/emojis/${this.id}.${cf}`;
+        this.id = data.id || null;
+        this.name = data.name || null;
+        this.roles = data.roles || null;
+        this.guild = guild || null;
+        this.require_colons = data.require_colons || null;
+        this.managed = data.managed || null;
+        this.animated = data.animated || null;
+        this.url = this.id ? (format?: string) => `https://cdn.discordapp.com/emojis/${this.id}.${['webp', 'jpeg', 'jpg', 'png'].includes(typeof format === 'string' ? format.toLowerCase() : '') ? format.toLowerCase() : (this.animated === true ? 'gif' : 'webp')}` : null;
+        this.rename = async (name: string) => {
+            const r = await client._modifyEmoji(this.guild.id, this.id, name);
+            this.name = r.name || null;
+            return r;
         };
       } else {
         this.url = () => this.name ? `https://twemoji.maxcdn.com/v/latest/72x72/${this.name.codePointAt(16).toString()}.png` : null;

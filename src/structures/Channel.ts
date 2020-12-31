@@ -1,8 +1,8 @@
 /* eslint-disable camelcase */
 /* eslint-disable require-jsdoc */
-import { Message } from "./Message";
-import { MessageRaw } from "./MessageRaw";
-import { Client } from "../websocket";
+import { Message } from './Message';
+import { MessageRaw } from './MessageRaw';
+import { Client } from '../websocket';
 
 export class Channel {
   readonly id: string;
@@ -22,7 +22,7 @@ export class Channel {
   readonly application_id?: string;
   readonly parent_id?: string;
   readonly last_pin_timestamp?: string;
-  send: (content: string | MessageRaw) => Promise<Message>
+  send: (content: string | MessageRaw) => Promise<Message>;
   constructor() {
     this.send = async function (content: string) {
       const client = Client.prototype;
