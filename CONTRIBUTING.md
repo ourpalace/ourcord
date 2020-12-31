@@ -50,9 +50,8 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
 - Ask yourself these questions:
   - Can I access something that's not mine, or something I shouldn't have access to?
   - Can I disable something for other people?
-
 - If the answer to either of those two questions are "yes", then you're probably dealing with a security issue. Note that even if you answer "no" to both questions, you may still be dealing with a security issue, so if you're unsure, just email us at [].
-  
+
 ## 4. Ground Rules
 
 > _This section will set expectations for behavior for everyone_
@@ -64,7 +63,7 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
 - Be welcoming to newcomers and encourage diverse new contributors from all backgrounds.
 - Be willing to accept criticism and work on improving your code.
 
-----
+---
 
 ## 5. Your First Contribution
 
@@ -87,7 +86,7 @@ _At this point, you're ready to make your changes! Feel free to ask for help, ev
 
 > __NOTE:__ If a maintainer asks you to "rebase" your PR, they're saying that a lot of code has changed and that you need to update your branch so it's easier to merge.
 
-----
+---
 
 ## 6. Getting started
 
@@ -114,22 +113,73 @@ As a rule of thumb, changes are obvious fixes if they do not introduce any new f
 - Changes to ‘metadata’ files like Gemfile, .gitignore, build scripts, etc.
 - Moving source files from one directory or package to another
 
-----
+---
 
 ## 7. How to report a bug
 
 > __!IMPORTANT!:__ If you find a security vulnerability, __DO NOT__ open an issue. Email [] instead.
+>
+> __INFO:__ The template below for your bug reporting needs! To open click the arrow with "details" on it.
 
-----
+<details>
+
+```md
+<!--
+If you need help with ourcord please join the discord server: https://discord.gg/3yDQKDXXdk
+This issue tracker is only for bug reports and enhancement suggestions.
+You won't receive any basic help here.
+
+Replace "x" with the information
+Remove "r" so the code block will work properly - You can't use a code block in a code block :(
+
+Remember to list these in your report:
+- What did you expect to see?
+- What you got instead?
+
+-->
+
+__Please describe the problem you are having in as much detail as possible:__
+x
+__Include a reproducible code sample here, if possible:__
+x
+`r``js
+<insert your code here>
+`r``
+
+__Further details:__
+
+- OurCord version: x
+- Node.js version: x
+- Operating system: x
+- Priority this issue should have: x
+<!--^^ please be realistic and elaborate if possible-^^-->
+
+__Other details:__
+x
+
+<!--
+If the below applies to you, please check the respective checkbox by inserting a "x" ([] -> [x]).
+You don't have to modify the text to suit your particular situation – if you want to
+elaborate, please do so in the description.
+Its not required to test your issue on the master branch, it would make fixing
+the problem a lot easier for us, so please do so if possible. ;)
+-->
+</details>
+- [ ] I have also tested the issue on latest master, commit hash:
+```
+
+---
 
 ## 8. How to suggest a feature or enhancement
 
-----
+> _This section will give contributors context before they make suggestions that may not align with the project’s needs._
+_
+---
 
 ## 9. Code review process
 
-----
+---
 
 ## 10. Code Style
 
-----
+---
