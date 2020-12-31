@@ -86,3 +86,5 @@ For something that is bigger than a one or two-line fix:
 
 
 ## Code Style
+
+# Footnotes
