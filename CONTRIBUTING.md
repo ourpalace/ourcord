@@ -61,7 +61,7 @@ If you're still stuck here are a couple of tutorials:
 * [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github "How to Contribute to an Open Source Project on GitHub")
 
 
-_At this point, you're ready to make your changes! Feel free to ask for help, everyone is a beginner at first:D._
+_At this point, you're ready to make your changes! Feel free to ask for help, everyone is a beginner at first :D._
 
 > __NOTE:__ If a maintainer asks you to "rebase" your PR, they're saying that a lot of code has changed and that you need to update your branch so it's easier to merge.
 
