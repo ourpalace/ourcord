@@ -1,7 +1,7 @@
-# OurCords Contributing Guildlines
+# OurCords Contributing Guidelines
 
 <!--
-do you expect a easter egg here :/ 
+do you expect an easter egg here :/ 
 pretty sus ngl
 -->
 
@@ -13,6 +13,7 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
 
 ## 2. Table of Contents
 
+<!-- no toc -->
 - [1. Contributing](#1-contributing)
 - [2. Table of Contents](#2-table-of-contents)
 - [3. Some FAQ Things](#3-some-faq-things)
@@ -20,8 +21,8 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
   - [3.2. What do you want me to contribute?](#32-what-do-you-want-me-to-contribute)
   - [3.3. What contributions you DON'T want?](#33-what-contributions-you-dont-want)
   - [3.4. Do we have to use gitmoji for our commits and PRs?](#34-do-we-have-to-use-gitmoji-for-our-commits-and-prs)
-  - [3.5. Why do we have to email you guys for security vulnerability's instead of opening an issue?](#35-why-do-we-have-to-email-you-guys-for-security-vulnerabilitys-instead-of-opening-an-issue)
-  - [3.6. How do I determine whether i'm are dealing with a security issue or a normal issue?](#36-how-do-i-determine-whether-im-are-dealing-with-a-security-issue-or-a-normal-issue)
+  - [3.5. Why do we have to email you guys for security vulnerabilities instead of opening an issue?](#35-why-do-we-have-to-email-you-guys-for-security-vulnerabilities-instead-of-opening-an-issue)
+  - [3.6. How do I determine whether I'm are dealing with a security issue or a normal issue?](#36-how-do-i-determine-whether-im-are-dealing-with-a-security-issue-or-a-normal-issue)
 - [4. Ground Rules](#4-ground-rules)
 - [5. Your First Contribution](#5-your-first-contribution)
 - [6. Getting started](#6-getting-started)
@@ -30,7 +31,6 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
 - [9. Code review process](#9-code-review-process)
 - [10. Conventions](#10-conventions)
   - [10.1. Code](#101-code)
-    - [10.1.1. Current Formatting Config Files](#1011-current-formatting-config-files)
   - [10.2. Commit messages](#102-commit-messages)
 - [11. Developer Certificate of Origin](#11-developer-certificate-of-origin)
 
@@ -65,13 +65,13 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
 
 ---
 
-#### 3.5. Why do we have to email you guys for security vulnerability's instead of opening an issue?
+#### 3.5. Why do we have to email you guys for security vulnerabilities instead of opening an issue?
 
 - For security reasons, as if you used the issue tracker, everyone can see it, but in email only we can see it.
 
 ---
 
-##### 3.6. How do I determine whether i'm are dealing with a security issue or a normal issue?
+##### 3.6. How do I determine whether I'm are dealing with a security issue or a normal issue?
 
 - Ask yourself these questions:
   - Can I access something that's not mine, or something I shouldn't have access to?
@@ -127,7 +127,7 @@ For something that is bigger than a one or two-line fix:
 3. If you like the change and think the project could use it:
 
 - Be really really sure your code follows our [code style](#code-style)
-- After that you can now send a pull request and join the contributor gang B).
+- After that, you can now send a pull request and join the contributor gang B).
 
 > __NOTE:__ Small contributions such as fixing spelling errors, where the content is small enough to not be considered intellectual property, can be submitted by a contributor as a patch.
 
@@ -186,14 +186,14 @@ __Other details:__
 x
 
 <!--
-If the below applies to you, please check the respective checkbox by inserting a "x" ([] -> [x]).
+If the below applies to you, please check the respective checkbox by inserting an "x" ([] -> [x]).
 You don't have to modify the text to suit your particular situation – if you want to
 elaborate, please do so in the description.
-Its not required to test your issue on the master branch, it would make fixing
+It's not required to test your issue on the master branch, it would make fixing
 the problem a lot easier for us, so please do so if possible. ;)
 -->
 
-- [ ] I have also tested the issue on latest master, commit hash:
+- [ ] I have also tested the issue on the latest master, commit hash:
 ```
 
 ---
@@ -231,7 +231,7 @@ Add any other context or screenshots about the feature request here.
 
 ## 9. Code review process
 
-> _This section explain how a contribution gets accepted after it’s been submitted._
+> _This section explains how a contribution gets accepted after it’s been submitted._
 
 The ourcord team looks at PRs on a regular basis. It will depend on factors like _activity_ and _quality_.
 After we requested feedback, we expect responses within two weeks. After two weeks we may close the pull request if it isn't showing any activity at all.
