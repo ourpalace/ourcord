@@ -7,6 +7,7 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
 - [Some FAQ Things](#some-faq-things)
 - [Ground Rules](#ground-rules)
 - [Your First Contribution](#your-first-contribution)
+- 
 
 
 
@@ -53,6 +54,7 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
 * Be welcoming to newcomers and encourage diverse new contributors from all backgrounds.
 * Be willing to accept criticism and work on improving your code.
 
+----
 
 ## Your First Contribution
 Unsure where to begin contributing to OurCord? You can start by looking through these beginner and help-wanted issues:
@@ -77,6 +79,7 @@ _At this point, you're ready to make your changes! Feel free to ask for help, ev
 
 > __NOTE:__ If a maintainer asks you to "rebase" your PR, they're saying that a lot of code has changed and that you need to update your branch so it's easier to merge.
 
+----
 
 ## Getting started
 > _This section is a quick walkthrough of how to submit a contribution._
@@ -100,15 +103,21 @@ As a rule of thumb, changes are obvious fixes if they do not introduce any new f
 * Changes to ‘metadata’ files like Gemfile, .gitignore, build scripts, etc.
 * Moving source files from one directory or package to another
 
+----
+
 ## How to report a bug
 If you find a security vulnerability, __DO NOT__ open an issue. Email [] instead.
 
+----
 
 ## How to suggest a feature or enhancement
 
+----
 
 ## Code review process
 
+----
 
 ## Code Style
 
+----
