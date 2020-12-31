@@ -6,23 +6,22 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
 
 ## 2. Table of Contents
 
-- [OurCords Contributing Guildlines](#ourcords-contributing-guildlines)
-  - [1. Contributing](#1-contributing)
-  - [2. Table of Contents](#2-table-of-contents)
-  - [3. Some FAQ Things](#3-some-faq-things)
-    - [3.1. Why should I read your guidelines?](#31-why-should-i-read-your-guidelines)
-    - [3.2. What do you want me to contribute?](#32-what-do-you-want-me-to-contribute)
-    - [3.3. What contributions you __DON'T__ want?](#33-what-contributions-you-dont-want)
-    - [3.4. Do we have to use gitmoji for our commits and PRs?](#34-do-we-have-to-use-gitmoji-for-our-commits-and-prs)
-    - [3.5. Why do we have to email you guys for security vulnerability's instead of opening an issue?](#35-why-do-we-have-to-email-you-guys-for-security-vulnerabilitys-instead-of-opening-an-issue)
-    - [3.6. How do I determine whether i'm are dealing with a security issue or a normal issue?](#36-how-do-i-determine-whether-im-are-dealing-with-a-security-issue-or-a-normal-issue)
-  - [4. Ground Rules](#4-ground-rules)
-  - [5. Your First Contribution](#5-your-first-contribution)
-  - [6. Getting started](#6-getting-started)
-  - [7. How to report a bug](#7-how-to-report-a-bug)
-  - [8. How to suggest a feature or enhancement](#8-how-to-suggest-a-feature-or-enhancement)
-  - [9. Code review process](#9-code-review-process)
-  - [10. Code Style](#10-code-style)
+- [1. Contributing](#1-contributing)
+- [2. Table of Contents](#2-table-of-contents)
+- [3. Some FAQ Things](#3-some-faq-things)
+  - [3.1. Why should I read your guidelines?](#31-why-should-i-read-your-guidelines)
+  - [3.2. What do you want me to contribute?](#32-what-do-you-want-me-to-contribute)
+  - [3.3. What contributions you DON'T want?](#33-what-contributions-you-dont-want)
+  - [3.4. Do we have to use gitmoji for our commits and PRs?](#34-do-we-have-to-use-gitmoji-for-our-commits-and-prs)
+  - [3.5. Why do we have to email you guys for security vulnerability's instead of opening an issue?](#35-why-do-we-have-to-email-you-guys-for-security-vulnerabilitys-instead-of-opening-an-issue)
+  - [3.6. How do I determine whether i'm are dealing with a security issue or a normal issue?](#36-how-do-i-determine-whether-im-are-dealing-with-a-security-issue-or-a-normal-issue)
+- [4. Ground Rules](#4-ground-rules)
+- [5. Your First Contribution](#5-your-first-contribution)
+- [6. Getting started](#6-getting-started)
+- [7. How to report a bug](#7-how-to-report-a-bug)
+- [8. How to suggest a feature or enhancement](#8-how-to-suggest-a-feature-or-enhancement)
+- [9. Code review process](#9-code-review-process)
+- [10. Code Style](#10-code-style)
 
 ## 3. Some FAQ Things
 
@@ -34,7 +33,7 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
 
 - Keep an open mind! Improving documentation, bug triaging, or improving ~~our bad code~~ are all examples of helpful contributions that mean less work for you.
 
-### 3.3. What contributions you __DON'T__ want?
+### 3.3. What contributions you DON'T want?
 
 - Please don't use the issue tracker for any support-related questions, instead, ~~raid~~ join our [Discord](https://discord.gg/3yDQKDXXdk "Discord Invite- Our Palce")for support or consider using Stack Overflow.
 
