@@ -2,6 +2,16 @@
 You are here to help on OurCord? Epic, feel welcome, and read the following sections to know how to start contributing and make this the most awesome Discord library!
 
 
+### Table of Contents
+- [Contributing](#contributing)
+- [Some FAQ Things](#some-faq-things)
+- [Ground Rules](#ground-rules)
+- [Your First Contribution](#your-first-contribution)
+
+
+
+
+
 ## Some FAQ Things
 
 ----
