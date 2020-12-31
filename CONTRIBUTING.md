@@ -22,6 +22,7 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
 - [8. How to suggest a feature or enhancement](#8-how-to-suggest-a-feature-or-enhancement)
 - [9. Code review process](#9-code-review-process)
 - [10. Code Style](#10-code-style)
+- [11. Conventions](#11-conventions)
 
 ## 3. Some FAQ Things
 
@@ -212,8 +213,12 @@ Add any other context or screenshots about the feature request here.
 
 ## 9. Code review process
 
+> _This section explain how a contribution gets accepted after it’s been submitted._
+
 ---
 
 ## 10. Code Style
 
 ---
+
+## 11. Conventions
