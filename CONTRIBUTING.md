@@ -121,6 +121,7 @@ As a rule of thumb, changes are obvious fixes if they do not introduce any new f
 >
 > __INFO:__ The template below for your bug reporting needs! To open click the arrow with "details" on it.
 
+<summary>
 <details>
 
 ```md
@@ -164,9 +165,12 @@ elaborate, please do so in the description.
 Its not required to test your issue on the master branch, it would make fixing
 the problem a lot easier for us, so please do so if possible. ;)
 -->
-</details>
+
 - [ ] I have also tested the issue on latest master, commit hash:
 ```
+
+</details>
+</summary>
 
 ---
 
