@@ -226,4 +226,12 @@ After we requested feedback, we expect responses within two weeks. After two wee
 
 ## 10. Conventions
 
+> _This sectoin explains the preferred style of commit messages and code!_
+
+### 10.1. Code
+
+---
+
+### 10.2. Commit messages
+
 ---
