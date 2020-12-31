@@ -1,5 +1,9 @@
 # OurCords Contributing Guildlines
 
+<!--
+do you expect a easter egg here :/ 
+pretty sus ngl
+-->
 ## 1. Contributing
 
 You are here to help on OurCord? Epic, feel welcome, and read the following sections to know how to start contributing and make this the most awesome Discord library!
@@ -214,6 +218,9 @@ Add any other context or screenshots about the feature request here.
 ## 9. Code review process
 
 > _This section explain how a contribution gets accepted after it’s been submitted._
+
+The ourcord team looks at PRs on a regular basis. It will depend on factors like _activity_ and _quality_.
+After we requested feedback, we expect responses within two weeks. After two weeks we may close the pull request if it isn't showing any activity at all.
 
 ---
 
