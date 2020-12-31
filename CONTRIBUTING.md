@@ -25,7 +25,12 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
 
 - Do we have to use [gitmoji](https://gitmoji.dev/ "Gitmoji") for our commits and PRs?
   - It's not necessary but recommended. 
+  
+----
 
+- WHy do we have to email you guys for security vulnerability's instead of opening an issue?
+  - For security reasons, as if you used the issue tracker, everyone can see it, but in email only we can see it.
+  
 ----
 
 ## Ground Rules
@@ -86,6 +91,7 @@ As a rule of thumb, changes are obvious fixes if they do not introduce any new f
 * Moving source files from one directory or package to another
 
 ## How to report a bug
+If you find a security vulnerability, __DO NOT__ open an issue. Email [] instead.
 
 
 ## How to suggest a feature or enhancement
