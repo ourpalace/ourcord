@@ -28,7 +28,7 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
   
 ----
 
-- WHy do we have to email you guys for security vulnerability's instead of opening an issue?
+- Why do we have to email you guys for security vulnerability's instead of opening an issue?
   - For security reasons, as if you used the issue tracker, everyone can see it, but in email only we can see it.
   
 ----
@@ -75,15 +75,15 @@ For something that is bigger than a one or two-line fix:
 1. [Create a fork](https://help.github.com/forking/) of `ourcord/ourcord`.
 2. Edit your changes in your fork (`<your_username>/ourcord`).
 3. If you like the change and think the project could use it:
-  * Be really really really sure your code follows our [code style](#code-style)
+  * Be really really sure your code follows our [code style](#code-style)
   * After that you can now send a pull request and join the contributor gang B).
 
 
 > __NOTE:__ Small contributions such as fixing spelling errors, where the content is small enough to not be considered intellectual property, can be submitted by a contributor as a patch.
 
 As a rule of thumb, changes are obvious fixes if they do not introduce any new functionality or creative thinking. As long as the change does not affect functionality, some likely examples include the following:
-* Spelling / grammar fixes
-* Typo correction, white space and formatting changes
+* Spelling/grammar fixes
+* Typo correction, white space, and formatting changes
 * Comment clean up
 * Bug fixes that change default return values or error codes stored in constants
 * Adding logging messages or debugging output
