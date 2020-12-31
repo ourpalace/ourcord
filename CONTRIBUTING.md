@@ -20,7 +20,7 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
 
 
 - What contributions you __DON'T__ want?
-  - Please don't use the issue tracker for any support-related questions, instead, ~~raid~~ join our Discord[^discord] for support or consider using Stack Overflow.
+  - Please don't use the issue tracker for any support-related questions, instead, ~~raid~~ join our [Discord](https://discord.gg/3yDQKDXXdk "Discord Invite- Our Palce")for support or consider using Stack Overflow.
 ----
 
 - Do we have to use [gitmoji](https://gitmoji.dev/ "Gitmoji") for our commits and PRs?
@@ -87,6 +87,3 @@ For something that is bigger than a one or two-line fix:
 
 ## Code Style
 
-# Footnotes
-
-[^discord]: [Discord/3yDQKDXXdk](https://discord.gg/3yDQKDXXdk "Discord Invite- Our Palce")
