@@ -2,7 +2,8 @@
 /* eslint-disable require-jsdoc */
 import { Message } from './Message';
 import { MessageRaw } from './MessageRaw';
-import { Client } from '../websocket';
+import { Client, MessageProperties } from '../websocket';
+import { ChannelRaw } from './ChannelRaw';
 
 export class Channel {
   readonly id: string;
@@ -21,15 +22,29 @@ export class Channel {
   readonly owner_id?: string;
   readonly application_id?: string;
   readonly parent_id?: string;
-  readonly last_pin_timestamp?: string;
-  send: (content: string | MessageRaw) => Promise<Message>;
-  constructor() {
-    this.send = async function (content: string) {
-      const client = Client.prototype;
-      const data = MessageRaw.prototype;
-      const r = await client._sendMessage(data.channel_id, content);
-      return new Message(r, client);
-    };
+  readonly last_pin_timestamp?: Date;
+  constructor(data: ChannelRaw) {
+    this.id = data.id;
+    this.type = data.type;
+    this.position = data.position;
+    this.permission_overwrites = data.permission_overwrites;
+    this.name = data.name;
+    this.topic = data.topic;
+    this.nsfw = data.nsfw;
+    this.last_message_id = data.last_message_id;
+    this.rate_limit_per_user = data.rate_limit_per_user;
+    this.recipients = data.recipients;
+    this.icon = data.icon;
+    this.owner_id = data.owner_id;
+    this.application_id = data.applcation_id;
+    this.parent_id = data.parent_id;
+    this.last_pin_timestamp = data.last_pin_timestamp;
     return this;
   }
+  async send (content: string | MessageProperties): Promise<Message> {
+    const client = Client.prototype;
+    const data = MessageRaw.prototype;
+    const r = await client._sendMessage(data.channel_id, content);
+    return new Message(r, client);
+  };
 };

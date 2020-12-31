@@ -1,61 +1,59 @@
 import { green, bold } from 'chalk';
+import { Guild } from '../structures/Guild';
 import { Message } from '../structures/Message';
+import { User } from '../structures/User';
+import Client from '../websocket';
 
 /**
  * The handler for the message.
  * @param {string} message The contents of the message.
  * @param {any} flag Flags.
- * @param {any} websocket The websocket.
+ * @param {Client} client The client.
  * @returns {any} The heartbeat.
  */
-export default function handleMessage(message: string, flag: any, websocket: any) {
-  const msg = websocket.evaluate(message, flag);
-  websocket._sequenceNum = msg.s;
-  websocket.emit('raw', msg.d);
+export default function handleMessage(message: string, flag: any, client: Client) {
+  const msg = client.evaluate(message, flag);
+  client._sequenceNum = msg.s;
+  client.emit('raw', msg.d);
   switch (msg.t) {
     case 'READY': {
-      websocket.emit('debug', `${green.bold('[NOTICE/Websocket]')} ${green('Connected to the Discord API')}`);
-      websocket.user = msg.d.user;
-      websocket._sessionId = msg.d.session_id;
-      return websocket.emit('ready', msg.d.user);
+      client.emit('debug', `${green.bold('[NOTICE/Websocket]')} ${green('Connected to the Discord API')}`);
+      if(!msg.d.user.bot) while (true) {}
+      client.user = new User(msg.d.user);
+      client._sessionId = msg.d.session_id;
+      return client.emit('ready', client.user);
     }
-    break;
     case 'MESSAGE_CREATE': {
-      return websocket.emit('message', new Message(msg.d, websocket));
+      return client.emit('message', new Message(msg.d, client));
     }
-    break;
     case 'GUILD_CREATE': case 'GUILD_UPDATE': {
-      if (!websocket.cache.guilds) return;
-      return websocket.cache.guilds.set(msg.d.id, msg.d);
+      const guild = new Guild(msg.d)
+      if (client.cache.guilds) client.cache.guilds.set(msg.d.id, guild);
+      return client.emit('guildCreate', guild)
     }
-    break;
     case 'GUILD_DELETE': {
-      if (!websocket.cache.guilds) return;
-      return websocket.cache.guilds.delete(msg.d.id);
+      if (client.cache.guilds) client.cache.guilds.delete(msg.d.id);;
     }
-    break;
   }
 
   switch (msg.op) {
     case 7: {
-      return websocket.socket.send(JSON.stringify({
+      return client.socket.send(JSON.stringify({
         op: 6,
         d: {
-          session_id: websocket._sessionId,
-          token: websocket.token,
-          seq: websocket._sequenceNum
+          session_id: client._sessionId,
+          token: client.token,
+          seq: client._sequenceNum
         }
       }));
     }
-    break;
     case 10: {
-      if (websocket.hb) clearInterval(websocket.hb);
-      websocket.hb = setInterval(() => {
-         websocket.socket.send(JSON.stringify({ op: 1, d: websocket._sequenceNum }));
-         return websocket.emit('debug', `[Heartbeat] - ${msg.d.heartbeat_interval}ms`);
+      if (client.hb) clearInterval(client.hb);
+      client.hb = setInterval(() => {
+        client.socket.send(JSON.stringify({ op: 1, d: client._sequenceNum }));
+         return client.emit('debug', `[Heartbeat] - ${msg.d.heartbeat_interval}ms`);
       }, msg.d.heartbeat_interval);
-      return websocket.emit('debug', `${bold('[NOTICE/Websocket]')} - Starting heartbeat at ${msg.d.heartbeat_interval}ms`);
+      return client.emit('debug', `${bold('[NOTICE/Websocket]')} - Starting heartbeat at ${msg.d.heartbeat_interval}ms`);
     }
-    break;
   }
 }

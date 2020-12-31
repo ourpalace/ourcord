@@ -1,22 +1,18 @@
-/* eslint-disable require-jsdoc */
-import { Channel } from '../structures/Channel';
-import { Guild } from '../structures/Guild';
-import { User } from '../structures/User';
-import { Member } from '../structures/Member';
 import Client, { ClientOptions } from '../websocket';
+import FakeMap from './Map';
 
 export class Cache {
     options: ClientOptions;
-    channels: Map<string, Channel> | null;
-    guilds: Map<string, Guild> | null;
-    users: Map<string, User> | null;
-    members: Map<string, Member> | null;
+    channels: FakeMap | null;
+    guilds: FakeMap | null;
+    users: FakeMap | null;
+    members: FakeMap | null;
 
     constructor(client: Client, options?: ClientOptions) {
-      this.channels = options.cacheChannels === false ? null : new Map();
-      this.guilds = options.cacheGuilds === false ? null : new Map();
-      this.users = options.cacheChannels === false ? null : new Map();
-      this.members = options.cacheMembers === false ? null : new Map();
+      this.channels = options.cacheChannels === false ? null : new FakeMap();
+      this.guilds = options.cacheGuilds === false ? null : new FakeMap();
+      this.users = options.cacheChannels === false ? null : new FakeMap();
+      this.members = options.cacheMembers === false ? null : new FakeMap();
       this._bind(client);
     }
 

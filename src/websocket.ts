@@ -30,6 +30,7 @@ export type WSProperties = {
 
 export interface MessageProperties {
   content?: string;
+  embed?: EmbedProperties;
 }
 
 export interface EmbedProperties {
@@ -103,14 +104,17 @@ export interface Client {
  */
 export class Client extends Emitter {
   readonly token: string;
-  readonly hb: NodeJS.Timeout;
-  readonly user: User;
+  hb: NodeJS.Timeout;
+  user: User;
   socket: any;
   activities: any;
   config: ClientOptions;
   cache: any;
   ws: WSProperties;
   security: SecurityProperties;
+  // idk
+  _sequenceNum: any;
+  _sessionId: any;
 
   /**
    * The main client constructor.
@@ -319,7 +323,7 @@ export class Client extends Emitter {
    * @param {any} flag The flags for evaluation.
    * @returns {string}
    */
-  evaluate(data: any, flag: any): string {
+  evaluate(data: any, flag: any): any {
     if (typeof flag !== 'object') flag = {};
     if (flag.binary === null || typeof flag.binary === 'undefined') return JSON.parse(data);
     const inflateData = new pako.Inflate();
