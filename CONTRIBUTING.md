@@ -4,6 +4,7 @@
 do you expect a easter egg here :/ 
 pretty sus ngl
 -->
+
 ## 1. Contributing
 
 You are here to help on OurCord? Epic, feel welcome, and read the following sections to know how to start contributing and make this the most awesome Discord library!
@@ -25,8 +26,7 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
 - [7. How to report a bug](#7-how-to-report-a-bug)
 - [8. How to suggest a feature or enhancement](#8-how-to-suggest-a-feature-or-enhancement)
 - [9. Code review process](#9-code-review-process)
-- [10. Code Style](#10-code-style)
-- [11. Conventions](#11-conventions)
+- [10. Conventions](#10-conventions)
 
 ## 3. Some FAQ Things
 
@@ -224,8 +224,6 @@ After we requested feedback, we expect responses within two weeks. After two wee
 
 ---
 
-## 10. Code Style
+## 10. Conventions
 
 ---
-
-## 11. Conventions
