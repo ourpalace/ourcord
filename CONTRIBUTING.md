@@ -76,7 +76,7 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
 - Ask yourself these questions:
   - Can I access something that's not mine, or something I shouldn't have access to?
   - Can I disable something for other people?
-- If the answer to either of those two questions are "yes", then you're probably dealing with a security issue. Note that even if you answer "no" to both questions, you may still be dealing with a security issue, so if you're unsure, just email us at `example@example.com`.
+- If the answer to either of those two questions are "yes", then you're probably dealing with a security issue. Note that even if you answer "no" to both questions, you may still be dealing with a security issue, so if you're unsure, just email us at `[INSERT EMAIL ADDRESS]`.
 
 <br>
 
@@ -147,7 +147,7 @@ As a rule of thumb, changes are obvious fixes if they do not introduce any new f
 
 ## 7. How to report a bug
 
-> __!IMPORTANT!:__ If you find a security vulnerability, __DO NOT__ open an issue. Email example@example.com instead.
+> __!IMPORTANT!:__ If you find a security vulnerability, __DO NOT__ open an issue. Email [INSERT EMAIL ADDRESS] instead.
 >
 > __INFO:__ The template below for your bug reporting needs!
 
