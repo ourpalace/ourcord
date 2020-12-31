@@ -9,6 +9,8 @@ pretty sus ngl
 
 You are here to help on OurCord? Epic, feel welcome, and read the following sections to know how to start contributing and make this the most awesome Discord library!
 
+<br>
+
 ## 2. Table of Contents
 
 - [1. Contributing](#1-contributing)
@@ -32,34 +34,51 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
   - [10.2. Commit messages](#102-commit-messages)
 - [11. Developer Certificate of Origin](#11-developer-certificate-of-origin)
 
+<br>
+<br>
+
 ## 3. Some FAQ Things
 
-### 3.1. Why should I read your guidelines?
+<br>
+
+#### 3.1. Why should I read your guidelines?
 
 - Following these guidelines helps to communicate that you respect the time of the developers managing and developing this open-source project. In return, they should reciprocate that respect in addressing your issue, assessing changes, and helping you finalize your pull requests.
 
-### 3.2. What do you want me to contribute?
+---
+
+#### 3.2. What do you want me to contribute?
 
 - Keep an open mind! Improving documentation, bug triaging, or improving ~~our bad code~~ are all examples of helpful contributions that mean less work for you.
 
-### 3.3. What contributions you DON'T want?
+---
+
+#### 3.3. What contributions you DON'T want?
 
 - Please don't use the issue tracker for any support-related questions, instead, ~~raid~~ join our [Discord](https://discord.gg/3yDQKDXXdk "Discord Invite- Our Palce") for support or consider using Stack Overflow.
 
-### 3.4. Do we have to use [gitmoji](https://gitmoji.dev/ "Gitmoji") for our commits and PRs?
+---
+
+#### 3.4. Do we have to use [gitmoji](https://gitmoji.dev/ "Gitmoji") for our commits and PRs?
 
 - It's not necessary but recommended.
-  
-### 3.5. Why do we have to email you guys for security vulnerability's instead of opening an issue?
+
+---
+
+#### 3.5. Why do we have to email you guys for security vulnerability's instead of opening an issue?
 
 - For security reasons, as if you used the issue tracker, everyone can see it, but in email only we can see it.
-  
-### 3.6. How do I determine whether i'm are dealing with a security issue or a normal issue?
+
+---
+
+##### 3.6. How do I determine whether i'm are dealing with a security issue or a normal issue?
 
 - Ask yourself these questions:
   - Can I access something that's not mine, or something I shouldn't have access to?
   - Can I disable something for other people?
 - If the answer to either of those two questions are "yes", then you're probably dealing with a security issue. Note that even if you answer "no" to both questions, you may still be dealing with a security issue, so if you're unsure, just email us at `example@example.com`.
+
+<br>
 
 ## 4. Ground Rules
 
@@ -72,7 +91,7 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
 - Be welcoming to newcomers and encourage diverse new contributors from all backgrounds.
 - Be willing to accept criticism and work on improving your code.
 
----
+<br>
 
 ## 5. Your First Contribution
 
@@ -95,7 +114,7 @@ _At this point, you're ready to make your changes! Feel free to ask for help, ev
 
 > __NOTE:__ If a maintainer asks you to "rebase" your PR, they're saying that a lot of code has changed and that you need to update your branch so it's easier to merge.
 
----
+<br>
 
 ## 6. Getting started
 
@@ -122,16 +141,15 @@ As a rule of thumb, changes are obvious fixes if they do not introduce any new f
 - Changes to ‘metadata’ files like Gemfile, .gitignore, build scripts, etc.
 - Moving source files from one directory or package to another
 
+<br>
+
 ---
 
 ## 7. How to report a bug
 
 > __!IMPORTANT!:__ If you find a security vulnerability, __DO NOT__ open an issue. Email example@example.com instead.
 >
-> __INFO:__ The template below for your bug reporting needs! To open click the arrow with "details" on it.
-
-<summary>
-<details>
+> __INFO:__ The template below for your bug reporting needs!
 
 ```markdown
 <!--
@@ -178,9 +196,6 @@ the problem a lot easier for us, so please do so if possible. ;)
 - [ ] I have also tested the issue on latest master, commit hash:
 ```
 
-</details>
-</summary>
-
 ---
 
 ## 8. How to suggest a feature or enhancement
@@ -189,10 +204,7 @@ the problem a lot easier for us, so please do so if possible. ;)
 
 If you find yourself wishing for a feature that doesn't exist in OurCord, you are probably not alone. There are bound to be others out there with similar needs. Many of the features that OurCord has today have been added because our users saw the need. Open an issue on our issues list on GitHub which describes the feature you would like to see, why you need it, and how it should work.
 
-> __INFO:__ The template below for your feature suggesting needs! To open click the arrow with "details" on it.
-
-<summary>
-<details>
+> __INFO:__ The template below for your feature suggesting needs!
 
 ```markdown
 <!--
@@ -214,10 +226,8 @@ A clear and concise description of any alternative solutions or features you've 
 Add any other context or screenshots about the feature request here.
 ```
 
-</details>
-</summary>
-
 ---
+<br>
 
 ## 9. Code review process
 
@@ -226,11 +236,13 @@ Add any other context or screenshots about the feature request here.
 The ourcord team looks at PRs on a regular basis. It will depend on factors like _activity_ and _quality_.
 After we requested feedback, we expect responses within two weeks. After two weeks we may close the pull request if it isn't showing any activity at all.
 
----
+<br>
 
 ## 10. Conventions
 
 > _This section explains the preferred style of commit messages and code!_
+
+---
 
 ### 10.1. Code
 
@@ -241,6 +253,9 @@ WIP
 ### 10.2. Commit messages
 
 WIP also
+
+---
+<br>
 
 ## 11. Developer Certificate of Origin
 
