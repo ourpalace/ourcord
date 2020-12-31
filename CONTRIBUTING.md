@@ -65,3 +65,14 @@ _At this point, you're ready to make your changes! Feel free to ask for help, ev
 
 > __NOTE:__ If a maintainer asks you to "rebase" your PR, they're saying that a lot of code has changed and that you need to update your branch so it's easier to merge.
 
+
+## Getting started
+
+
+## How to report a bug
+
+
+## How to suggest a feature or enhancement
+
+
+## Code review process
