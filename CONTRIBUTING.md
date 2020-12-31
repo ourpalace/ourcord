@@ -182,8 +182,8 @@ If you find yourself wishing for a feature that doesn't exist in OurCord, you ar
 
 > __INFO:__ The template below for your feature suggesting needs! To open click the arrow with "details" on it.
 
-<details>
 <summary>
+<details>
 
 ```markdown
 <!--
