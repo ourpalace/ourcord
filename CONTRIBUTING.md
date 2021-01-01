@@ -344,7 +344,7 @@ By making a contribution to this project, I certify that:
 
 ## 13. Links
 
-- [Discord](https://discord.gg/3yDQKDXXdk "Discord Invite- Our Palce")
+- [Discord Server](https://discord.gg/3yDQKDXXdk "Discord Invite- Our Palce")
 - [Gitmoji](https://gitmoji.dev/ "Gitmoji")
 - [Documentation](https://ourcord.js.org "OurCord Documentation")
 - [Make a Pull Request](http://makeapullrequest.com/ "Make a Pull Request")
