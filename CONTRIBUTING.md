@@ -26,6 +26,10 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
 - [9. Code review process](#9-code-review-process)
 - [10. Conventions](#10-conventions)
   - [10.1. Code](#101-code)
+    - [Indentation](#indentation)
+    - [camelCase](#camelcase)
+    - [Double or Single Quotes or Backticks?](#double-or-single-quotes-or-backticks)
+    - [Formatting](#formatting)
   - [10.2. Commit messages](#102-commit-messages)
 - [11. Developer Certificate of Origin](#11-developer-certificate-of-origin)
 
