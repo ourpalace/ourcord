@@ -13,7 +13,7 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
 <!-- no toc -->
 - [1. Contributing](#1-contributing)
 - [2. Table of Contents](#2-table-of-contents)
-- [3. Some FAQ Things](#3-some-faq-things)
+- [3. FAQ](#3-faq)
   - [3.1. Why should I read your guidelines?](#31-why-should-i-read-your-guidelines)
   - [3.2. What do you want me to contribute?](#32-what-do-you-want-me-to-contribute)
   - [3.3. What contributions you DON'T want?](#33-what-contributions-you-dont-want)
@@ -42,7 +42,7 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
 <br>
 <br>
 
-## 3. Some FAQ Things
+## 3. FAQ
 
 > Frequently Asked Questions
 <br>
