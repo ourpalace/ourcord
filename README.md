@@ -1,17 +1,17 @@
-<p align="center">
-  <img src="assets/logo.svg" />
-</p>
+<div align="center">
+  <img src="assets/logo.svg" alt="ourcord"/>
 
-## About
-
-Ourcord is a new and alternative discord library for js that focuses on speed and simplicity while retaining low level functions of the discord API.
-
+[![https://nodei.co/npm/ourcord.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/ourcord.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/ourcord)
 
 [![npm](https://img.shields.io/npm/v/ourcord?color=red&style=for-the-badge)](https://npmjs.com/package/ourcord)
 [![npm](https://img.shields.io/bundlephobia/min/ourcord?color=red&style=for-the-badge)](https://npmjs.com/package/ourcord)
 [![npm](https://img.shields.io/npm/dm/ourcord?color=red&style=for-the-badge)](https://npmjs.com/package/ourcord)
 [![npm](https://img.shields.io/github/contributors/ourcord/ourcord?color=red&style=for-the-badge)](https://npmjs.com/package/ourcord)
+</div>
 
+## About
+
+Ourcord is a new and alternative discord library for js that focuses on speed and simplicity while retaining low level functions of the discord API.
 
 ## Table of Contents
 
@@ -19,7 +19,7 @@ Ourcord is a new and alternative discord library for js that focuses on speed an
 - [Table of Contents](#table-of-contents)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Client Config](#client-config-)
+- [Client Config <a href="src/websocket.ts#L33"></></a>](#client-config-)
 - [Links](#links)
 
 ## Installation
