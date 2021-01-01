@@ -1,5 +1,5 @@
 const ourcord = require("ourcord");
-const client = new ourcord.Client(process.env.TOKEN, {
+const client = new ourcord.Client('<TOKEN>', {
   status: 'dnd',
   cacheGuilds: true,
   cacheChannels: true,
