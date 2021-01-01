@@ -39,6 +39,7 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
 
 ## 3. Some FAQ Things
 
+> Frequently Asked Questions
 <br>
 
 #### 3.1. Why should I read your guidelines?
