@@ -153,7 +153,7 @@ As a rule of thumb, changes are obvious fixes if they do not introduce any new f
 
 ## 7. How to report a bug
 
-> __!IMPORTANT!:__ If you find a security vulnerability, __DO NOT__ open an issue. Email [INSERT EMAIL ADDRESS] instead.
+> __!IMPORTANT!:__ If you find a security vulnerability, __DO NOT__ open an issue. Email [INSERT EMAIL ADDRESS] instead. _[FAQ #5](#35-why-do-we-have-to-email-you-guys-for-security-vulnerabilities-instead-of-opening-an-issue) & [FAQ #6](#36-how-do-i-determine-whether-im-are-dealing-with-a-security-issue-or-a-normal-issue)_
 >
 > __INFO:__ The template below for your bug reporting needs!
 
@@ -280,8 +280,12 @@ After we requested feedback, we expect responses within two weeks. After two wee
 
 ### 10.2. Commit messages
 
-WIP
+- Use the present tense _("Add config", not "Added config")_
+- Use the imperative mood _("Move square to...", not "Moves square to...")_
+- Limit the first line to 72 characters or less
+- Consider starting the commit message with [Gitmoji](https://gitmoji.dev/ "Gitmoji"). _[FAQ #4](#34-do-we-have-to-use-gitmoji-for-our-commits-and-prs)_
 
+-
 ---
 
 ### 10.3. Issue and Pull Request Labeling
