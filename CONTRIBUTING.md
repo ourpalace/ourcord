@@ -1,10 +1,5 @@
 # OurCords Contributing Guidelines
 
-<!--
-do you expect an easter egg here :/ 
-pretty sus ngl
--->
-
 ## 1. Contributing
 
 You are here to help on OurCord? Epic, feel welcome, and read the following sections to know how to start contributing and make this the most awesome Discord library!
