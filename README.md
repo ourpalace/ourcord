@@ -17,8 +17,7 @@ Ourcord is a new and alternative discord library for js that focuses on speed an
 - [Table of Contents](#table-of-contents)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Client Config <a href="src/websocket.ts#L33"></></a>](#client-config-)
-- [Contributing](#contributing)
+- [Client Config](#client-config-)
 - [Links](#links)
 
 ## Installation
@@ -60,10 +59,6 @@ View the full documentation [here](https://ourcord.js.org).
 | defaultImageFormat | `string`  | `null`      | Default image extension to display.                           | `yes`     |
 | defaultImageSize   | `number`  | `null`      | Default image size to display.                                | `yes`     |
 
-## Contributing
-
-Please read [Contributing.md](CONTRIBUTING.md)
-
 ## Links
 
 [**Discord server**](https://discord.gg/3yDQKDXXdk)  
@@ -71,3 +66,5 @@ Please read [Contributing.md](CONTRIBUTING.md)
 [**Examples**](https://github.com/ourcord/examples)
 
 [**Documentation**](https://ourcord.js.org)
+
+[**Contributing**](CONTRIBUTING.md)
