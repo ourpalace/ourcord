@@ -57,7 +57,7 @@ View the full documentation [here](https://ourcord.js.org).
 | cacheGuilds        | `boolean` | `false`     | Whether or not to cache guilds                                | `yes`     |
 | cacheUsers         | `boolean` | `false`     | Whether or not to cache users                                 | `yes`     |
 | cacheMembers       | `boolean` | `false`     | Whether or not to cache guild members                         | `yes`     |
-| activity           | `object`  | None        | The activity you want to appear on your client on connect     | `yes`     |
+| activity           | `object`  | `null`      | The activity you want to appear on your client on connect     | `yes`     |
 | status             | `string`  | `'dnd'`     | The status you want your client to connect with               | `yes`     |
 | defaultImageFormat | `string`  | `null`      | Default image extension to display.                           | `yes`     |
 | defaultImageSize   | `number`  | `null`      | Default image size to display.                                | `yes`     |
