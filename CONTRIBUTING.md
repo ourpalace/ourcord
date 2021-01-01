@@ -305,6 +305,7 @@ _If your having any problems ask [@khalby786](https://github.com/khalby786)._
 
 ## 12. Developer Certificate of Origin
 
+```txt
 Developer's Certificate of Origin 1.1
 
 By making a contribution to this project, I certify that:
@@ -330,6 +331,7 @@ By making a contribution to this project, I certify that:
     personal information I submit with it, including my sign-off) is
     maintained indefinitely and may be redistributed consistent with
     this project or the open source license(s) involved.
+```
 
 ---
 
