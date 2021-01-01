@@ -126,7 +126,7 @@ For something that is bigger than a one or two-line fix:
 2. Edit your changes in your fork (`<your_username>/ourcord`).
 3. If you like the change and think the project could use it:
 
-- Be really really sure your code follows our [code style](#code-style)
+- Be really really sure your code follows our [code style](#101-code)
 - After that, you can now send a pull request and join the contributor gang B).
 
 > __NOTE:__ Small contributions such as fixing spelling errors, where the content is small enough to not be considered intellectual property, can be submitted by a contributor as a patch.
@@ -246,13 +246,26 @@ After we requested feedback, we expect responses within two weeks. After two wee
 
 ### 10.1. Code
 
+[JSHint](https://jshint.com/) and [ESlint](https://eslint.org/) is used for checking code style and quality. It is also useful for avoiding some errors. The custom settings should be fine to use.
 
+> __Indentation__ <br><br>
+> Indentation should be using 4 spaces instead of tabs.
+
+> __camelCase__ <br><br>
+> camelCase should be used for all variables and file names. Avoid the use of underscores as word separators. This extends to things like CSS class names, IDs in test HTML documents, everything.
+<br><br>
+
+> __Double or Single Quotes or Backticks?__ <br><br>
+> You should be using single quotes, backticks are only needed if you need variable interpolation (``` `foo ${bar}` ```). <br><br>
+
+> __Formatting__ <br><br>
+> WIP
 
 ---
 
 ### 10.2. Commit messages
 
-WIP also
+WIP
 
 ---
 <br>
