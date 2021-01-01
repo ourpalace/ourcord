@@ -32,6 +32,7 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
     - [Formatting](#formatting)
   - [10.2. Commit messages](#102-commit-messages)
 - [11. Developer Certificate of Origin](#11-developer-certificate-of-origin)
+- [Links](#links)
 
 <br>
 <br>
@@ -122,7 +123,7 @@ _At this point, you're ready to make your changes! Feel free to ask for help, ev
 
 For something that is bigger than a one or two-line fix:
 
-1. [Create a fork](https://help.github.com/forking/) of `ourcord/ourcord`.
+1. [Create a fork](https://help.github.com/forking/ "GitHub Help - Forking") of `ourcord/ourcord`.
 2. Edit your changes in your fork (`<your_username>/ourcord`).
 3. If you like the change and think the project could use it:
 
@@ -246,7 +247,7 @@ After we requested feedback, we expect responses within two weeks. After two wee
 
 ### 10.1. Code
 
-[JSHint](https://jshint.com/) and [ESlint](https://eslint.org/) is used for checking code style and quality. It is also useful for avoiding some errors. The custom settings should be fine to use.
+[JSHint](https://jshint.com/ "JSHint") and [ESlint](https://eslint.org/ "ESlint") is used for checking code style and quality. It is also useful for avoiding some errors. The custom settings should be fine to use.
 
 #### Indentation
 
@@ -308,5 +309,17 @@ By making a contribution to this project, I certify that:
     this project or the open source license(s) involved.
 
 ---
+
+## Links
+
+- [Discord](https://discord.gg/3yDQKDXXdk "Discord Invite- Our Palce")
+- [Gitmoji](https://gitmoji.dev/ "Gitmoji")
+- [Documentation](https://ourcord.js.org "OurCord Documentation")
+- [Make a Pull Request](http://makeapullrequest.com/ "Make a Pull Request")
+- [First Timers Only](http://www.firsttimersonly.com/ "First Timers Only")
+- [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github "How to Contribute to an Open Source Project on GitHub")
+- [Forking](https://help.github.com/forking/ "GitHub Help - Forking")
+- [JSHint](https://jshint.com/ "JSHint")
+- [ESlint](https://eslint.org/ "ESlint")
 
 > Copyright (C) 2020 OurCord and its contributors.
