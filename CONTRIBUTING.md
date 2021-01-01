@@ -283,7 +283,7 @@ After we requested feedback, we expect responses within two weeks. After two wee
 - Use the present tense _("Add config", not "Added config")_
 - Use the imperative mood _("Move square to...", not "Moves square to...")_
 - Limit the first line to 72 characters or less
-- Its reccomended starting the commit message with [Gitmoji](https://gitmoji.dev/ "Gitmoji"). _[FAQ #4](#34-do-we-have-to-use-gitmoji-for-our-commits-and-prs)_
+- Its __[reccomended](#34-do-we-have-to-use-gitmoji-for-our-commits-and-prs)__ starting the commit message with [Gitmoji](https://gitmoji.dev/ "Gitmoji").
 
 ---
 
