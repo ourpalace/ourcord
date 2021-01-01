@@ -1,5 +1,7 @@
 # OurCords Contributing Guidelines
 
+> __NOTE:__ Everything here hasn't been verified / finished yet.
+
 ## 1. Contributing
 
 You are here to help on OurCord? Epic, feel welcome, and read the following sections to know how to start contributing and make this the most awesome Discord library!
@@ -89,7 +91,7 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
 - Each pull request should implement __ONE__ feature or bug fix. If you want to add or fix more than one thing, submit more than one pull request.
 - Create issues for any major changes and enhancements that you wish to make. Discuss things transparently and get community feedback.
 - Be aware that the pull request review process is not immediate, and is generally proportional to the number of comments of the pull request.
-- Do not commit changes to files that are irrelevant to your feature or bug fix (`.gitignore`).
+- Do not commit changes to files that are irrelevant to your feature or bug fix (`.gitignore`, `.markdownlint.json`, etc.).
 - Be welcoming to newcomers and encourage diverse new contributors from all backgrounds.
 - Be willing to accept criticism and work on improving your code.
 
@@ -281,7 +283,26 @@ WIP
 ---
 <br>
 
-## 11. Developer Certificate of Origin
+## 11. Generating the Documentation
+
+> This section gives a step by step guide to generate the documentation.
+>
+> __NOTE:__ The only time you'll need to regenerate the documentation is when
+> you change [`README.md`](README.md) or code in [`src/`](src/).
+
+### Using docs.sh
+
+> You might not have to do Step 3 if you're using Vercel or Netlify. Doing just Step 1 should be enough. _(Remember to commit!)_
+
+1. Run `npm run docs:gen` at the root directory.
+2. Run `npm run docs:dev` to view the docs in development mode.
+3. Run `npm run docs:build` to build your docs for production
+
+_If your having any problems ask [@khalby786](https://github.com/khalby786)._
+
+<br>
+
+## 12. Developer Certificate of Origin
 
 Developer's Certificate of Origin 1.1
 
@@ -311,7 +332,7 @@ By making a contribution to this project, I certify that:
 
 ---
 
-## Links
+## 13. Links
 
 - [Discord](https://discord.gg/3yDQKDXXdk "Discord Invite- Our Palce")
 - [Gitmoji](https://gitmoji.dev/ "Gitmoji")
