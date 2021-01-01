@@ -323,7 +323,6 @@ By making a contribution to this project, I certify that:
 - [JSHint](https://jshint.com/ "JSHint")
 - [ESlint](https://eslint.org/ "ESlint")
 
-[Back to top](#ourcords-contributing-guidelines)
-[Back to README.md](README.md)
+[Back to top](#ourcords-contributing-guidelines) | [Back to README.md](README.md)
 
 > Copyright (C) 2020 OurCord and its contributors.
