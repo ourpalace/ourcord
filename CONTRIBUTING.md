@@ -33,7 +33,8 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
   - [10.2. Commit messages](#102-commit-messages)
 - [11. Developer Certificate of Origin](#11-developer-certificate-of-origin)
 - [Links](#links)
-
+  
+[Back to README.md](README.md)
 <br>
 <br>
 
@@ -321,5 +322,8 @@ By making a contribution to this project, I certify that:
 - [Forking](https://help.github.com/forking/ "GitHub Help - Forking")
 - [JSHint](https://jshint.com/ "JSHint")
 - [ESlint](https://eslint.org/ "ESlint")
+
+[Back to top](#ourcords-contributing-guidelines)
+[Back to README.md](README.md)
 
 > Copyright (C) 2020 OurCord and its contributors.
