@@ -7,7 +7,7 @@
 [![npm](https://img.shields.io/bundlephobia/min/ourcord?color=red&style=for-the-badge)](https://npmjs.com/package/ourcord)
 [![npm](https://img.shields.io/npm/dm/ourcord?color=red&style=for-the-badge)](https://npmjs.com/package/ourcord)
 [![npm](https://img.shields.io/github/contributors/ourcord/ourcord?color=red&style=for-the-badge)](https://npmjs.com/package/ourcord)
-[![Discord](https://img.shields.io/discord/<serverID>?color=7289da&logo=discord&logoColor=white&style=for-the-badge)](https://discord.gg/3yDQKDXXdk)
+[![Discord](https://img.shields.io/discord/671056591088517162?color=7289da&logo=discord&logoColor=white&style=for-the-badge)](https://discord.gg/3yDQKDXXdk)
 </div>
 
 ## About
