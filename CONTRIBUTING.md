@@ -33,8 +33,9 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
     - [Double or Single Quotes or Backticks?](#double-or-single-quotes-or-backticks)
     - [Formatting](#formatting)
   - [10.2. Commit messages](#102-commit-messages)
-- [11. Developer Certificate of Origin](#11-developer-certificate-of-origin)
-- [Links](#links)
+- [11. Generating the Documentation](#11-generating-the-documentation)
+- [12. Developer Certificate of Origin](#12-developer-certificate-of-origin)
+- [13. Links](#13-links)
   
 [Back to README.md](README.md)
 <br>
