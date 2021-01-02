@@ -262,7 +262,10 @@ After we requested feedback, we expect responses within two weeks. After two wee
 
 #### camelCase
 
-- camelCase should be used for all variables and file names. Avoid the use of underscores as word separators. This extends to things like CSS class names, IDs in test HTML documents, everything.
+> __NOTE:__ An exception for this is [`README`](README.md), [`CODE_OF_CONDUCT`](CODE_OF_CONDUCT.md), [`CONTRIBUTING`](CONTRIBUTING.md), [`LICENSE`](LICENSE),
+> and [`src/structures`](src/structures)
+
+- camelCase should be used for all variables and file names. Avoid the use of underscores as word separators. This exetends to everything.
 
 ---
 
