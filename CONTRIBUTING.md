@@ -35,6 +35,7 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
   - [10.2. Commit messages](#102-commit-messages)
   - [10.3. Issue and Pull Request Labeling](#103-issue-and-pull-request-labeling)
 - [11. Generating the Documentation](#11-generating-the-documentation)
+  - [Using docs.sh](#using-docssh)
 - [12. Developer Certificate of Origin](#12-developer-certificate-of-origin)
 - [13. Links](#13-links)
   
@@ -265,7 +266,7 @@ After we requested feedback, we expect responses within two weeks. After two wee
 > __NOTE:__ An exception for this is [`README`](README.md), [`CODE_OF_CONDUCT`](CODE_OF_CONDUCT.md), [`CONTRIBUTING`](CONTRIBUTING.md), [`LICENSE`](LICENSE),
 > and [`src/structures`](src/structures)
 
-- camelCase should be used for all variables and file names. Avoid the use of underscores as word separators. This exetends to everything.
+- camelCase should be used for all variables and file names. Avoid the use of underscores as word separators. This exetends to almost everything.
 
 ---
 
