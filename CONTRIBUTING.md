@@ -297,7 +297,18 @@ After we requested feedback, we expect responses within two weeks. After two wee
 >
 > __NOTE:__ If you have suggestions for new labels, open a issue ;).
 
-a
+| Label name | Search 🔎 (`ourcord/ourcord`) | Description |
+|-|-|-|
+| `bug` | [Search](https://github.com/ourcord/ourcord/issues?q=label%3Abug+) | Confirmed bugs or very likely to be bugs. |
+| `documentation` | [Search](https://github.com/ourcord/ourcord/issues?q=label%3Adocumentation+) | Anything related to documentation. |
+| `duplicate` | [Search](https://github.com/ourcord/ourcord/issues?q=label%3Aduplicate+) | Issues which are duplicates of other issues. |
+| `enhancement`  | [Search](https://github.com/ourcord/ourcord/issues?q=label%3Aenhancement+) | Feature requests. |
+| `good first issue` | [Search](https://github.com/ourcord/ourcord/issues?q=label%3A%22good+first+issue%22+) | A good first issue! |
+| `help wanted` | [Search](https://github.com/ourcord/ourcord/issues?q=+label%3A%22help+wanted%22+) | We need some help here! |
+| `important` | [Search](https://github.com/ourcord/ourcord/issues?q=label%3Aimportant+) | Important, thats all. |
+| `invalid` | [Search](https://github.com/ourcord/ourcord/issues?q=label%3Ainvalid+) | Invalid issues. |
+| `Please fix this now Mattthew` | [Search](https://github.com/ourcord/ourcord/issues?q=label%3A%22Please+fix+this+now+Mattthew%22+) | Summons Mattthew to fix this. |
+| `wontfix` | [Search](https://github.com/ourcord/ourcord/issues?q=label%3Awontfix+) | Won't be fixed on. |
 
 ---
 <br>
