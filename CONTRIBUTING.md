@@ -154,7 +154,7 @@ As a rule of thumb, changes are obvious fixes if they do not introduce any new f
 
 ## 7. How to report a bug
 
-> __!IMPORTANT!:__ If you find a security vulnerability, __DO NOT__ open an issue. Email [INSERT EMAIL ADDRESS] instead. _[#5](#35-why-do-we-have-to-email-you-guys-for-security-vulnerabilities-instead-of-opening-an-issue) & [#6](#36-how-do-i-determine-whether-im-are-dealing-with-a-security-issue-or-a-normal-issue)_
+> __!IMPORTANT!:__ If you find a security vulnerability, __DO NOT__ open an issue. Email [INSERT EMAIL ADDRESS] instead. _[ [#5](#35-why-do-we-have-to-email-you-guys-for-security-vulnerabilities-instead-of-opening-an-issue) & [#6](#36-how-do-i-determine-whether-im-are-dealing-with-a-security-issue-or-a-normal-issue) ]_
 >
 > __INFO:__ The template below for your bug reporting needs!
 
