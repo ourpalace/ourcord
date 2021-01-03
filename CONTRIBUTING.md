@@ -1,6 +1,6 @@
 # OurCords Contributing Guidelines
 
-> __NOTE:__ Everything here hasn't been verified / finished yet.
+> __NOTE:__ Everything here hasn't been verified/finished yet.
 
 ## 1. Contributing
 
@@ -82,7 +82,7 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
 - Ask yourself these questions:
   - Can I access something that's not mine, or something I shouldn't have access to?
   - Can I disable something for other people?
-- If the answer to either of those two questions are "yes", then you're probably dealing with a security issue. Note that even if you answer "no" to both questions, you may still be dealing with a security issue, so if you're unsure, just email us at `[INSERT EMAIL ADDRESS]`.
+- If the answer to either of those two questions is "yes", then you're probably dealing with a security issue. Note that even if you answer "no" to both questions, you may still be dealing with a security issue, so if you're unsure, just email us at `[INSERT EMAIL ADDRESS]`.
 
 <br>
 
@@ -90,9 +90,9 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
 
 > _This section will set expectations for behavior for everyone_
 
-- Each pull request should implement atleast __ONE__ feature or bug fix.
+- Each pull request should implement at least __ONE__ feature or bug fix.
 - Create issues for any major changes and enhancements that you wish to make. Discuss things transparently and get community feedback.
-- Be aware that the pull request review process is not immediate, and is generally proportional to the number of comments of the pull request.
+- Be aware that the pull request review process is not immediate, and is generally proportional to the number of comments on the pull request.
 - Do not commit changes to files that are irrelevant to your feature or bug fix (`.gitignore`, `.markdownlint.json`, etc.).
 - Be welcoming to newcomers and encourage diverse new contributors from all backgrounds.
 - Be willing to accept criticism and work on improving your code.
@@ -131,7 +131,7 @@ _At this point, you're ready to make your changes! Feel free to ask for help, ev
 For something that is bigger than a one or two-line fix:
 
 1. [Create a fork](https://help.github.com/forking/ "GitHub Help - Forking") of `ourcord/ourcord`.
-2. Edit your changes in your fork (`<your_username>/ourcord`).
+2. Edit your changes in your fork (`/ourcord`).
 3. If you like the change and think the project could use it:
 
 - Be really really sure your code follows our [code style](#101-code)
@@ -186,13 +186,12 @@ __Further details:__
 - Node.js version: x
 - Operating system: x
 - Priority this issue should have: x
-<!--^^ please be realistic and elaborate if possible-^^-->
 
 __Other details:__
 x
 
 <!--
-If the below applies to you, please check the respective checkbox by inserting an "x" ([] -> [x]).
+If the below applies to you, please check the respective check box by inserting an "x" ([] -> [x]).
 You don't have to modify the text to suit your particular situation – if you want to
 elaborate, please do so in the description.
 It's not required to test your issue on the master branch, it would make fixing
@@ -294,7 +293,7 @@ After we requested feedback, we expect responses within two weeks. After two wee
 
 > This section lists the labels we use to help us track and manage issues and pull requests!
 >
-> __NOTE:__ If you have any suggestions for new labels, open a issue!
+> __NOTE:__ If you have any suggestions for new labels, open an issue!
 
 | Label name | Search 🔎 (`ourcord/ourcord`) | Description |
 |-|-|-|
@@ -327,7 +326,7 @@ After we requested feedback, we expect responses within two weeks. After two wee
 2. Run `npm run docs:dev` to view the docs in development mode.
 3. Run `npm run docs:build` to build your docs for production
 
-_If your having any problems ask [@khalby786](https://github.com/khalby786)._
+_If you're having any problems ask [@khalby786](https://github.com/khalby786)._
 
 <br>
 
