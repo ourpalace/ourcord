@@ -45,7 +45,6 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
 
 ## 3. FAQ
 
-> Frequently Asked Questions
 <br>
 
 #### 3.1. Why should I read your guidelines?
@@ -102,6 +101,8 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
 
 ## 5. Your First Contribution
 
+> __NOTE:__ If a maintainer asks you to "rebase" your PR, they're saying that a lot of code has changed and that you need to update your branch so it's easier to merge.
+
 Unsure where to begin contributing to OurCord? You can start by looking through these beginner and help-wanted issues:
 
 - Beginner issues (Issues that should only require a few lines of code, and a test or two).
@@ -119,13 +120,13 @@ If you're still stuck here are a couple of tutorials:
 
 _At this point, you're ready to make your changes! Feel free to ask for help, everyone is a beginner at first :D._
 
-> __NOTE:__ If a maintainer asks you to "rebase" your PR, they're saying that a lot of code has changed and that you need to update your branch so it's easier to merge.
-
 <br>
 
 ## 6. Getting started
 
 > _This section is a quick walkthrough of how to submit a contribution._
+>
+> __NOTE:__ Small contributions such as fixing spelling errors, where the content is small enough to not be considered intellectual property, can be submitted by a contributor as a patch.
 
 For something that is bigger than a one or two-line fix:
 
@@ -135,8 +136,6 @@ For something that is bigger than a one or two-line fix:
 
 - Be really really sure your code follows our [code style](#101-code)
 - After that, you can now send a pull request and join the contributor gang B).
-
-> __NOTE:__ Small contributions such as fixing spelling errors, where the content is small enough to not be considered intellectual property, can be submitted by a contributor as a patch.
 
 As a rule of thumb, changes are obvious fixes if they do not introduce any new functionality or creative thinking. As long as the change does not affect functionality, some likely examples include the following:
 
@@ -155,8 +154,8 @@ As a rule of thumb, changes are obvious fixes if they do not introduce any new f
 ## 7. How to report a bug
 
 > __!IMPORTANT!:__ If you find a security vulnerability, __DO NOT__ open an issue. Email [INSERT EMAIL ADDRESS] instead. _[ [#5](#35-why-do-we-have-to-email-you-guys-for-security-vulnerabilities-instead-of-opening-an-issue) & [#6](#36-how-do-i-determine-whether-im-are-dealing-with-a-security-issue-or-a-normal-issue) ]_
->
-> __INFO:__ The template below for your bug reporting needs!
+
+The template below for your bug reporting needs!
 
 ```markdown
 <!--
@@ -211,7 +210,7 @@ the problem a lot easier for us, so please do so if possible. ;)
 
 If you find yourself wishing for a feature that doesn't exist in OurCord, you are probably not alone. There are bound to be others out there with similar needs. Many of the features that OurCord has today have been added because our users saw the need. Open an issue on our issues list on GitHub which describes the feature you would like to see, why you need it, and how it should work.
 
-> __INFO:__ The template below for your feature suggesting needs!
+The template below for your feature suggesting needs!
 
 ```markdown
 <!--
@@ -295,7 +294,7 @@ After we requested feedback, we expect responses within two weeks. After two wee
 
 > This section lists the labels we use to help us track and manage issues and pull requests!
 >
-> __NOTE:__ If you have suggestions for new labels, open a issue ;).
+> __NOTE:__ If you have any suggestions for new labels, open a issue!
 
 | Label name | Search 🔎 (`ourcord/ourcord`) | Description |
 |-|-|-|
