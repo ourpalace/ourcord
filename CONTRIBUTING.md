@@ -178,7 +178,7 @@ x
 __Include a reproducible code sample here, if possible:__
 x
 `r``js
-<insert your code here>
+<CODE>
 `r``
 
 __Further details:__
