@@ -131,7 +131,7 @@ _At this point, you're ready to make your changes! Feel free to ask for help, ev
 For something that is bigger than a one or two-line fix:
 
 1. [Create a fork](https://help.github.com/forking/ "GitHub Help - Forking") of `ourcord/ourcord`.
-2. Edit your changes in your fork (`/ourcord`).
+2. Edit your changes in your fork (<your_username>/ourcord).
 3. If you like the change and think the project could use it:
 
 - Be really really sure your code follows our [code style](#101-code)
@@ -186,6 +186,7 @@ __Further details:__
 - Node.js version: x
 - Operating system: x
 - Priority this issue should have: x
+<!--^^ please be realistic and elaborate if possible-^^-->
 
 __Other details:__
 x
