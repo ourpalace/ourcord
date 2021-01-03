@@ -91,7 +91,7 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
 
 > _This section will set expectations for behavior for everyone_
 
-- Each pull request should implement __ONE__ feature or bug fix. If you want to add or fix more than one thing, submit more than one pull request.
+- Each pull request should implement atleast __ONE__ feature or bug fix.
 - Create issues for any major changes and enhancements that you wish to make. Discuss things transparently and get community feedback.
 - Be aware that the pull request review process is not immediate, and is generally proportional to the number of comments of the pull request.
 - Do not commit changes to files that are irrelevant to your feature or bug fix (`.gitignore`, `.markdownlint.json`, etc.).
@@ -293,7 +293,11 @@ After we requested feedback, we expect responses within two weeks. After two wee
 
 ### 10.3. Issue and Pull Request Labeling
 
-WIP
+> This section lists the labels we use to help us track and manage issues and pull requests!
+>
+> __NOTE:__ If you have suggestions for new labels, open a issue ;).
+
+a
 
 ---
 <br>
@@ -365,4 +369,4 @@ By making a contribution to this project, I certify that:
 
 [Back to top](#ourcords-contributing-guidelines) | [Back to README.md](README.md)
 
-> Copyright (C) 2021 OurCord and its contributors.
+> Copyright (C) 2020 OurCord and its contributors.
