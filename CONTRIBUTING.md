@@ -380,4 +380,4 @@ By making a contribution to this project, I certify that:
 
 [Back to top](#ourcords-contributing-guidelines) | [Back to README.md](README.md)
 
-> Copyright (C) 2020 OurCord and its contributors.
+> Copyright (C) 2021 OurCord and its contributors.
