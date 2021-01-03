@@ -101,7 +101,7 @@ You are here to help on Ourcord? Epic, feel welcome, and read the following sect
 
 ## 5. Your First Contribution
 
-> __NOTE:__ If a maintainer asks you to "rebase" your PR, they're saying that a lot of code has changed and that you need to update your branch so it's easier to merge.
+> __NOTE:__ If a maintainer asks you to "rebase" your pull request, they're saying that a lot of code has changed and that you need to update your branch so it's easier to merge.
 
 Unsure where to begin contributing to Ourcord? You can start by looking through these beginner and help-wanted issues:
 
