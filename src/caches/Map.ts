@@ -1,3 +1,4 @@
+/* eslint-disable require-jsdoc */
 export default class FakeMap {
   object: object;
   size: number;
@@ -13,7 +14,7 @@ export default class FakeMap {
     this.updateSize();
     return this.object;
   }
-  
+
   public delete(key: string | number): object {
     delete this.object[key];
     this.updateSize();
@@ -25,6 +26,6 @@ export default class FakeMap {
   }
 
   public toString() {
-    return JSON.stringify(this.object)
+    return JSON.stringify(this.object);
   }
 }

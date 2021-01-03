@@ -1,7 +1,7 @@
 /* eslint-disable require-jsdoc */
 /* eslint-disable camelcase */
 import Client from '../websocket';
-import { User } from './User';
+import {User} from './User';
 
 export class Rest {
   id: string;
@@ -17,10 +17,10 @@ export class Rest {
     this.id = data.id;
     this.user = {
       id: data.user_id,
-      user: async function () {
+      user: async function() {
         const r = await client._GetRestUser(data.user_id);
         return new User(r);
-      }
+      },
     };
   }
 }

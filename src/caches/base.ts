@@ -1,4 +1,5 @@
-import Client, { ClientOptions } from '../websocket';
+/* eslint-disable require-jsdoc */
+import Client, {ClientOptions} from '../websocket';
 import FakeMap from './Map';
 
 export class Cache {
@@ -18,10 +19,10 @@ export class Cache {
 
     _bind(client: Client) {
       client.cache = {
-      channels: this.channels,
-      guilds: this.guilds,
-      users: this.users,
-      members: this.members
+        channels: this.channels,
+        guilds: this.guilds,
+        users: this.users,
+        members: this.members,
       };
     }
 }

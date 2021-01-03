@@ -4,22 +4,22 @@
 // eslint-disable-next-line spaced-comment
 /// <reference types="node" />
 import ws from 'ws';
-import fetch, { Response } from 'node-fetch';
-import { EventEmitter as Emitter } from 'events';
-import { red, yellow, bold } from 'chalk';
+import fetch, {Response} from 'node-fetch';
+import {EventEmitter as Emitter} from 'events';
+import {red, yellow, bold} from 'chalk';
 import os from 'os';
 import pako from 'pako';
 // @ts-ignore
-import { config } from 'dotenv';
+import {config} from 'dotenv';
 import * as handlers from './handlers/handlers.index';
-import { statusTypesArray, apiBaseURL } from './utils';
-import { Cache } from './caches/base';
-import { MessageRaw } from './structures/MessageRaw';
-import { Message } from './structures/Message';
-import { EmojiRaw } from './structures/EmojiRaw';
-import SlashCommand, { SlashConfig } from "./structures/SlashCommand";
-import { User } from './structures/User';
-import { Emoji } from './structures/Emoji';
+import {statusTypesArray, apiBaseURL} from './utils';
+import {Cache} from './caches/base';
+import {MessageRaw} from './structures/MessageRaw';
+import {Message} from './structures/Message';
+import {EmojiRaw} from './structures/EmojiRaw';
+import SlashCommand, {SlashConfig} from "./structures/SlashCommand";
+import {User} from './structures/User';
+import {Emoji} from './structures/Emoji';
 
 config();
 
@@ -159,13 +159,13 @@ export class Client extends Emitter {
    * @param {string} method method, e.g: GET, POST, DELETE, PUT, etc.
    * @param {string} path path of URL.
    * @param {object} body body/data of Request.
-   * @returns {Promise<(Response|any)>}
+   * @return {Promise<(Response|any)>}
    */
   async request(method: string, path: string, body: object = null): Promise<Response|any> {
     return (await fetch(apiBaseURL + path, {
       method: method,
       headers: {
-        Authorization: `Bot ${this.token}`,
+        "Authorization": `Bot ${this.token}`,
         'Content-Type': 'application/json'
       },
       body: body ? JSON.stringify(body) : null
@@ -180,28 +180,26 @@ export class Client extends Emitter {
    * @param {string[]} roles Array of all role IDs which should be whitelisted to the emoji.
    */
   async _modifyEmoji(guild: string, emoji: string, name?: string, roles?: string[]): Promise<EmojiRaw> {
-    const url = `https://discord.com/api/v7/guilds/${guild}/emojis/${emoji}`;
-    let b: Emoji = {};
+    const b: Emoji = {};
     if (name) b.name = name;
     if (roles) b.roles = roles;
-    return (await this.request('PATCH', `/guilds/${guild}/emojis/${emoji}`, b).then(res => res.json()));
+    return (await this.request('PATCH', `/guilds/${guild}/emojis/${emoji}`, b).then((res) => res.json()));
   };
 
-   /**
+  /**
     * Method to delete an emoji.
     * @param {string} guild ID of the guild that the emoji belongs to.
     * @param {string} emoji ID of the emoji that is to be deleted.
-    * @returns {Promise<boolean>}
+    * @return {Promise<boolean>}
     */
-   async _deleteEmoji(guild: string, emoji: string): Promise<boolean> {
-     const url = `https://discord.com/api/v7/guilds/${guild}/emojis/${emoji}`;
-     const sent = await this.request('DELETE', `/${guild}/emojis/${emoji}`);
-     return sent.status === 204;
-   };
+  async _deleteEmoji(guild: string, emoji: string): Promise<boolean> {
+    const sent = await this.request('DELETE', `/${guild}/emojis/${emoji}`);
+    return sent.status === 204;
+  };
 
   /**
    * The method used to connect to the gateway.
-   * @returns {void}
+   * @return {void}
    */
   connect(): void {
     this.emit('debug', `${yellow.bold('[NOTICE/Websocket]')} ${yellow('Attempting to connect to the discord gateway')}`);
@@ -225,7 +223,7 @@ export class Client extends Emitter {
   /**
    * The method used to destroy the client and close the connection to the websocket.
    * @param {string} [reason] The reason to close the socket.
-   * @returns {void}
+   * @return {void}
    */
   destroy(reason?: string): void {
     this.socket.close();
@@ -235,7 +233,7 @@ export class Client extends Emitter {
   /**
    * The method used to create a slash command.
    * @param {SlashConfig} SlashConfig The slash command config.
-   * @returns {Promise<SlashCommand>}
+   * @return {Promise<SlashCommand>}
    */
   async createSlashCommand(SlashConfig: SlashConfig): Promise<SlashCommand> {
     return new SlashCommand(this, SlashConfig);
@@ -243,21 +241,21 @@ export class Client extends Emitter {
 
   /**
    * The method used to get all the global slash commands of the client.
-   * @returns {SlashConfig}
+   * @return {SlashConfig}
    */
   async getGlobalSlashcommands(): Promise<SlashConfig[]> {
     return await fetch(`https://discord.com/api/v8/applications/${this.user.id}/commands`, {
       headers: {
         Authorization: `Bot ${this.token}`,
       }
-    }).then(res => res.json());
+    }).then((res) => res.json());
   }
 
   /**
    * The method used to send a message to a TextChannel.
    * @param {string} channel ID of the TextChannel the message will be sent in.
    * @param {(string|RawMessageProps)} content The body of the message.
-   * @returns {Promise<MessageRaw>}
+   * @return {Promise<MessageRaw>}
    */
   async _sendMessage(channel: string, content: string | MessageProperties): Promise<MessageRaw> {
     let b: MessageProperties = {};
@@ -277,7 +275,7 @@ export class Client extends Emitter {
    * The method used to send an embed in a TextChannel.
    * @param {string} channel ID of the TextChannel the embed will be sent in.
    * @param {EmbedProperties} options The embed data.
-   * @returns {Promise<object>}
+   * @return {Promise<object>}
    */
   async _MessageEmbed(channel: string, options: EmbedProperties): Promise<any> {
     if (options === null || typeof options === 'undefined') throw new Error(`${red.bold('[ERROR/DiscordAPI Error]')} ${red("Cannot send a message with no content")}`);
@@ -287,7 +285,7 @@ export class Client extends Emitter {
   /**
    * The method used to fetch a user from the rest discord API.
    * @param {string} userID The ID of the user to fetch.
-   * @returns {Promise<object>}
+   * @return {Promise<object>}
    */
   async _GetRestUser(userID: string): Promise<User> {
     if (userID === null || typeof userID === 'undefined' || !userID.toString().length) throw new Error(`${red.bold('[ERROR/DiscordAPI Error]')} ${userID} is not snowflake`);
@@ -296,7 +294,7 @@ export class Client extends Emitter {
 
   /**
    * The method used to get the metadata.
-   * @returns {object}
+   * @return {object}
    */
   getMetaData(): any {
     return {
@@ -321,7 +319,7 @@ export class Client extends Emitter {
    * Evaluates under the hood stuff.
    * @param {any} data The data to evaluate.
    * @param {any} flag The flags for evaluation.
-   * @returns {string}
+   * @return {string}
    */
   evaluate(data: any, flag: any): any {
     if (typeof flag !== 'object') flag = {};
@@ -335,7 +333,7 @@ export class Client extends Emitter {
   /**
    * The method used to set the status of the client.
    * @param {('online'|'idle'|'dnd'|'invisible')} t The status type to set client's status to.
-   * @returns {void}
+   * @return {void}
    */
   setStatus(t: 'online' | 'idle' | 'dnd' | 'invisible'): void {
     if (!statusTypesArray.includes(t)) throw new Error(`${red.bold('[ERROR/DiscordAPI Error]')} ${red("Invalid status type")}`);
@@ -359,12 +357,12 @@ export class Client extends Emitter {
    * The method used to create a GuildChannel.
    * @param {string} g ID of the guild where the channel will be created in.
    * @param {string} name The name of the channel.
-   * @returns {Promise<object>}
+   * @return {Promise<object>}
    */
   async createChannel(g: string, name: string): Promise<any> {
     if (typeof g !== 'string') throw new Error(`${red.bold('[ERROR/DiscordAPI Error]')} ${g} is not snowflake`);
     if (typeof name !== 'string') throw new Error(`${red.bold('[ERROR/DiscordAPI Error]')} The channel name is required`);
-    return (await this.request('POST', `/guilds/${g}/channels`, { name }));
+    return (await this.request('POST', `/guilds/${g}/channels`, {name}));
   };
 }
 

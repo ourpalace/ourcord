@@ -10,7 +10,7 @@ export interface EmojiRaw {
     name?: string;
     roles?: string[];
     user?: User;
-    require_colons?: boolean;
+    requireColons?: boolean;
     managed?: boolean;
     animated?: boolean;
 }

@@ -1,7 +1,8 @@
-import { Channel } from './Channel';
-import { Emoji } from './Emoji'
-import { Member } from './Member';
-import { Role } from './Role';
+/* eslint-disable camelcase */
+import {Channel} from './Channel';
+import {Emoji} from './Emoji';
+import {Member} from './Member';
+import {Role} from './Role';
 
 export interface GuildRaw {
     id?: string;

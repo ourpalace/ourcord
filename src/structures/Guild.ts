@@ -1,4 +1,5 @@
-import { GuildRaw } from './GuildRaw';
+/* eslint-disable require-jsdoc */
+import {GuildRaw} from './GuildRaw';
 
 export class Guild {
   constructor(data: GuildRaw) {

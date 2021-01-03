@@ -1,10 +1,10 @@
 /* eslint-disable camelcase */
 /* eslint-disable require-jsdoc */
 import Client from '../websocket';
-import { MessageRaw } from './MessageRaw';
-import { Member } from './Member';
-import { Channel } from './Channel';
-import { User } from './User';
+import {MessageRaw} from './MessageRaw';
+import {Member} from './Member';
+import {Channel} from './Channel';
+import {User} from './User';
 
 export class Message {
     id: string;
@@ -41,10 +41,10 @@ export class Message {
         send: async function(content: string) {
           const r = await client._sendMessage(data.channel_id, content);
           return new Message(r, client);
-        }
+        },
       };
       this.guild = {
-        id: data.guild_id
+        id: data.guild_id,
       };
       this.author = data.author;
       this.member = data.member;
@@ -55,7 +55,7 @@ export class Message {
         everyone: data.mention_everyone,
         channels: data.mention_channels,
         users: data.mentions,
-        roles: data.mention_roles
+        roles: data.mention_roles,
       };
       this.attachments = data.attachments;
       this.embeds = data.embeds;
@@ -73,16 +73,16 @@ export class Message {
      * @return {Promise<Message>}
      */
     async delete(reason: string): Promise<Message> {
-      return (await this._client.request('DELETE', `/channels/${this.channel.id}/messages/${this.id}`, { reason }));
+      return (await this._client.request('DELETE', `/channels/${this.channel.id}/messages/${this.id}`, {reason}));
     }
-    
+
     /**
      * Edits the message.
      * @param {string} content New content of the message.
      * @return {Promise<Message>}
      */
     async edit(content: string): Promise<Message> {
-      return (await this._client.request('PATCH', `/channels/${this.channel.id}/messages/${this.id}`, { content }));
+      return (await this._client.request('PATCH', `/channels/${this.channel.id}/messages/${this.id}`, {content}));
     }
 }
 
