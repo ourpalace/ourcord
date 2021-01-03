@@ -37,8 +37,7 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
 - [11. Generating the Documentation](#11-generating-the-documentation)
   - [Using docs.sh](#using-docssh)
 - [12. Developer Certificate of Origin](#12-developer-certificate-of-origin)
-- [13. Definitions](#13-definitions)
-- [14. Links](#14-links)
+- [13. Links](#13-links)
   
 [Back to README.md](README.md)
 <br>
@@ -364,9 +363,7 @@ By making a contribution to this project, I certify that:
 
 ---
 
-## 13. Definitions
-
-## 14. Links
+## 13. Links
 
 - [Discord Server](https://discord.gg/3yDQKDXXdk "Discord Invite- Our Palce")
 - [Gitmoji](https://gitmoji.dev/ "Gitmoji")
