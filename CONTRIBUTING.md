@@ -1,10 +1,10 @@
-# OurCords Contributing Guidelines
+# Ourcords Contributing Guidelines
 
 > __NOTE:__ Everything here hasn't been verified/finished yet.
 
 ## 1. Contributing
 
-You are here to help on OurCord? Epic, feel welcome, and read the following sections to know how to start contributing and make this the most awesome Discord library!
+You are here to help on Ourcord? Epic, feel welcome, and read the following sections to know how to start contributing and make this the most awesome Discord library!
 
 <br>
 
@@ -77,7 +77,7 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
 
 ---
 
-##### 3.6. How do I determine whether I'm are dealing with a security issue or a normal issue?
+#### 3.6. How do I determine whether I'm are dealing with a security issue or a normal issue?
 
 - Ask yourself these questions:
   - Can I access something that's not mine, or something I shouldn't have access to?
@@ -103,14 +103,14 @@ You are here to help on OurCord? Epic, feel welcome, and read the following sect
 
 > __NOTE:__ If a maintainer asks you to "rebase" your PR, they're saying that a lot of code has changed and that you need to update your branch so it's easier to merge.
 
-Unsure where to begin contributing to OurCord? You can start by looking through these beginner and help-wanted issues:
+Unsure where to begin contributing to Ourcord? You can start by looking through these beginner and help-wanted issues:
 
 - Beginner issues (Issues that should only require a few lines of code, and a test or two).
 - Help wanted issues (Issues which should be a bit more involved than beginner issues).
 
 While not perfect, a number of comments are a reasonable proxy for the impact a given change will have.
 
-If you want to read about using OurCord or developing tutorials for OurCord bots, the OurCord documentation is free and available online. You can find the source to the documentation [here](https://ourcord.js.org "OurCord Documentation").
+If you want to read about using Ourcord or developing tutorials for Ourcord bots, the Ourcord documentation is free and available online. You can find the source to the documentation [here](https://Ourcord.js.org "Ourcord Documentation").
 
 If you're still stuck here are a couple of tutorials:
 
@@ -182,7 +182,7 @@ x
 
 __Further details:__
 
-- OurCord version: x
+- Ourcord version: x
 - Node.js version: x
 - Operating system: x
 - Priority this issue should have: x
@@ -208,7 +208,7 @@ the problem a lot easier for us, so please do so if possible. ;)
 
 > _This section will give a process for suggesting a feature_
 
-If you find yourself wishing for a feature that doesn't exist in OurCord, you are probably not alone. There are bound to be others out there with similar needs. Many of the features that OurCord has today have been added because our users saw the need. Open an issue on our issues list on GitHub which describes the feature you would like to see, why you need it, and how it should work.
+If you find yourself wishing for a feature that doesn't exist in Ourcord, you are probably not alone. There are bound to be others out there with similar needs. Many of the features that Ourcord has today have been added because our users saw the need. Open an issue on our issues list on GitHub which describes the feature you would like to see, why you need it, and how it should work.
 
 The template below for your feature suggesting needs!
 
@@ -298,16 +298,16 @@ After we requested feedback, we expect responses within two weeks. After two wee
 
 | Label name | Search 🔎 (`ourcord/ourcord`) | Description |
 |-|-|-|
-| `bug` | [Search](https://github.com/ourcord/ourcord/issues?q=label%3Abug+) | Confirmed bugs or very likely to be bugs. |
-| `documentation` | [Search](https://github.com/ourcord/ourcord/issues?q=label%3Adocumentation+) | Anything related to documentation. |
-| `duplicate` | [Search](https://github.com/ourcord/ourcord/issues?q=label%3Aduplicate+) | Issues which are duplicates of other issues. |
-| `enhancement`  | [Search](https://github.com/ourcord/ourcord/issues?q=label%3Aenhancement+) | Feature requests. |
-| `good first issue` | [Search](https://github.com/ourcord/ourcord/issues?q=label%3A%22good+first+issue%22+) | A good first issue! |
-| `help wanted` | [Search](https://github.com/ourcord/ourcord/issues?q=+label%3A%22help+wanted%22+) | We need some help here! |
-| `important` | [Search](https://github.com/ourcord/ourcord/issues?q=label%3Aimportant+) | Important, thats all. |
-| `invalid` | [Search](https://github.com/ourcord/ourcord/issues?q=label%3Ainvalid+) | Invalid issues. |
-| `Please fix this now Mattthew` | [Search](https://github.com/ourcord/ourcord/issues?q=label%3A%22Please+fix+this+now+Mattthew%22+) | Summons Mattthew to fix this. |
-| `wontfix` | [Search](https://github.com/ourcord/ourcord/issues?q=label%3Awontfix+) | Won't be fixed on. |
+| `bug` | [Search](https://github.com/Ourcord/Ourcord/issues?q=label%3Abug+) | Confirmed bugs or very likely to be bugs. |
+| `documentation` | [Search](https://github.com/Ourcord/Ourcord/issues?q=label%3Adocumentation+) | Anything related to documentation. |
+| `duplicate` | [Search](https://github.com/Ourcord/Ourcord/issues?q=label%3Aduplicate+) | Issues which are duplicates of other issues. |
+| `enhancement`  | [Search](https://github.com/Ourcord/Ourcord/issues?q=label%3Aenhancement+) | Feature requests. |
+| `good first issue` | [Search](https://github.com/Ourcord/Ourcord/issues?q=label%3A%22good+first+issue%22+) | A good first issue! |
+| `help wanted` | [Search](https://github.com/Ourcord/Ourcord/issues?q=+label%3A%22help+wanted%22+) | We need some help here! |
+| `important` | [Search](https://github.com/Ourcord/Ourcord/issues?q=label%3Aimportant+) | Important, thats all. |
+| `invalid` | [Search](https://github.com/Ourcord/Ourcord/issues?q=label%3Ainvalid+) | Invalid issues. |
+| `Please fix this now Mattthew` | [Search](https://github.com/Ourcord/Ourcord/issues?q=label%3A%22Please+fix+this+now+Mattthew%22+) | Summons Mattthew to fix this. |
+| `wontfix` | [Search](https://github.com/Ourcord/Ourcord/issues?q=label%3Awontfix+) | Won't be fixed on. |
 
 ---
 <br>
@@ -367,7 +367,7 @@ By making a contribution to this project, I certify that:
 
 - [Discord Server](https://discord.gg/3yDQKDXXdk "Discord Invite- Our Palce")
 - [Gitmoji](https://gitmoji.dev/ "Gitmoji")
-- [Documentation](https://ourcord.js.org "OurCord Documentation")
+- [Documentation](https://ourcord.js.org "Ourcord Documentation")
 - [Make a Pull Request](http://makeapullrequest.com/ "Make a Pull Request")
 - [First Timers Only](http://www.firsttimersonly.com/ "First Timers Only")
 - [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github "How to Contribute to an Open Source Project on GitHub")
@@ -377,6 +377,6 @@ By making a contribution to this project, I certify that:
 
 ---
 
-[Back to top](#ourcords-contributing-guidelines) | [Back to README.md](README.md)
+[Back to top](#Ourcords-contributing-guidelines) | [Back to README.md](README.md)
 
-> Copyright (C) 2021 OurCord and its contributors.
+> Copyright (C) 2021 Ourcord and its contributors.
