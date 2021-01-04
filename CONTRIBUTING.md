@@ -129,7 +129,7 @@ _At this point, you're ready to make your changes! Feel free to ask for help, ev
 
 For something that is bigger than a one or two-line fix:
 
-1. [Create a fork](https://help.github.com/forking/ "GitHub Help - Forking") of `ourcord/ourcord`.
+1. [Create a fork](https://help.github.com/forking/ "GitHub Help - Forking") of `ourpalace/ourcord`.
 2. Edit your changes in your fork (<your_username>/ourcord).
 3. If you like the change and think the project could use it:
 
@@ -289,18 +289,18 @@ After we requested feedback, we expect responses within two weeks. After two wee
 >
 > __NOTE:__ If you have any suggestions for new labels, open an issue!
 
-| Label name | Search 🔎 (`ourcord/ourcord`) | Description |
+| Label name | Search 🔎 (`ourpalace/ourcord`) | Description |
 |-|-|-|
-| `bug` | [Search](https://github.com/Ourcord/Ourcord/issues?q=label%3Abug+) | Confirmed bugs or very likely to be bugs. |
-| `documentation` | [Search](https://github.com/Ourcord/Ourcord/issues?q=label%3Adocumentation+) | Anything related to documentation. |
-| `duplicate` | [Search](https://github.com/Ourcord/Ourcord/issues?q=label%3Aduplicate+) | Issues which are duplicates of other issues. |
-| `enhancement`  | [Search](https://github.com/Ourcord/Ourcord/issues?q=label%3Aenhancement+) | Feature requests. |
-| `good first issue` | [Search](https://github.com/Ourcord/Ourcord/issues?q=label%3A%22good+first+issue%22+) | A good first issue! |
-| `help wanted` | [Search](https://github.com/Ourcord/Ourcord/issues?q=+label%3A%22help+wanted%22+) | We need some help here! |
-| `important` | [Search](https://github.com/Ourcord/Ourcord/issues?q=label%3Aimportant+) | Important, thats all. |
-| `invalid` | [Search](https://github.com/Ourcord/Ourcord/issues?q=label%3Ainvalid+) | Invalid issues. |
-| `Please fix this now Mattthew` | [Search](https://github.com/Ourcord/Ourcord/issues?q=label%3A%22Please+fix+this+now+Mattthew%22+) | Summons Mattthew to fix this. |
-| `wontfix` | [Search](https://github.com/Ourcord/Ourcord/issues?q=label%3Awontfix+) | Won't be fixed on. |
+| `bug` | [Search](https://github.com/ourpalace/ourcord/issues?q=label%3Abug+) | Confirmed bugs or very likely to be bugs. |
+| `documentation` | [Search](https://github.com/ourpalace/ourcord/issues?q=label%3Adocumentation+) | Anything related to documentation. |
+| `duplicate` | [Search](https://github.com/ourpalace/ourcord/issues?q=label%3Aduplicate+) | Issues which are duplicates of other issues. |
+| `enhancement`  | [Search](https://github.com/ourpalace/Ourcord/issues?q=label%3Aenhancement+) | Feature requests. |
+| `good first issue` | [Search](https://github.com/ourpalace/ourcord/issues?q=label%3A%22good+first+issue%22+) | A good first issue! |
+| `help wanted` | [Search](https://github.com/ourpalace/ourcord/issues?q=+label%3A%22help+wanted%22+) | We need some help here! |
+| `important` | [Search](https://github.com/ourpalace/ourcord/issues?q=label%3Aimportant+) | Important, thats all. |
+| `invalid` | [Search](https://github.com/ourpalace/ourcord/issues?q=label%3Ainvalid+) | Invalid issues. |
+| `Please fix this now Mattthew` | [Search](https://github.com/ourpalace/ourcord/issues?q=label%3A%22Please+fix+this+now+Mattthew%22+) | Summons Mattthew to fix this. |
+| `wontfix` | [Search](https://github.com/ourpalace/ourcord/issues?q=label%3Awontfix+) | Won't be fixed on. |
 
 ---
 <br>
@@ -358,7 +358,7 @@ By making a contribution to this project, I certify that:
 
 ## 13. Links
 
-- [Discord Server](https://discord.gg/3yDQKDXXdk "Discord Invite- Our Palce")
+- [Discord Server](https://discord.gg/3yDQKDXXdk "Discord Invite- Ourpalce")
 - [Gitmoji](https://gitmoji.dev/ "Gitmoji")
 - [Documentation](https://ourcord.js.org "Ourcord Documentation")
 - [Make a Pull Request](http://makeapullrequest.com/ "Make a Pull Request")
@@ -370,6 +370,6 @@ By making a contribution to this project, I certify that:
 
 ---
 
-[Back to top](#ourcords-contributing-guidelines) | [Back to README.md](README.md)
+[Back to top](#ourcords-contributing-guidelines) | [Back to README.md](https://github.com/ourpalace/ourcord)
 
 > Copyright (C) 2021 Ourcord and its contributors.
