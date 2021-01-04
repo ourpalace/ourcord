@@ -370,6 +370,6 @@ By making a contribution to this project, I certify that:
 
 ---
 
-[Back to top](#Ourcords-contributing-guidelines) | [Back to README.md](README.md)
+[Back to top](#ourcords-contributing-guidelines) | [Back to README.md](README.md)
 
 > Copyright (C) 2021 Ourcord and its contributors.
