@@ -31,7 +31,6 @@ You are here to help on Ourcord? Epic, feel welcome, and read the following sect
     - [Indentation](#indentation)
     - [camelCase](#camelcase)
     - [Double or Single Quotes or Backticks?](#double-or-single-quotes-or-backticks)
-    - [Formatting](#formatting)
   - [10.2. Commit messages](#102-commit-messages)
   - [10.3. Issue and Pull Request Labeling](#103-issue-and-pull-request-labeling)
 - [11. Generating the Documentation](#11-generating-the-documentation)
@@ -272,12 +271,6 @@ After we requested feedback, we expect responses within two weeks. After two wee
 #### Double or Single Quotes or Backticks?
 
 - You should be using single quotes, backticks are only needed if you need variable interpolation (``` `foo ${bar}` ```).
-
----
-
-#### Formatting
-
-- WIP
 
 ---
 
