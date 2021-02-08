@@ -371,5 +371,3 @@ By making a contribution to this project, I certify that:
 ---
 
 [Back to top](#ourcords-contributing-guidelines) | [Back to README.md](https://github.com/ourpalace/ourcord)
-
-> Copyright (C) 2021 Ourcord and its contributors.
