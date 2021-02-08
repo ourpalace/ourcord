@@ -2,7 +2,7 @@
   "name": "ourcord",
   "version": "1.1.8",
   "main": "dist/export.js",
-  "repository": "https://github.com/ourcord/ourcord",
+  "repository": "https://github.com/ourpalace/ourcord",
   "author": "ourcord",
   "license": "MIT",
   "types": "dist/export.d.ts",

@@ -1,4 +1,11 @@
 {
     "node": true,
-    "esversion": 9
+    "esversion": 9,
+    "curly": true,
+    "quotmark": "single",
+    "camelCase": true,
+    "strict": "global",
+    "undef": true,
+    "maxerr": 60,
+    "eqeqeq": true
 }
