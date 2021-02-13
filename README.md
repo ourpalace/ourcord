@@ -1,3 +1,5 @@
+# ⚠ This project has been archived
+
 <p align="center">
   <img src="assets/logo.svg" />
 </p>
