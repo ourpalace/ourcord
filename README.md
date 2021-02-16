@@ -1,3 +1,5 @@
+<h1>⚠️ The <a href="https://github.com/ourpalace/ourcord">orginal</a> project has been archived. ⚠️ </h1>
+<br>
 <div align="center">
   <img src="assets/logo.svg" alt="ourcord"/>
 
